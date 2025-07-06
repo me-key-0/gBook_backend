@@ -1,0 +1,22 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const userController_1 = require("@/controllers/userController");
+const auth_1 = require("@/middleware/auth");
+const validation_1 = require("@/middleware/validation");
+const rateLimiter_1 = require("@/middleware/rateLimiter");
+const router = (0, express_1.Router)();
+router.get('/:id', auth_1.optionalAuth, (0, validation_1.validateParams)(validation_1.schemas.objectId), userController_1.userController.getProfile);
+router.get('/:id/comments', (0, validation_1.validateParams)(validation_1.schemas.objectId), userController_1.userController.getProfileComments);
+router.use(auth_1.authenticate);
+router.post('/:id/like', rateLimiter_1.likeLimiter, (0, validation_1.validateParams)(validation_1.schemas.objectId), userController_1.userController.likeProfile);
+router.post('/:id/save', (0, validation_1.validateParams)(validation_1.schemas.objectId), userController_1.userController.saveProfile);
+router.post('/:id/comment', rateLimiter_1.commentLimiter, (0, validation_1.validateParams)(validation_1.schemas.objectId), (0, validation_1.validate)(validation_1.schemas.addComment), userController_1.userController.commentOnProfile);
+router.post('/:id/tag', (0, validation_1.validateParams)(validation_1.schemas.objectId), (0, validation_1.validate)(validation_1.schemas.tagUser), userController_1.userController.tagUser);
+router.post('/:id/report', (0, validation_1.validateParams)(validation_1.schemas.objectId), (0, validation_1.validate)(validation_1.schemas.createReport), userController_1.userController.reportUser);
+router.get('/me/liked', userController_1.userController.getLikedProfiles);
+router.get('/me/saved', userController_1.userController.getSavedProfiles);
+router.get('/me/suggested', userController_1.userController.getSuggestedUsers);
+router.put('/me/privacy', (0, validation_1.validate)(validation_1.schemas.privacySettings), userController_1.userController.updatePrivacySettings);
+exports.default = router;
+//# sourceMappingURL=user.js.map

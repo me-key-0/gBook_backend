@@ -1,0 +1,749 @@
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-06 06:59:54'
+}
+{
+  service: 'gradbook-api',
+  errorInfo: {
+    code: 'app/invalid-credential',
+    message: 'Failed to parse private key: Error: Invalid PEM formatted message.'
+  },
+  codePrefix: 'app',
+  level: 'error',
+  message: '❌ Firebase initialization failed: Failed to parse private key: Error: Invalid PEM formatted message.',
+  stack: 'Error: Failed to parse private key: Error: Invalid PEM formatted message.\n' +
+    '    at new ServiceAccount (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\firebase-admin\\lib\\app\\credential-internal.js:153:19)\n' +
+    '    at new ServiceAccountCredential (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\firebase-admin\\lib\\app\\credential-internal.js:70:15)\n' +
+    '    at Object.cert (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\firebase-admin\\lib\\app\\credential-factory.js:103:54)\n' +
+    '    at FirebaseService.initialize (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\src\\config\\firebase.ts:38:38)\n' +
+    '    at Server.start (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\src\\server.ts:120:23)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '2025-07-06 07:03:30'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-06 07:18:29'
+}
+{
+  service: 'gradbook-api',
+  message: "❌ Database connection failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/",
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 39018037,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 39018037,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 39018037,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-jpqdje-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  level: 'error',
+  stack: "MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/\n" +
+    '    at _handleConnectionErrors (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\connection.js:1165:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\connection.js:1096:11)\n' +
+    '    at Database.connect (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\src\\config\\database.ts:37:7)\n' +
+    '    at Server.start (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\src\\server.ts:117:7)',
+  timestamp: '2025-07-06 07:18:51'
+}
+{
+  service: 'gradbook-api',
+  errors: {
+    role: ValidatorError: `admin` is not a valid enum value for path `role`.
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: '`admin` is not a valid enum value for path `role`.',
+        type: 'enum',
+        enumValues: [ 'graduate', 'guest' ],
+        path: 'role',
+        fullPath: undefined,
+        value: 'admin'
+      },
+      kind: 'enum',
+      path: 'role',
+      value: 'admin',
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'User validation failed',
+  level: 'error',
+  message: '❌ Database seeding failed: User validation failed: role: `admin` is not a valid enum value for path `role`.',
+  stack: 'ValidationError: User validation failed: role: `admin` is not a valid enum value for path `role`.\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  timestamp: '2025-07-06 07:41:00'
+}
+{
+  service: 'gradbook-api',
+  errors: {
+    surname: ValidatorError: Surname is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'Surname is required',
+        type: 'required',
+        path: 'surname',
+        fullPath: undefined,
+        value: ''
+      },
+      kind: 'required',
+      path: 'surname',
+      value: '',
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'User validation failed',
+  level: 'error',
+  message: '❌ Database seeding failed: User validation failed: surname: Surname is required',
+  stack: 'ValidationError: User validation failed: surname: Surname is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  timestamp: '2025-07-06 07:43:24'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ECONNREFUSED',
+  syscall: 'querySrv',
+  hostname: '_mongodb._tcp.nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: 'Failed to connect to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: querySrv ECONNREFUSED _mongodb._tcp.nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-06 10:34:49'
+}
+{
+  service: 'gradbook-api',
+  errors: {
+    surname: ValidatorError: Surname is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'Surname is required',
+        type: 'required',
+        path: 'surname',
+        fullPath: undefined,
+        value: ''
+      },
+      kind: 'required',
+      path: 'surname',
+      value: '',
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'User validation failed',
+  level: 'error',
+  message: '❌ Database seeding failed: User validation failed: surname: Surname is required',
+  stack: 'ValidationError: User validation failed: surname: Surname is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  timestamp: '2025-07-06 10:35:58'
+}
+{
+  service: 'gradbook-api',
+  errors: {
+    surname: ValidatorError: Surname must be at least 2 characters
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'Surname must be at least 2 characters',
+        type: 'minlength',
+        minlength: 2,
+        path: 'surname',
+        fullPath: undefined,
+        value: 'V'
+      },
+      kind: 'minlength',
+      path: 'surname',
+      value: 'V',
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'User validation failed',
+  level: 'error',
+  message: '❌ Database seeding failed: User validation failed: surname: Surname must be at least 2 characters',
+  stack: 'ValidationError: User validation failed: surname: Surname must be at least 2 characters\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  timestamp: '2025-07-06 10:42:10'
+}
+{
+  service: 'gradbook-api',
+  statusCode: 401,
+  isOperational: true,
+  level: 'error',
+  message: 'Authentication error: Access token is required',
+  stack: 'Error: Access token is required\n' +
+    '    at authenticate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\src\\middleware\\auth.ts:27:13)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\index.js:328:13)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\index.js:175:3)\n' +
+    '    at router (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\index.js:47:12)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\index.js:328:13)',
+  timestamp: '2025-07-06 12:15:53'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: Cannot like your own profile',
+  stack: 'Error: Cannot like your own profile\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\src\\controllers\\userController.ts:83:13\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\src\\middleware\\errorHandler.ts:85:21\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\src\\middleware\\validation.ts:66:5\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express-rate-limit\\dist\\index.cjs:807:7\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express-rate-limit\\dist\\index.cjs:691:5',
+  url: '/api/v1/users/686a29064ecf459fa06f25b8/like',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.0',
+  level: 'error',
+  timestamp: '2025-07-06 12:37:38'
+}
+{
+  service: 'gradbook-api',
+  errors: {
+    fromUser: ValidatorError: From user is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'From user is required',
+        type: 'required',
+        path: 'fromUser',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'fromUser',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    },
+    user: ValidatorError: User is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'User is required',
+        type: 'required',
+        path: 'user',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'user',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'Notification validation failed',
+  level: 'error',
+  message: 'Error creating notification: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  timestamp: '2025-07-06 12:38:00'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  url: '/api/v1/users/686a29064ecf459fa06f25b9/like',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.0',
+  level: 'error',
+  timestamp: '2025-07-06 12:38:00'
+}
+{
+  service: 'gradbook-api',
+  errors: {
+    fromUser: ValidatorError: From user is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'From user is required',
+        type: 'required',
+        path: 'fromUser',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'fromUser',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    },
+    user: ValidatorError: User is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'User is required',
+        type: 'required',
+        path: 'user',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'user',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'Notification validation failed',
+  level: 'error',
+  message: 'Error creating notification: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  timestamp: '2025-07-06 12:40:24'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  url: '/api/v1/users/686a29064ecf459fa06f25ba/like',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.0',
+  level: 'error',
+  timestamp: '2025-07-06 12:40:24'
+}
+{
+  service: 'gradbook-api',
+  errors: {
+    fromUser: ValidatorError: From user is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'From user is required',
+        type: 'required',
+        path: 'fromUser',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'fromUser',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    },
+    user: ValidatorError: User is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'User is required',
+        type: 'required',
+        path: 'user',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'user',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'Notification validation failed',
+  level: 'error',
+  message: 'Error creating notification: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  timestamp: '2025-07-06 12:40:52'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  url: '/api/v1/users/686a29064ecf459fa06f25ba/like',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.0',
+  level: 'error',
+  timestamp: '2025-07-06 12:40:52'
+}
+{
+  service: 'gradbook-api',
+  errors: {
+    fromUser: ValidatorError: From user is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'From user is required',
+        type: 'required',
+        path: 'fromUser',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'fromUser',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    },
+    user: ValidatorError: User is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'User is required',
+        type: 'required',
+        path: 'user',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'user',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'Notification validation failed',
+  level: 'error',
+  message: 'Error creating notification: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  timestamp: '2025-07-06 12:42:48'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  url: '/api/v1/users/686a29064ecf459fa06f25ba/like?fromUser=686a29064ecf459fa06f25b8&user=686a29064ecf459fa06f25ba',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.0',
+  level: 'error',
+  timestamp: '2025-07-06 12:42:48'
+}
+{
+  service: 'gradbook-api',
+  errors: {
+    fromUser: ValidatorError: From user is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'From user is required',
+        type: 'required',
+        path: 'fromUser',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'fromUser',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    },
+    user: ValidatorError: User is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'User is required',
+        type: 'required',
+        path: 'user',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'user',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'Notification validation failed',
+  level: 'error',
+  message: 'Error creating notification: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  timestamp: '2025-07-06 13:06:40'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  url: '/api/v1/users/686a29064ecf459fa06f25ba/comment?fromUser=686a29064ecf459fa06f25b8&user=686a29064ecf459fa06f25ba',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.0',
+  level: 'error',
+  timestamp: '2025-07-06 13:06:40'
+}
+{
+  service: 'gradbook-api',
+  errors: {
+    fromUser: ValidatorError: From user is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'From user is required',
+        type: 'required',
+        path: 'fromUser',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'fromUser',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    },
+    user: ValidatorError: User is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'User is required',
+        type: 'required',
+        path: 'user',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'user',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'Notification validation failed',
+  level: 'error',
+  message: 'Error creating notification: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  timestamp: '2025-07-06 13:11:38'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  url: '/api/v1/users/686a29064ecf459fa06f25ba/comment?fromUser=686a29064ecf459fa06f25b8&user=686a29064ecf459fa06f25ba',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.0',
+  level: 'error',
+  timestamp: '2025-07-06 13:11:38'
+}
+{
+  service: 'gradbook-api',
+  errno: -4077,
+  code: 'ECONNRESET',
+  syscall: 'read',
+  level: 'error',
+  message: 'Authentication error: read ECONNRESET',
+  stack: 'Error: read ECONNRESET\n' +
+    '    at TLSWrap.onStreamRead (node:internal/stream_base_commons:218:20)',
+  timestamp: '2025-07-06 13:26:14'
+}

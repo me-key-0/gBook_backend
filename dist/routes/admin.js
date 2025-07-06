@@ -1,0 +1,27 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const adminController_1 = require("@/controllers/adminController");
+const auth_1 = require("@/middleware/auth");
+const validation_1 = require("@/middleware/validation");
+const router = (0, express_1.Router)();
+router.use(auth_1.authenticate);
+router.get('/users', adminController_1.adminController.getAllUsers);
+router.put('/users/:userId/deactivate', (0, validation_1.validateParams)(validation_1.schemas.objectId), adminController_1.adminController.deactivateUser);
+router.put('/users/:userId/activate', (0, validation_1.validateParams)(validation_1.schemas.objectId), adminController_1.adminController.activateUser);
+router.get('/reports', adminController_1.adminController.getReports);
+router.put('/reports/:reportId/review', (0, validation_1.validateParams)(validation_1.schemas.objectId), adminController_1.adminController.reviewReport);
+router.get('/questions', adminController_1.adminController.getQuestions);
+router.post('/questions', adminController_1.adminController.createQuestion);
+router.put('/questions/:questionId', (0, validation_1.validateParams)(validation_1.schemas.objectId), adminController_1.adminController.updateQuestion);
+router.delete('/questions/:questionId', (0, validation_1.validateParams)(validation_1.schemas.objectId), adminController_1.adminController.deleteQuestion);
+router.get('/tags', adminController_1.adminController.getTags);
+router.post('/tags', adminController_1.adminController.createTag);
+router.put('/tags/:tagId', (0, validation_1.validateParams)(validation_1.schemas.objectId), adminController_1.adminController.updateTag);
+router.delete('/tags/:tagId', (0, validation_1.validateParams)(validation_1.schemas.objectId), adminController_1.adminController.deleteTag);
+router.post('/campuses', adminController_1.adminController.createCampus);
+router.post('/colleges', adminController_1.adminController.createCollege);
+router.post('/departments', adminController_1.adminController.createDepartment);
+router.get('/analytics', adminController_1.adminController.getAnalytics);
+exports.default = router;
+//# sourceMappingURL=admin.js.map

@@ -1,0 +1,2651 @@
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-06 06:59:54'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:03:30'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-06 07:18:29'
+}
+{
+  service: 'gradbook-api',
+  message: "❌ Database connection failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/",
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 39018037,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 39018037,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 39018037,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-jpqdje-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  level: 'error',
+  stack: "MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/\n" +
+    '    at _handleConnectionErrors (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\connection.js:1165:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\connection.js:1096:11)\n' +
+    '    at Database.connect (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\src\\config\\database.ts:37:7)\n' +
+    '    at Server.start (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\src\\server.ts:117:7)',
+  timestamp: '2025-07-06 07:18:51'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:20:22'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:20:22'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:20:22'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:20:22'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:20:22'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:20:22'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:27:45'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:27:45'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:27:45'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:27:45'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:27:45'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:27:45'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:28:40'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:28:40'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:28:40'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:28:40'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:28:40'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:28:40'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:29:42'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:29:42'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:29:42'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:29:42'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:29:42'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:29:42'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:32:35'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:32:35'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:32:35'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:32:35'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:32:35'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:32:35'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:33:36'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:33:36'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:33:36'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:33:36'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:33:36'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:33:36'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:33:57'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:33:58'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:33:58'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:33:58'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:33:58'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:33:58'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:36:10'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:36:10'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:36:10'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:36:10'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:36:10'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:36:10'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:39:27'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:39:27'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:39:27'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:39:27'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:39:27'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:39:27'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:40:21'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:40:21'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:40:21'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:40:21'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:40:21'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:40:21'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:40:48'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:40:48'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:40:48'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:40:48'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:40:48'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:40:48'
+}
+{
+  message: 'Connected to MongoDB for seeding',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:40:57'
+}
+{
+  message: 'Clearing existing data...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:40:57'
+}
+{
+  message: 'Database cleared',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:40:59'
+}
+{
+  message: 'Seeding campuses...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:40:59'
+}
+{
+  message: 'Seeded 3 campuses',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:40:59'
+}
+{
+  message: 'Seeding colleges...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:40:59'
+}
+{
+  message: 'Seeded 4 colleges',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:40:59'
+}
+{
+  message: 'Seeding departments...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:40:59'
+}
+{
+  message: 'Seeded 10 departments',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:41:00'
+}
+{
+  message: 'Seeding questions...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:41:00'
+}
+{
+  message: 'Seeded 13 questions',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:41:00'
+}
+{
+  message: 'Seeding tags...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:41:00'
+}
+{
+  message: 'Seeded 30 tags',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:41:00'
+}
+{
+  message: 'Seeding users...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:41:00'
+}
+{
+  service: 'gradbook-api',
+  errors: {
+    role: ValidatorError: `admin` is not a valid enum value for path `role`.
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: '`admin` is not a valid enum value for path `role`.',
+        type: 'enum',
+        enumValues: [ 'graduate', 'guest' ],
+        path: 'role',
+        fullPath: undefined,
+        value: 'admin'
+      },
+      kind: 'enum',
+      path: 'role',
+      value: 'admin',
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'User validation failed',
+  level: 'error',
+  message: '❌ Database seeding failed: User validation failed: role: `admin` is not a valid enum value for path `role`.',
+  stack: 'ValidationError: User validation failed: role: `admin` is not a valid enum value for path `role`.\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  timestamp: '2025-07-06 07:41:00'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:43:12'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:43:12'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:43:12'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:43:12'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:43:12'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:43:12'
+}
+{
+  message: 'Connected to MongoDB for seeding',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:43:19'
+}
+{
+  message: 'Clearing existing data...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:43:19'
+}
+{
+  message: 'Database cleared',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:43:21'
+}
+{
+  message: 'Seeding campuses...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:43:21'
+}
+{
+  message: 'Seeded 3 campuses',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:43:22'
+}
+{
+  message: 'Seeding colleges...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:43:22'
+}
+{
+  message: 'Seeded 4 colleges',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:43:22'
+}
+{
+  message: 'Seeding departments...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:43:22'
+}
+{
+  message: 'Seeded 10 departments',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:43:22'
+}
+{
+  message: 'Seeding questions...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:43:22'
+}
+{
+  message: 'Seeded 13 questions',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:43:22'
+}
+{
+  message: 'Seeding tags...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:43:22'
+}
+{
+  message: 'Seeded 30 tags',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:43:23'
+}
+{
+  message: 'Seeding users...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 07:43:23'
+}
+{
+  service: 'gradbook-api',
+  errors: {
+    surname: ValidatorError: Surname is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'Surname is required',
+        type: 'required',
+        path: 'surname',
+        fullPath: undefined,
+        value: ''
+      },
+      kind: 'required',
+      path: 'surname',
+      value: '',
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'User validation failed',
+  level: 'error',
+  message: '❌ Database seeding failed: User validation failed: surname: Surname is required',
+  stack: 'ValidationError: User validation failed: surname: Surname is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  timestamp: '2025-07-06 07:43:24'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ECONNREFUSED',
+  syscall: 'querySrv',
+  hostname: '_mongodb._tcp.nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: 'Failed to connect to MongoDB: querySrv ECONNREFUSED _mongodb._tcp.nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: querySrv ECONNREFUSED _mongodb._tcp.nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-06 10:34:49'
+}
+{
+  message: 'Connected to MongoDB for seeding',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:35:52'
+}
+{
+  message: 'Clearing existing data...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:35:52'
+}
+{
+  message: 'Database cleared',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:35:56'
+}
+{
+  message: 'Seeding campuses...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:35:56'
+}
+{
+  message: 'Seeded 3 campuses',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:35:56'
+}
+{
+  message: 'Seeding colleges...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:35:56'
+}
+{
+  message: 'Seeded 4 colleges',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:35:56'
+}
+{
+  message: 'Seeding departments...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:35:56'
+}
+{
+  message: 'Seeded 10 departments',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:35:57'
+}
+{
+  message: 'Seeding questions...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:35:57'
+}
+{
+  message: 'Seeded 13 questions',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:35:57'
+}
+{
+  message: 'Seeding tags...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:35:57'
+}
+{
+  message: 'Seeded 30 tags',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:35:57'
+}
+{
+  message: 'Seeding users...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:35:57'
+}
+{
+  service: 'gradbook-api',
+  errors: {
+    surname: ValidatorError: Surname is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'Surname is required',
+        type: 'required',
+        path: 'surname',
+        fullPath: undefined,
+        value: ''
+      },
+      kind: 'required',
+      path: 'surname',
+      value: '',
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'User validation failed',
+  level: 'error',
+  message: '❌ Database seeding failed: User validation failed: surname: Surname is required',
+  stack: 'ValidationError: User validation failed: surname: Surname is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  timestamp: '2025-07-06 10:35:58'
+}
+{
+  message: 'Connected to MongoDB for seeding',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:05'
+}
+{
+  message: 'Clearing existing data...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:05'
+}
+{
+  message: 'Database cleared',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:08'
+}
+{
+  message: 'Seeding campuses...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:08'
+}
+{
+  message: 'Seeded 3 campuses',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:08'
+}
+{
+  message: 'Seeding colleges...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:08'
+}
+{
+  message: 'Seeded 4 colleges',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:08'
+}
+{
+  message: 'Seeding departments...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:08'
+}
+{
+  message: 'Seeded 10 departments',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:09'
+}
+{
+  message: 'Seeding questions...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:09'
+}
+{
+  message: 'Seeded 13 questions',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:09'
+}
+{
+  message: 'Seeding tags...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:09'
+}
+{
+  message: 'Seeded 30 tags',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:09'
+}
+{
+  message: 'Seeding users...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:09'
+}
+{
+  service: 'gradbook-api',
+  errors: {
+    surname: ValidatorError: Surname must be at least 2 characters
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaString.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'Surname must be at least 2 characters',
+        type: 'minlength',
+        minlength: 2,
+        path: 'surname',
+        fullPath: undefined,
+        value: 'V'
+      },
+      kind: 'minlength',
+      path: 'surname',
+      value: 'V',
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'User validation failed',
+  level: 'error',
+  message: '❌ Database seeding failed: User validation failed: surname: Surname must be at least 2 characters',
+  stack: 'ValidationError: User validation failed: surname: Surname must be at least 2 characters\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  timestamp: '2025-07-06 10:42:10'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:48'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:48'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:48'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:48'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:48'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:48'
+}
+{
+  message: 'Connected to MongoDB for seeding',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:56'
+}
+{
+  message: 'Clearing existing data...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:56'
+}
+{
+  message: 'Database cleared',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:59'
+}
+{
+  message: 'Seeding campuses...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:59'
+}
+{
+  message: 'Seeded 3 campuses',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:59'
+}
+{
+  message: 'Seeding colleges...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:42:59'
+}
+{
+  message: 'Seeded 4 colleges',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:43:00'
+}
+{
+  message: 'Seeding departments...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:43:00'
+}
+{
+  message: 'Seeded 10 departments',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:43:00'
+}
+{
+  message: 'Seeding questions...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:43:00'
+}
+{
+  message: 'Seeded 13 questions',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:43:00'
+}
+{
+  message: 'Seeding tags...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:43:00'
+}
+{
+  message: 'Seeded 30 tags',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:43:00'
+}
+{
+  message: 'Seeding users...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:43:00'
+}
+{
+  message: 'Seeded 61 users (1 admin, 50 graduates, 10 guests)',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:43:03'
+}
+{
+  message: 'Seeding posts...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:43:03'
+}
+{
+  message: 'Seeded 80 posts',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:43:03'
+}
+{
+  message: '✅ Database seeding completed successfully!',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:43:03'
+}
+{
+  message: '\n📋 Sample Credentials:',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:43:03'
+}
+{
+  message: 'Admin: admin@gradbook.com / password123',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:43:03'
+}
+{
+  message: 'Graduate: john.smith0@university.edu / password123',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:43:03'
+}
+{
+  message: 'Guest: guest0@example.com / password123',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:43:03'
+}
+{
+  message: 'Disconnected from MongoDB',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:43:03'
+}
+{
+  message: '📴 Received SIGINT. Starting graceful shutdown...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:45:36'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:45:47'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:45:47'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:45:47'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:45:47'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:45:47'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:45:47'
+}
+{
+  message: 'Database disconnected',
+  level: 'warn',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:48:28'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:48:29'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:49:08'
+}
+{
+  message: 'Database disconnected',
+  level: 'warn',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:49:20'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:49:21'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:50:48'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:50:50'
+}
+{
+  message: 'Database disconnected',
+  level: 'warn',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:51:13'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:51:13'
+}
+{
+  message: 'Database disconnected',
+  level: 'warn',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 10:53:44'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 11:16:58'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 11:23:39'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 11:23:39'
+}
+{
+  message: 'Database disconnected',
+  level: 'warn',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 11:23:50'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 11:23:50'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 11:50:42'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 11:50:42'
+}
+{
+  message: 'Database disconnected',
+  level: 'warn',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:05:09'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:05:09'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:12:14'
+}
+{
+  message: 'Database disconnected',
+  level: 'warn',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:12:25'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:12:25'
+}
+{
+  message: 'GET /users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:14:04'
+}
+{
+  message: 'GET / - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:14:46'
+}
+{
+  message: 'GET /api/v1/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:15:53'
+}
+{
+  service: 'gradbook-api',
+  statusCode: 401,
+  isOperational: true,
+  level: 'error',
+  message: 'Authentication error: Access token is required',
+  stack: 'Error: Access token is required\n' +
+    '    at authenticate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\src\\middleware\\auth.ts:27:13)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\index.js:328:13)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\index.js:286:9\n' +
+    '    at Function.process_params (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\index.js:346:12)\n' +
+    '    at next (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\index.js:280:10)\n' +
+    '    at Function.handle (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\index.js:175:3)\n' +
+    '    at router (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\index.js:47:12)\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at trim_prefix (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\index.js:328:13)',
+  timestamp: '2025-07-06 12:15:53'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:18:06'
+}
+{
+  message: 'Database disconnected',
+  level: 'warn',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:18:17'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:18:33'
+}
+{
+  message: 'Database disconnected',
+  level: 'warn',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:19:59'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:20:05'
+}
+{
+  message: 'POST //auth/register - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:25:17'
+}
+{
+  message: 'POST /api/v1/auth/register - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:25:31'
+}
+{
+  service: 'gradbook-api',
+  level: 'warn',
+  message: 'Validation error:',
+  timestamp: '2025-07-06 12:25:32'
+}
+{
+  message: 'Database disconnected',
+  level: 'warn',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:26:06'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:26:17'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:27:12'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:29:59'
+}
+{
+  message: 'Database disconnected',
+  level: 'warn',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:31:39'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:33:11'
+}
+{
+  message: 'POST /api/v1/auth/login - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:34:27'
+}
+{
+  message: 'User logged in: john.smith0@university.edu',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:34:30'
+}
+{
+  message: 'GET /api/v1/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:35:05'
+}
+{
+  message: 'GET /api/v1/users/1 - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:35:36'
+}
+{
+  service: 'gradbook-api',
+  level: 'warn',
+  message: 'Params validation error:',
+  timestamp: '2025-07-06 12:35:36'
+}
+{
+  message: 'GET /api/v1/users/686a29064ecf459fa06f25cf - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:35:55'
+}
+{
+  message: 'User 686a29064ecf459fa06f25b8 viewd user 686a29064ecf459fa06f25cf',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:35:56'
+}
+{
+  message: 'POST /api/v1/users/686a29064ecf459fa06f25b8/like - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:37:38'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: Cannot like your own profile',
+  stack: 'Error: Cannot like your own profile\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\src\\controllers\\userController.ts:83:13\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\src\\middleware\\errorHandler.ts:85:21\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\src\\middleware\\validation.ts:66:5\n' +
+    '    at Layer.handle [as handle_request] (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\layer.js:95:5)\n' +
+    '    at next (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express\\lib\\router\\route.js:149:13)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express-rate-limit\\dist\\index.cjs:807:7\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\express-rate-limit\\dist\\index.cjs:691:5',
+  url: '/api/v1/users/686a29064ecf459fa06f25b8/like',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.0',
+  level: 'error',
+  timestamp: '2025-07-06 12:37:38'
+}
+{
+  message: 'POST /api/v1/users/686a29064ecf459fa06f25b9/like - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:37:59'
+}
+{
+  service: 'gradbook-api',
+  errors: {
+    fromUser: ValidatorError: From user is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'From user is required',
+        type: 'required',
+        path: 'fromUser',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'fromUser',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    },
+    user: ValidatorError: User is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'User is required',
+        type: 'required',
+        path: 'user',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'user',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'Notification validation failed',
+  level: 'error',
+  message: 'Error creating notification: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  timestamp: '2025-07-06 12:38:00'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  url: '/api/v1/users/686a29064ecf459fa06f25b9/like',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.0',
+  level: 'error',
+  timestamp: '2025-07-06 12:38:00'
+}
+{
+  message: 'POST /api/v1/users/686a29064ecf459fa06f25ba - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:39:58'
+}
+{
+  message: 'GET /api/v1/users/686a29064ecf459fa06f25ba - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:40:10'
+}
+{
+  message: 'User 686a29064ecf459fa06f25b8 viewd user 686a29064ecf459fa06f25ba',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:40:12'
+}
+{
+  message: 'POST /api/v1/users/686a29064ecf459fa06f25ba/like - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:40:23'
+}
+{
+  service: 'gradbook-api',
+  errors: {
+    fromUser: ValidatorError: From user is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'From user is required',
+        type: 'required',
+        path: 'fromUser',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'fromUser',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    },
+    user: ValidatorError: User is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'User is required',
+        type: 'required',
+        path: 'user',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'user',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'Notification validation failed',
+  level: 'error',
+  message: 'Error creating notification: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  timestamp: '2025-07-06 12:40:24'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  url: '/api/v1/users/686a29064ecf459fa06f25ba/like',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.0',
+  level: 'error',
+  timestamp: '2025-07-06 12:40:24'
+}
+{
+  message: 'POST /api/v1/users/686a29064ecf459fa06f25ba/like - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:40:51'
+}
+{
+  service: 'gradbook-api',
+  errors: {
+    fromUser: ValidatorError: From user is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'From user is required',
+        type: 'required',
+        path: 'fromUser',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'fromUser',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    },
+    user: ValidatorError: User is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'User is required',
+        type: 'required',
+        path: 'user',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'user',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'Notification validation failed',
+  level: 'error',
+  message: 'Error creating notification: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  timestamp: '2025-07-06 12:40:52'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  url: '/api/v1/users/686a29064ecf459fa06f25ba/like',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.0',
+  level: 'error',
+  timestamp: '2025-07-06 12:40:52'
+}
+{
+  message: 'POST /api/v1/users/686a29064ecf459fa06f25ba/like - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:42:47'
+}
+{
+  service: 'gradbook-api',
+  errors: {
+    fromUser: ValidatorError: From user is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'From user is required',
+        type: 'required',
+        path: 'fromUser',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'fromUser',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    },
+    user: ValidatorError: User is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'User is required',
+        type: 'required',
+        path: 'user',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'user',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'Notification validation failed',
+  level: 'error',
+  message: 'Error creating notification: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  timestamp: '2025-07-06 12:42:48'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  url: '/api/v1/users/686a29064ecf459fa06f25ba/like?fromUser=686a29064ecf459fa06f25b8&user=686a29064ecf459fa06f25ba',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.0',
+  level: 'error',
+  timestamp: '2025-07-06 12:42:48'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:50:14'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:50:14'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:50:14'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:50:14'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:50:14'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:50:14'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:56:40'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:56:40'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:56:40'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:56:40'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:56:40'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:56:40'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:58:53'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:58:53'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:58:53'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:58:53'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:58:53'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 12:58:53'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:00:48'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:00:48'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:00:48'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:00:48'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:00:48'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:00:48'
+}
+{
+  message: 'POST /api/v1/users/686a29064ecf459fa06f25ba/like - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:00:48'
+}
+{
+  message: 'Notification sent to user 686a29064ecf459fa06f25ba: John Smith liked your profile',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:01:00'
+}
+{
+  message: 'Notification created for user 686a29064ecf459fa06f25ba: John Smith liked your profile',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:01:00'
+}
+{
+  message: 'POST /api/v1/users/686a29064ecf459fa06f25ba/comment - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:06:38'
+}
+{
+  service: 'gradbook-api',
+  errors: {
+    fromUser: ValidatorError: From user is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'From user is required',
+        type: 'required',
+        path: 'fromUser',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'fromUser',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    },
+    user: ValidatorError: User is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'User is required',
+        type: 'required',
+        path: 'user',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'user',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'Notification validation failed',
+  level: 'error',
+  message: 'Error creating notification: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  timestamp: '2025-07-06 13:06:40'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  url: '/api/v1/users/686a29064ecf459fa06f25ba/comment?fromUser=686a29064ecf459fa06f25b8&user=686a29064ecf459fa06f25ba',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.0',
+  level: 'error',
+  timestamp: '2025-07-06 13:06:40'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:08:32'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:08:32'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:08:32'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:08:32'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:08:32'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:08:32'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:09:37'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:09:37'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:09:37'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:09:37'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:09:37'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:09:37'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:10:37'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:10:37'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:10:37'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:10:37'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:10:37'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:10:37'
+}
+{
+  message: 'POST /api/v1/users/686a29064ecf459fa06f25ba/comment - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:11:36'
+}
+{
+  service: 'gradbook-api',
+  errors: {
+    fromUser: ValidatorError: From user is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'From user is required',
+        type: 'required',
+        path: 'fromUser',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'fromUser',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    },
+    user: ValidatorError: User is required
+        at validate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1404:13)
+        at SchemaObjectId.SchemaType.doValidate (C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\schemaType.js:1388:7)
+        at C:\Users\dell\Downloads\project-bolt-github-zfu7sdsa\project\node_modules\mongoose\lib\document.js:3082:18
+        at processTicksAndRejections (node:internal/process/task_queues:77:11) {
+      properties: {
+        validator: [Function (anonymous)],
+        message: 'User is required',
+        type: 'required',
+        path: 'user',
+        fullPath: undefined,
+        value: undefined
+      },
+      kind: 'required',
+      path: 'user',
+      value: undefined,
+      reason: undefined,
+      [Symbol(mongoose#validatorError)]: true
+    }
+  },
+  _message: 'Notification validation failed',
+  level: 'error',
+  message: 'Error creating notification: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  timestamp: '2025-07-06 13:11:38'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: Notification validation failed: fromUser: From user is required, user: User is required',
+  stack: 'ValidationError: Notification validation failed: fromUser: From user is required, user: User is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Downloads\\project-bolt-github-zfu7sdsa\\project\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  url: '/api/v1/users/686a29064ecf459fa06f25ba/comment?fromUser=686a29064ecf459fa06f25b8&user=686a29064ecf459fa06f25ba',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.0',
+  level: 'error',
+  timestamp: '2025-07-06 13:11:38'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:14:24'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:14:24'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:14:24'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:14:24'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:14:24'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:14:24'
+}
+{
+  message: 'POST /api/v1/users/686a29064ecf459fa06f25ba/comment - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:14:25'
+}
+{
+  message: 'Notification sent to user 686a29064ecf459fa06f25ba: John Smith commented on your profile',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:14:32'
+}
+{
+  message: 'Notification created for user 686a29064ecf459fa06f25ba: John Smith commented on your profile',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:14:32'
+}
+{
+  message: 'POST /api/v1/users/686a29064ecf459fa06f25ba/comment - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:15:26'
+}
+{
+  message: 'Notification sent to user 686a29064ecf459fa06f25ba: John Smith commented on your profile',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:15:29'
+}
+{
+  message: 'Notification created for user 686a29064ecf459fa06f25ba: John Smith commented on your profile',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:15:29'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:16:54'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:16:54'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:16:54'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:16:54'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:16:54'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:16:54'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:17:03'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:17:03'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:17:03'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:17:03'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:17:03'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:17:03'
+}
+{
+  message: 'POST /api/v1/users/686a29064ecf459fa06f25ba/comment - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:19:29'
+}
+{
+  message: 'Notification created for user 686a29064ecf459fa06f25ba: John Smith commented on your profile',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:19:31'
+}
+{
+  message: 'Notification sent to user 686a29064ecf459fa06f25ba: John Smith commented on your profile',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:19:31'
+}
+{
+  message: 'GET /api/v1/users/686a29064ecf459fa06f25cf - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:20:03'
+}
+{
+  message: 'User 686a29064ecf459fa06f25b8 viewd user 686a29064ecf459fa06f25cf',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:20:04'
+}
+{
+  message: 'GET /api/v1//posts - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:21:42'
+}
+{
+  message: 'GET /api/v1/posts - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:22:10'
+}
+{
+  message: 'Generated personalized feed for user 686a29064ecf459fa06f25b8: 20 posts',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:22:13'
+}
+{
+  message: 'GET /api/v1/posts/lastwords - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:23:56'
+}
+{
+  message: 'POST /api/v1/posts - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:25:40'
+}
+{
+  service: 'gradbook-api',
+  errno: -4077,
+  code: 'ECONNRESET',
+  syscall: 'read',
+  level: 'error',
+  message: 'Authentication error: read ECONNRESET',
+  stack: 'Error: read ECONNRESET\n' +
+    '    at TLSWrap.onStreamRead (node:internal/stream_base_commons:218:20)',
+  timestamp: '2025-07-06 13:26:14'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:28:03'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:28:03'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:29:48'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:29:48'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:53:40'
+}
+{
+  message: 'Database disconnected',
+  level: 'warn',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:54:27'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 13:54:27'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 14:02:47'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 14:02:48'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 14:02:48'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 14:02:48'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 14:02:48'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 14:02:48'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 14:54:14'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 14:54:14'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 14:54:14'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 14:54:14'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 14:54:14'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 14:54:14'
+}
+{
+  message: '📴 Received SIGINT. Starting graceful shutdown...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-06 15:24:11'
+}

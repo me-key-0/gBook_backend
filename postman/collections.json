@@ -1,0 +1,314 @@
+{
+  "info": {
+    "name": "GradBook API",
+    "description": "Complete API collection for GradBook Backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{jwt_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000/api/v1",
+      "type": "string"
+    },
+    {
+      "key": "jwt_token",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "Register Graduate",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"surname\": \"Jr\",\n  \"username\": \"johndoe\",\n  \"email\": \"john.doe@university.edu\",\n  \"password\": \"password123\",\n  \"confirmPassword\": \"password123\",\n  \"phoneNumber\": \"+1234567890\",\n  \"graduationYear\": 2024,\n  \"campus\": \"{{campus_id}}\",\n  \"college\": \"{{college_id}}\",\n  \"department\": \"{{department_id}}\",\n  \"role\": \"graduate\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/register",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "register"]
+            }
+          }
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"john.smith0@university.edu\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/login",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "login"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    const response = pm.response.json();",
+                  "    pm.collectionVariables.set('jwt_token', response.data.token);",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Profile",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/auth/profile",
+              "host": ["{{base_url}}"],
+              "path": ["auth", "profile"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Get User Profile",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/users/{{user_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["users", "{{user_id}}"]
+            }
+          }
+        },
+        {
+          "name": "Like Profile",
+          "request": {
+            "method": "POST",
+            "url": {
+              "raw": "{{base_url}}/users/{{user_id}}/like",
+              "host": ["{{base_url}}"],
+              "path": ["users", "{{user_id}}", "like"]
+            }
+          }
+        },
+        {
+          "name": "Comment on Profile",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"Great profile! Looking forward to staying in touch.\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/users/{{user_id}}/comment",
+              "host": ["{{base_url}}"],
+              "path": ["users", "{{user_id}}", "comment"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Posts",
+      "item": [
+        {
+          "name": "Get Feed",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/posts?page=1&limit=20",
+              "host": ["{{base_url}}"],
+              "path": ["posts"],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "20"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Create Post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"questionId\": \"{{question_id}}\",\n  \"answer\": \"This is my answer to this question. University has been an amazing journey!\",\n  \"type\": \"question\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/posts",
+              "host": ["{{base_url}}"],
+              "path": ["posts"]
+            }
+          }
+        },
+        {
+          "name": "Get Last Words",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/posts/lastwords",
+              "host": ["{{base_url}}"],
+              "path": ["posts", "lastwords"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Search",
+      "item": [
+        {
+          "name": "Search Users",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/search/users?q=john&campus={{campus_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["search", "users"],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "john"
+                },
+                {
+                  "key": "campus",
+                  "value": "{{campus_id}}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Search Filters",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/search/filters",
+              "host": ["{{base_url}}"],
+              "path": ["search", "filters"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "Get All Campuses",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/categories/campuses",
+              "host": ["{{base_url}}"],
+              "path": ["categories", "campuses"]
+            }
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if (pm.response.code === 200) {",
+                  "    const response = pm.response.json();",
+                  "    if (response.data && response.data.length > 0) {",
+                  "        pm.collectionVariables.set('campus_id', response.data[0]._id);",
+                  "    }",
+                  "}"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "Get Academic Structure",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/categories/structure",
+              "host": ["{{base_url}}"],
+              "path": ["categories", "structure"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Questions",
+      "item": [
+        {
+          "name": "Get All Questions",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/questions",
+              "host": ["{{base_url}}"],
+              "path": ["questions"]
+            }
+          }
+        },
+        {
+          "name": "Get Questions by Type",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/questions/type/post",
+              "host": ["{{base_url}}"],
+              "path": ["questions", "type", "post"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
