@@ -205,6 +205,8 @@ class NotificationService {
       fromUserId: commenterUserId,
       targetId: postId,
       message: `${commenter.firstName} ${commenter.lastName} commented on your post`,
+      fromUser: new Types.ObjectId(commenterUserId),
+      user: new Types.ObjectId(postOwnerId),
     });
   }
 
