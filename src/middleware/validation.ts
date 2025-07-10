@@ -81,7 +81,7 @@ export const schemas = {
   register: Joi.object({
     firstName: Joi.string().min(2).max(50).required(),
     lastName: Joi.string().min(2).max(50).required(),
-    surname: Joi.string().min(2).max(50).required(),
+    // surname: Joi.string().min(2).max(50).required(),
     username: Joi.string()
       .min(3)
       .max(30)
@@ -93,14 +93,16 @@ export const schemas = {
     phoneNumber: Joi.string()
       .pattern(/^\+?[\d\s-()]+$/)
       .optional(),
-    graduationYear: Joi.number()
-      .min(1950)
-      .max(new Date().getFullYear() + 10)
-      .required(),
+    role: Joi.string().valid("graduate", "guest").required(),
+  }),
+
+  formSubmission: Joi.object({
+    schoolId: Joi.string().required(),
     campus: Joi.string().hex().length(24).required(),
     college: Joi.string().hex().length(24).required(),
     department: Joi.string().hex().length(24).required(),
     role: Joi.string().valid("graduate", "guest").required(),
+    // Form validation continues....
   }),
 
   login: Joi.object({

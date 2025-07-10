@@ -21,7 +21,7 @@ const userSchema = new Schema<IUser>(
     },
     surname: {
       type: String,
-      required: [true, "Surname is required"],
+      // required: [true, "Surname is required"],
       trim: true,
       minlength: [1, "Surname must be at least 2 characters"],
       maxlength: [50, "Surname cannot exceed 50 characters"],
@@ -61,9 +61,14 @@ const userSchema = new Schema<IUser>(
       trim: true,
       match: [/^\+?[\d\s-()]+$/, "Please enter a valid phone number"],
     },
+    schoolId: {
+      type: String,
+      match: [/^UOG\/\d{5}\/\d{2}$/i, "Please enter a valid school ID."],
+      trim: true,
+    },
     graduationYear: {
       type: Number,
-      required: [true, "Graduation year is required"],
+      // required: [true, "Graduation year is required"],
       min: [1950, "Graduation year must be after 1950"],
       max: [
         new Date().getFullYear() + 10,
@@ -86,17 +91,17 @@ const userSchema = new Schema<IUser>(
     campus: {
       type: Schema.Types.ObjectId,
       ref: "Campus",
-      required: [true, "Campus is required"],
+      // required: [true, "Campus is required"],
     },
     college: {
       type: Schema.Types.ObjectId,
       ref: "College",
-      required: [true, "College is required"],
+      // required: [true, "College is required"],
     },
     department: {
       type: Schema.Types.ObjectId,
       ref: "Department",
-      required: [true, "Department is required"],
+      // required: [true, "Department is required"],
     },
     role: {
       type: String,

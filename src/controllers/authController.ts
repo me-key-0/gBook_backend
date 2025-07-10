@@ -10,6 +10,8 @@ import {
   AuthenticationError,
   ValidationError,
   ConflictError,
+  InternalServerError,
+  BadRequestError,
 } from "@/utils/errors";
 import { logger } from "@/utils/logger";
 import { asyncHandler } from "@/middleware/errorHandler";
@@ -18,22 +20,19 @@ import {
   RegisterValidation,
   LoginValidation,
 } from "@/types";
+import { Otp } from "@/models/Otp";
+import { emailService } from "@/services/emailService";
 
 class AuthController {
-  public register = asyncHandler(
+  register = asyncHandler(
     async (req: Request, res: Response): Promise<void> => {
       const {
         firstName,
         lastName,
-        surname,
         username,
         email,
         password,
         phoneNumber,
-        graduationYear,
-        campus,
-        college,
-        department,
         role,
       }: RegisterValidation = req.body;
 
@@ -51,68 +50,157 @@ class AuthController {
         }
       }
 
-      // Validate academic structure
-      const [campusDoc, collegeDoc, departmentDoc] = await Promise.all([
-        Campus.findById(campus),
-        College.findById(college),
-        Department.findById(department),
-      ]);
-
-      if (!campusDoc) {
-        throw new ValidationError("Invalid campus selected");
-      }
-      if (!collegeDoc) {
-        throw new ValidationError("Invalid college selected");
-      }
-      if (!departmentDoc) {
-        throw new ValidationError("Invalid department selected");
-      }
-
-      // Verify academic structure relationships
-      if (collegeDoc.campus.toString() !== campus) {
-        throw new ValidationError("College does not belong to selected campus");
-      }
-      if (departmentDoc.college.toString() !== college) {
-        throw new ValidationError(
-          "Department does not belong to selected college"
-        );
-      }
-
       // Create user
       const user = await User.create({
         firstName,
         lastName,
-        surname,
         username: username.toLowerCase(),
         email: email.toLowerCase(),
         password,
         phoneNumber,
-        graduationYear,
-        campus,
-        college,
-        department,
         role,
-        isVerified: role === "guest", // Guests are auto-verified
+        isVerified: false, // Guests are auto-verified
         profileCompleted: role === "guest", // Guests don't need profile completion
       });
 
-      // Generate token
-      const token = user.generateAuthToken();
+      // Generate OTP using the model's static method
+      const otp = Otp.generateOTP();
+
+      // Create OTP object and save to DB
+      const otpExpiresAt = new Date(Date.now() + 10 * 60 * 1000); // OTP expires in 10 minutes
+      const otpDocument = await Otp.create({
+        user: user._id, // Reference to the user
+        email: user.email,
+        otp,
+        expiresAt: otpExpiresAt,
+        type: "email_verification", // This OTP is for email verification
+      });
+
+      // Send OTP email to user
+      const otpData = {
+        firstName: user.firstName,
+        lastName: user.lastName,
+        otp,
+        expiresInMinutes: 10, // OTP expiration time
+      };
+
+      const otpSent = await emailService.sendOtpEmail(user.email, otpData);
+
+      if (!otpSent) {
+        throw new InternalServerError("Failed to send OTP email");
+      }
 
       // Remove password from response
       const userResponse = user.toJSON();
 
       logger.info(`New user registered: ${email} (${role})`);
 
+      // Send the response with the user data and the generated token
       ResponseHandler.created(
         res,
         {
-          user: userResponse,
-          token,
+          user: {
+            firstname: firstName,
+            lastname: lastName,
+            role,
+            username,
+            email,
+            isVerified: false,
+          },
           requiresProfileCompletion:
             role === "graduate" && !user.profileCompleted,
         },
-        "Registration successful"
+        "Registration successful. Please verify your email."
+      );
+    }
+  );
+
+  verifyOtpController = asyncHandler(
+    async (req: Request, res: Response): Promise<void> => {
+      const { email, otp } = req.body;
+
+      // Find the OTP document based on email and the OTP
+      const otpRecord = await Otp.findValidOTP(
+        email,
+        otp,
+        "email_verification"
+      );
+
+      if (!otpRecord) {
+        throw new BadRequestError("Invalid or expired OTP");
+      }
+
+      // Mark OTP as used
+      await otpRecord.markAsUsed();
+
+      // Find the user and update their verification status
+      const user = await User.findOne({ email }).exec();
+
+      if (!user) {
+        throw new InternalServerError("User not found");
+      }
+
+      user.isVerified = true;
+      await user.save();
+
+      // Respond with success message
+      ResponseHandler.success(
+        res,
+        {
+          message: "OTP successfully verified. Your account is now activated.",
+        },
+        "Account verified"
+      );
+    }
+  );
+
+  resendOtpController = asyncHandler(
+    async (req: Request, res: Response): Promise<void> => {
+      const { email } = req.body;
+
+      // Find the existing OTP for the user and check if it is expired
+      const existingOtp = await Otp.findOne({
+        email,
+        isUsed: false,
+        expiresAt: { $gt: new Date() },
+      }).exec();
+
+      if (existingOtp) {
+        throw new ConflictError(
+          "An OTP is already pending or not expired yet."
+        );
+      }
+
+      // Generate new OTP
+      const otp = Otp.generateOTP();
+      const otpExpiresAt = new Date(Date.now() + 10 * 60 * 1000); // 10 minutes from now
+
+      // Create OTP document and save it
+      const otpDocument = await Otp.create({
+        email,
+        otp,
+        expiresAt: otpExpiresAt,
+        type: "email_verification",
+      });
+
+      // Send new OTP email
+      const otpData = {
+        firstName: "User", // Assuming a generic user name for the moment
+        lastName: "",
+        otp,
+        expiresInMinutes: 10,
+      };
+
+      const otpSent = await emailService.sendOtpEmail(email, otpData);
+
+      if (!otpSent) {
+        throw new InternalServerError("Failed to send OTP email");
+      }
+
+      ResponseHandler.success(
+        res,
+        { message: "A new OTP has been sent to your email." },
+        "OTP resent"
       );
     }
   );

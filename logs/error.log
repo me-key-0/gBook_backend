@@ -3176,3 +3176,1229 @@
     '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
   timestamp: '2025-07-09 01:22:51'
 }
+{
+  service: 'gradbook-api',
+  code: 'EAUTH',
+  response: '535-5.7.8 Username and Password not accepted. For more information, go to\n' +
+    '535 5.7.8  https://support.google.com/mail/?p=BadCredentials a640c23a62f3a-ae6e7e8f9b4sm108473366b.11 - gsmtp',
+  responseCode: 535,
+  command: 'AUTH PLAIN',
+  level: 'error',
+  message: 'Email service configuration error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to\n' +
+    '535 5.7.8  https://support.google.com/mail/?p=BadCredentials a640c23a62f3a-ae6e7e8f9b4sm108473366b.11 - gsmtp',
+  stack: 'Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to\n' +
+    '535 5.7.8  https://support.google.com/mail/?p=BadCredentials a640c23a62f3a-ae6e7e8f9b4sm108473366b.11 - gsmtp\n' +
+    '    at SMTPConnection._formatError (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\nodemailer\\lib\\smtp-connection\\index.js:809:19)\n' +
+    '    at SMTPConnection._actionAUTHComplete (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\nodemailer\\lib\\smtp-connection\\index.js:1588:34)\n' +
+    '    at SMTPConnection.<anonymous> (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\nodemailer\\lib\\smtp-connection\\index.js:556:26)\n' +
+    '    at SMTPConnection._processResponse (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\nodemailer\\lib\\smtp-connection\\index.js:993:20)\n' +
+    '    at SMTPConnection._onData (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\nodemailer\\lib\\smtp-connection\\index.js:774:14)\n' +
+    '    at TLSSocket.SMTPConnection._onSocketData (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\nodemailer\\lib\\smtp-connection\\index.js:195:44)\n' +
+    '    at TLSSocket.emit (node:events:519:28)\n' +
+    '    at addChunk (node:internal/streams/readable:559:12)\n' +
+    '    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)\n' +
+    '    at TLSSocket.Readable.push (node:internal/streams/readable:390:5)',
+  timestamp: '2025-07-10 13:21:53'
+}
+{
+  service: 'gradbook-api',
+  message: "❌ Database connection failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/",
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 18839519,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 18839519,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 18839519,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-jpqdje-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  level: 'error',
+  stack: "MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/\n" +
+    '    at _handleConnectionErrors (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1165:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1096:11)\n' +
+    '    at Database.connect (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\config\\database.ts:37:7)\n' +
+    '    at Server.start (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\server.ts:117:7)',
+  timestamp: '2025-07-10 13:21:56'
+}
+{
+  service: 'gradbook-api',
+  code: 'EAUTH',
+  response: '535-5.7.8 Username and Password not accepted. For more information, go to\n' +
+    '535 5.7.8  https://support.google.com/mail/?p=BadCredentials a640c23a62f3a-ae6e7e91a1bsm107341166b.29 - gsmtp',
+  responseCode: 535,
+  command: 'AUTH PLAIN',
+  level: 'error',
+  message: 'Email service configuration error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to\n' +
+    '535 5.7.8  https://support.google.com/mail/?p=BadCredentials a640c23a62f3a-ae6e7e91a1bsm107341166b.29 - gsmtp',
+  stack: 'Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to\n' +
+    '535 5.7.8  https://support.google.com/mail/?p=BadCredentials a640c23a62f3a-ae6e7e91a1bsm107341166b.29 - gsmtp\n' +
+    '    at SMTPConnection._formatError (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\nodemailer\\lib\\smtp-connection\\index.js:809:19)\n' +
+    '    at SMTPConnection._actionAUTHComplete (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\nodemailer\\lib\\smtp-connection\\index.js:1588:34)\n' +
+    '    at SMTPConnection.<anonymous> (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\nodemailer\\lib\\smtp-connection\\index.js:556:26)\n' +
+    '    at SMTPConnection._processResponse (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\nodemailer\\lib\\smtp-connection\\index.js:993:20)\n' +
+    '    at SMTPConnection._onData (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\nodemailer\\lib\\smtp-connection\\index.js:774:14)\n' +
+    '    at TLSSocket.SMTPConnection._onSocketData (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\nodemailer\\lib\\smtp-connection\\index.js:195:44)\n' +
+    '    at TLSSocket.emit (node:events:519:28)\n' +
+    '    at addChunk (node:internal/streams/readable:559:12)\n' +
+    '    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)\n' +
+    '    at TLSSocket.Readable.push (node:internal/streams/readable:390:5)',
+  timestamp: '2025-07-10 13:25:45'
+}
+{
+  service: 'gradbook-api',
+  message: "❌ Database connection failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/",
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 19071270,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 19071270,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 19071270,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-jpqdje-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  level: 'error',
+  stack: "MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/\n" +
+    '    at _handleConnectionErrors (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1165:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1096:11)\n' +
+    '    at Database.connect (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\config\\database.ts:37:7)\n' +
+    '    at Server.start (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\server.ts:117:7)',
+  timestamp: '2025-07-10 13:25:48'
+}
+{
+  service: 'gradbook-api',
+  code: 'EAUTH',
+  response: '535-5.7.8 Username and Password not accepted. For more information, go to\n' +
+    '535 5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-3b5e8e0d727sm1511121f8f.51 - gsmtp',
+  responseCode: 535,
+  command: 'AUTH PLAIN',
+  level: 'error',
+  message: 'Email service configuration error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to\n' +
+    '535 5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-3b5e8e0d727sm1511121f8f.51 - gsmtp',
+  stack: 'Error: Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to\n' +
+    '535 5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-3b5e8e0d727sm1511121f8f.51 - gsmtp\n' +
+    '    at SMTPConnection._formatError (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\nodemailer\\lib\\smtp-connection\\index.js:809:19)\n' +
+    '    at SMTPConnection._actionAUTHComplete (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\nodemailer\\lib\\smtp-connection\\index.js:1588:34)\n' +
+    '    at SMTPConnection.<anonymous> (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\nodemailer\\lib\\smtp-connection\\index.js:556:26)\n' +
+    '    at SMTPConnection._processResponse (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\nodemailer\\lib\\smtp-connection\\index.js:993:20)\n' +
+    '    at SMTPConnection._onData (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\nodemailer\\lib\\smtp-connection\\index.js:774:14)\n' +
+    '    at TLSSocket.SMTPConnection._onSocketData (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\nodemailer\\lib\\smtp-connection\\index.js:195:44)\n' +
+    '    at TLSSocket.emit (node:events:519:28)\n' +
+    '    at addChunk (node:internal/streams/readable:559:12)\n' +
+    '    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)\n' +
+    '    at TLSSocket.Readable.push (node:internal/streams/readable:390:5)',
+  timestamp: '2025-07-10 13:31:16'
+}
+{
+  service: 'gradbook-api',
+  errorLabelSet: Set(1) { 'ResetPool' },
+  beforeHandshake: false,
+  connectionGeneration: 5,
+  level: 'error',
+  message: 'Authentication error: connect ETIMEDOUT 159.41.79.95:27017',
+  stack: 'MongoNetworkError: connect ETIMEDOUT 159.41.79.95:27017\n' +
+    '    at TLSSocket.<anonymous> (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongodb\\src\\cmap\\connect.ts:394:16)\n' +
+    '    at Object.onceWrapper (node:events:634:26)\n' +
+    '    at TLSSocket.emit (node:events:519:28)\n' +
+    '    at emitErrorNT (node:internal/streams/destroy:169:8)\n' +
+    '    at emitErrorCloseNT (node:internal/streams/destroy:128:3)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:82:21)',
+  cause: Error: connect ETIMEDOUT 159.41.79.95:27017
+      at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16) {
+    errno: -4039,
+    code: 'ETIMEDOUT',
+    syscall: 'connect',
+    address: '159.41.79.95',
+    port: 27017
+  },
+  timestamp: '2025-07-10 13:56:36'
+}
+{
+  service: 'gradbook-api',
+  message: "❌ Database connection failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/",
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 21387796,
+        lastWriteDate: 0,
+        error: MongoNetworkError: B0620000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+        
+            at TLSSocket.<anonymous> (C:\Users\dell\Documents\gBook\gBook_backend\gBook_backend\node_modules\mongodb\src\cmap\connect.ts:394:16)
+            at Object.onceWrapper (node:events:634:26)
+            at TLSSocket.emit (node:events:519:28)
+            at emitErrorNT (node:internal/streams/destroy:169:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+            at processTicksAndRejections (node:internal/process/task_queues:82:21) {
+          errorLabelSet: Set(1) { 'ResetPool' },
+          beforeHandshake: false,
+          [cause]: [Error: B0620000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+          ] {
+            library: 'SSL routines',
+            reason: 'tlsv1 alert internal error',
+            code: 'ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR'
+          }
+        },
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 21387539,
+        lastWriteDate: 0,
+        error: MongoNetworkError: B0620000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+        
+            at TLSSocket.<anonymous> (C:\Users\dell\Documents\gBook\gBook_backend\gBook_backend\node_modules\mongodb\src\cmap\connect.ts:394:16)
+            at Object.onceWrapper (node:events:634:26)
+            at TLSSocket.emit (node:events:519:28)
+            at emitErrorNT (node:internal/streams/destroy:169:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+            at processTicksAndRejections (node:internal/process/task_queues:82:21) {
+          errorLabelSet: Set(1) { 'ResetPool' },
+          beforeHandshake: false,
+          [cause]: [Error: B0620000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+          ] {
+            library: 'SSL routines',
+            reason: 'tlsv1 alert internal error',
+            code: 'ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR'
+          }
+        },
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 21388771,
+        lastWriteDate: 0,
+        error: MongoNetworkError: B0620000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+        
+            at TLSSocket.<anonymous> (C:\Users\dell\Documents\gBook\gBook_backend\gBook_backend\node_modules\mongodb\src\cmap\connect.ts:394:16)
+            at Object.onceWrapper (node:events:634:26)
+            at TLSSocket.emit (node:events:519:28)
+            at emitErrorNT (node:internal/streams/destroy:169:8)
+            at emitErrorCloseNT (node:internal/streams/destroy:128:3)
+            at processTicksAndRejections (node:internal/process/task_queues:82:21) {
+          errorLabelSet: Set(1) { 'ResetPool' },
+          beforeHandshake: false,
+          [cause]: [Error: B0620000:error:0A000438:SSL routines:ssl3_read_bytes:tlsv1 alert internal error:c:\ws\deps\openssl\openssl\ssl\record\rec_layer_s3.c:1590:SSL alert number 80
+          ] {
+            library: 'SSL routines',
+            reason: 'tlsv1 alert internal error',
+            code: 'ERR_SSL_TLSV1_ALERT_INTERNAL_ERROR'
+          }
+        },
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-jpqdje-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  level: 'error',
+  stack: "MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/\n" +
+    '    at _handleConnectionErrors (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1165:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1096:11)\n' +
+    '    at Database.connect (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\config\\database.ts:37:7)\n' +
+    '    at Server.start (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\server.ts:117:7)',
+  timestamp: '2025-07-10 14:04:21'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: User validation failed: department: Department is required, college: College is required, campus: Campus is required',
+  stack: 'ValidationError: User validation failed: department: Department is required, college: College is required, campus: Campus is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  url: '/api/v1/auth/register',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-10 14:06:38'
+}
+{
+  service: 'gradbook-api',
+  message: '❌ Database connection failed: Server selection timed out after 5000 ms',
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 21566300,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+        type: 'RSSecondary',
+        hosts: [
+          'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+          'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+          'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017'
+        ],
+        passives: [],
+        arbiters: [],
+        tags: {
+          region: 'ME_SOUTH_1',
+          availabilityZone: 'mes1-az1',
+          diskState: 'READY',
+          provider: 'AWS',
+          workloadType: 'OPERATIONAL',
+          nodeType: 'ELECTABLE'
+        },
+        minWireVersion: 0,
+        maxWireVersion: 25,
+        roundTripTime: 292,
+        minRoundTripTime: 0,
+        lastUpdateTime: 21567595,
+        lastWriteDate: 2025-07-10T11:07:19.000Z,
+        error: null,
+        topologyVersion: {
+          processId: new ObjectId('6866d753c565f770d5c72510'),
+          counter: 5
+        },
+        setName: 'atlas-jpqdje-shard-0',
+        setVersion: 4,
+        electionId: null,
+        logicalSessionTimeoutMinutes: 30,
+        maxMessageSizeBytes: 48000000,
+        maxWriteBatchSize: 100000,
+        maxBsonObjectSize: 16777216,
+        primary: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        me: 'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+        '$clusterTime': {
+          clusterTime: new Timestamp({ t: 1752145639, i: 1 }),
+          signature: {
+            hash: <Buffer 84 4e 01 db 2e 19 e9 2c 46 0a 28 db cd 98 32 9f 5c 4a 3a da>,
+            keyId: new Long('7486576894024876035')
+          }
+        },
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 21566301,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-jpqdje-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: 30
+  },
+  code: undefined,
+  level: 'error',
+  stack: 'MongooseServerSelectionError: Server selection timed out after 5000 ms\n' +
+    '    at _handleConnectionErrors (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1165:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1096:11)\n' +
+    '    at Database.connect (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\config\\database.ts:37:7)\n' +
+    '    at Server.start (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\server.ts:117:7)',
+  timestamp: '2025-07-10 14:07:23'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: User validation failed: department: Department is required, college: College is required, campus: Campus is required',
+  stack: 'ValidationError: User validation failed: department: Department is required, college: College is required, campus: Campus is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  url: '/api/v1/auth/register',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-10 14:07:54'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: User validation failed: department: Department is required, college: College is required, campus: Campus is required',
+  stack: 'ValidationError: User validation failed: department: Department is required, college: College is required, campus: Campus is required\n' +
+    '    at model.Document.invalidate (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\document.js:3329:32)\n' +
+    '    at C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\document.js:3090:17\n' +
+    '    at C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\schemaType.js:1407:9\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:77:11)',
+  url: '/api/v1/auth/register',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-10 14:08:35'
+}
+{
+  service: 'gradbook-api',
+  message: '❌ Database connection failed: Server selection timed out after 5000 ms',
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+        type: 'RSSecondary',
+        hosts: [
+          'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+          'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+          'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017'
+        ],
+        passives: [],
+        arbiters: [],
+        tags: {
+          diskState: 'READY',
+          workloadType: 'OPERATIONAL',
+          provider: 'AWS',
+          nodeType: 'ELECTABLE',
+          region: 'ME_SOUTH_1',
+          availabilityZone: 'mes1-az2'
+        },
+        minWireVersion: 0,
+        maxWireVersion: 25,
+        roundTripTime: 1282,
+        minRoundTripTime: 0,
+        lastUpdateTime: 21704524,
+        lastWriteDate: 2025-07-10T11:09:34.000Z,
+        error: null,
+        topologyVersion: {
+          processId: new ObjectId('6866de0d3ed9958e7a57c6a7'),
+          counter: 3
+        },
+        setName: 'atlas-jpqdje-shard-0',
+        setVersion: 4,
+        electionId: null,
+        logicalSessionTimeoutMinutes: 30,
+        maxMessageSizeBytes: 48000000,
+        maxWriteBatchSize: 100000,
+        maxBsonObjectSize: 16777216,
+        primary: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        me: 'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+        '$clusterTime': {
+          clusterTime: new Timestamp({ t: 1752145774, i: 1 }),
+          signature: {
+            hash: <Buffer 77 c3 4d 39 e4 7b 35 c4 4c 4d f8 d6 e1 44 cd 1d 91 88 49 19>,
+            keyId: new Long('7486576894024876035')
+          }
+        },
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+        type: 'RSSecondary',
+        hosts: [
+          'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+          'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+          'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017'
+        ],
+        passives: [],
+        arbiters: [],
+        tags: {
+          diskState: 'READY',
+          workloadType: 'OPERATIONAL',
+          nodeType: 'ELECTABLE',
+          availabilityZone: 'mes1-az1',
+          provider: 'AWS',
+          region: 'ME_SOUTH_1'
+        },
+        minWireVersion: 0,
+        maxWireVersion: 25,
+        roundTripTime: 320,
+        minRoundTripTime: 0,
+        lastUpdateTime: 21702314,
+        lastWriteDate: 2025-07-10T11:09:33.000Z,
+        error: null,
+        topologyVersion: {
+          processId: new ObjectId('6866d753c565f770d5c72510'),
+          counter: 5
+        },
+        setName: 'atlas-jpqdje-shard-0',
+        setVersion: 4,
+        electionId: null,
+        logicalSessionTimeoutMinutes: 30,
+        maxMessageSizeBytes: 48000000,
+        maxWriteBatchSize: 100000,
+        maxBsonObjectSize: 16777216,
+        primary: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        me: 'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+        '$clusterTime': {
+          clusterTime: new Timestamp({ t: 1752145773, i: 1 }),
+          signature: {
+            hash: <Buffer 80 b4 3e 64 83 63 26 09 81 47 c0 f2 6b 51 bb 92 b9 8b e5 41>,
+            keyId: new Long('7486576894024876035')
+          }
+        },
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 21701045,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-jpqdje-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: 30
+  },
+  code: undefined,
+  level: 'error',
+  stack: 'MongooseServerSelectionError: Server selection timed out after 5000 ms\n' +
+    '    at _handleConnectionErrors (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1165:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1096:11)\n' +
+    '    at Database.connect (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\config\\database.ts:37:7)\n' +
+    '    at Server.start (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\server.ts:117:7)',
+  timestamp: '2025-07-10 14:09:38'
+}
+{
+  service: 'gradbook-api',
+  message: '❌ Database connection failed: Server selection timed out after 5000 ms',
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+        type: 'RSSecondary',
+        hosts: [
+          'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+          'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+          'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017'
+        ],
+        passives: [],
+        arbiters: [],
+        tags: {
+          diskState: 'READY',
+          availabilityZone: 'mes1-az2',
+          region: 'ME_SOUTH_1',
+          nodeType: 'ELECTABLE',
+          workloadType: 'OPERATIONAL',
+          provider: 'AWS'
+        },
+        minWireVersion: 0,
+        maxWireVersion: 25,
+        roundTripTime: 281,
+        minRoundTripTime: 0,
+        lastUpdateTime: 22165500,
+        lastWriteDate: 2025-07-10T11:17:16.000Z,
+        error: null,
+        topologyVersion: {
+          processId: new ObjectId('6866de0d3ed9958e7a57c6a7'),
+          counter: 3
+        },
+        setName: 'atlas-jpqdje-shard-0',
+        setVersion: 4,
+        electionId: null,
+        logicalSessionTimeoutMinutes: 30,
+        maxMessageSizeBytes: 48000000,
+        maxWriteBatchSize: 100000,
+        maxBsonObjectSize: 16777216,
+        primary: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        me: 'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+        '$clusterTime': {
+          clusterTime: new Timestamp({ t: 1752146236, i: 1 }),
+          signature: {
+            hash: <Buffer 9e fd c4 cb 0f 13 aa e3 56 b9 d9 59 81 e2 67 86 f4 5e 89 f1>,
+            keyId: new Long('7486576894024876035')
+          }
+        },
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 22164368,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+        type: 'RSSecondary',
+        hosts: [
+          'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+          'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+          'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017'
+        ],
+        passives: [],
+        arbiters: [],
+        tags: {
+          provider: 'AWS',
+          workloadType: 'OPERATIONAL',
+          nodeType: 'ELECTABLE',
+          region: 'ME_SOUTH_1',
+          availabilityZone: 'mes1-az1',
+          diskState: 'READY'
+        },
+        minWireVersion: 0,
+        maxWireVersion: 25,
+        roundTripTime: 1079,
+        minRoundTripTime: 0,
+        lastUpdateTime: 22166599,
+        lastWriteDate: 2025-07-10T11:17:17.000Z,
+        error: null,
+        topologyVersion: {
+          processId: new ObjectId('6866d753c565f770d5c72510'),
+          counter: 5
+        },
+        setName: 'atlas-jpqdje-shard-0',
+        setVersion: 4,
+        electionId: null,
+        logicalSessionTimeoutMinutes: 30,
+        maxMessageSizeBytes: 48000000,
+        maxWriteBatchSize: 100000,
+        maxBsonObjectSize: 16777216,
+        primary: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        me: 'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+        '$clusterTime': {
+          clusterTime: new Timestamp({ t: 1752146237, i: 1 }),
+          signature: {
+            hash: <Buffer 76 b6 87 03 d1 e9 d0 b0 c5 0b 02 2c 40 9e e4 41 ce 23 01 5a>,
+            keyId: new Long('7486576894024876035')
+          }
+        },
+        iscryptd: false
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-jpqdje-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: 30
+  },
+  code: undefined,
+  level: 'error',
+  stack: 'MongooseServerSelectionError: Server selection timed out after 5000 ms\n' +
+    '    at _handleConnectionErrors (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1165:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1096:11)\n' +
+    '    at Database.connect (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\config\\database.ts:37:7)\n' +
+    '    at Server.start (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\server.ts:117:7)',
+  timestamp: '2025-07-10 14:17:21'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: An OTP is already pending or not expired yet.',
+  stack: 'Error: An OTP is already pending or not expired yet.\n' +
+    '    at C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\controllers\\authController.ts:166:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  url: '/api/v1/auth/resend-otp',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-10 14:19:36'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: Invalid or expired OTP',
+  stack: 'Error: Invalid or expired OTP\n' +
+    '    at C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\controllers\\authController.ts:127:15\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  url: '/api/v1/auth/verify-otp',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-10 14:20:00'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-10 14:26:42'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-10 14:31:17'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-10 14:37:44'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: Email already registered',
+  stack: 'Error: Email already registered\n' +
+    '    at C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\controllers\\authController.ts:46:17\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  url: '/api/v1/auth/register',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-10 14:47:28'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: Expected double-quoted property name in JSON at position 38',
+  stack: 'SyntaxError: Expected double-quoted property name in JSON at position 38\n' +
+    '    at JSON.parse (<anonymous>)\n' +
+    '    at parse (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\body-parser\\lib\\types\\json.js:92:19)\n' +
+    '    at C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\body-parser\\lib\\read.js:128:18\n' +
+    '    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)\n' +
+    '    at invokeCallback (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\raw-body\\index.js:238:16)\n' +
+    '    at done (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\raw-body\\index.js:227:7)\n' +
+    '    at IncomingMessage.onEnd (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\raw-body\\index.js:287:7)\n' +
+    '    at IncomingMessage.emit (node:events:519:28)\n' +
+    '    at endReadableNT (node:internal/streams/readable:1696:12)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:82:21)',
+  url: '/api/v1/auth/resend-otp',
+  method: 'GET',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-10 14:48:59'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: Expected double-quoted property name in JSON at position 38',
+  stack: 'SyntaxError: Expected double-quoted property name in JSON at position 38\n' +
+    '    at JSON.parse (<anonymous>)\n' +
+    '    at parse (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\body-parser\\lib\\types\\json.js:92:19)\n' +
+    '    at C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\body-parser\\lib\\read.js:128:18\n' +
+    '    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)\n' +
+    '    at invokeCallback (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\raw-body\\index.js:238:16)\n' +
+    '    at done (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\raw-body\\index.js:227:7)\n' +
+    '    at IncomingMessage.onEnd (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\raw-body\\index.js:287:7)\n' +
+    '    at IncomingMessage.emit (node:events:519:28)\n' +
+    '    at endReadableNT (node:internal/streams/readable:1696:12)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:82:21)',
+  url: '/api/v1/auth/resend-otp',
+  method: 'GET',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-10 14:49:53'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-10 14:55:50'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-10 14:57:02'
+}
+{
+  service: 'gradbook-api',
+  message: '❌ Database connection failed: Server selection timed out after 5000 ms',
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+        type: 'RSSecondary',
+        hosts: [
+          'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+          'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+          'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017'
+        ],
+        passives: [],
+        arbiters: [],
+        tags: {
+          diskState: 'READY',
+          workloadType: 'OPERATIONAL',
+          nodeType: 'ELECTABLE',
+          availabilityZone: 'mes1-az1',
+          provider: 'AWS',
+          region: 'ME_SOUTH_1'
+        },
+        minWireVersion: 0,
+        maxWireVersion: 25,
+        roundTripTime: 256,
+        minRoundTripTime: 0,
+        lastUpdateTime: 24596416,
+        lastWriteDate: 2025-07-10T11:57:48.000Z,
+        error: null,
+        topologyVersion: {
+          processId: new ObjectId('6866d753c565f770d5c72510'),
+          counter: 5
+        },
+        setName: 'atlas-jpqdje-shard-0',
+        setVersion: 4,
+        electionId: null,
+        logicalSessionTimeoutMinutes: 30,
+        maxMessageSizeBytes: 48000000,
+        maxWriteBatchSize: 100000,
+        maxBsonObjectSize: 16777216,
+        primary: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        me: 'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+        '$clusterTime': {
+          clusterTime: new Timestamp({ t: 1752148668, i: 1 }),
+          signature: {
+            hash: <Buffer 5a f1 23 16 89 ac ef 85 05 d4 99 93 05 a0 b7 38 78 15 f3 83>,
+            keyId: new Long('7486576894024876035')
+          }
+        },
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 24595005,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+        type: 'RSSecondary',
+        hosts: [
+          'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+          'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+          'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017'
+        ],
+        passives: [],
+        arbiters: [],
+        tags: {
+          availabilityZone: 'mes1-az2',
+          nodeType: 'ELECTABLE',
+          region: 'ME_SOUTH_1',
+          workloadType: 'OPERATIONAL',
+          provider: 'AWS',
+          diskState: 'READY'
+        },
+        minWireVersion: 0,
+        maxWireVersion: 25,
+        roundTripTime: 261,
+        minRoundTripTime: 0,
+        lastUpdateTime: 24596399,
+        lastWriteDate: 2025-07-10T11:57:48.000Z,
+        error: null,
+        topologyVersion: {
+          processId: new ObjectId('6866de0d3ed9958e7a57c6a7'),
+          counter: 3
+        },
+        setName: 'atlas-jpqdje-shard-0',
+        setVersion: 4,
+        electionId: null,
+        logicalSessionTimeoutMinutes: 30,
+        maxMessageSizeBytes: 48000000,
+        maxWriteBatchSize: 100000,
+        maxBsonObjectSize: 16777216,
+        primary: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        me: 'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+        '$clusterTime': {
+          clusterTime: new Timestamp({ t: 1752148668, i: 1 }),
+          signature: {
+            hash: <Buffer 5a f1 23 16 89 ac ef 85 05 d4 99 93 05 a0 b7 38 78 15 f3 83>,
+            keyId: new Long('7486576894024876035')
+          }
+        },
+        iscryptd: false
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-jpqdje-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: 30
+  },
+  code: undefined,
+  level: 'error',
+  stack: 'MongooseServerSelectionError: Server selection timed out after 5000 ms\n' +
+    '    at _handleConnectionErrors (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1165:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1096:11)\n' +
+    '    at Database.connect (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\config\\database.ts:37:7)\n' +
+    '    at Server.start (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\server.ts:117:7)',
+  timestamp: '2025-07-10 14:57:52'
+}

@@ -11,6 +11,7 @@ export interface IUser extends Document {
   email: string;
   password: string;
   phoneNumber?: string;
+  schoolId?: string;
   graduationYear: number;
   photo?: string;
   quote?: string;
@@ -217,6 +218,26 @@ export interface IReport extends Document {
   updatedAt: Date;
 }
 
+export interface IOtp extends Document {
+  _id: Types.ObjectId;
+  user: Types.ObjectId | IUser;
+  email: string;
+  otp: string;
+  type: "email_verification" | "password_reset";
+  expiresAt: Date;
+  isUsed: boolean;
+  attempts: number;
+  ipAddress?: string;
+  userAgent?: string;
+  createdAt: Date;
+  updatedAt: Date;
+
+  // Methods
+  isValid(): boolean;
+  markAsUsed(): Promise<IOtp>;
+  incrementAttempts(): Promise<IOtp>;
+}
+
 // Request interfaces
 export interface AuthenticatedRequest extends Request {
   user?: IUser;
@@ -343,6 +364,17 @@ export interface RegisterValidation {
 export interface LoginValidation {
   email: string;
   password: string;
+}
+
+export interface OtpVerificationValidation {
+  email: string;
+  otp: string;
+  type?: "email_verification" | "password_reset";
+}
+
+export interface ResendOtpValidation {
+  email: string;
+  type?: "email_verification" | "password_reset";
 }
 
 export interface ProfileUpdateValidation {
