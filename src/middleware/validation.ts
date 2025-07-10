@@ -17,7 +17,8 @@ export const validate = (schema: Joi.ObjectSchema) => {
         .join(", ");
 
       logger.warn("Validation error:", errorMessage);
-      return ResponseHandler.badRequest(res, "Validation failed", errorMessage);
+      ResponseHandler.badRequest(res, "Validation failed", errorMessage);
+      return;
     }
 
     req.body = value;
@@ -38,11 +39,8 @@ export const validateQuery = (schema: Joi.ObjectSchema) => {
         .join(", ");
 
       logger.warn("Query validation error:", errorMessage);
-      return ResponseHandler.badRequest(
-        res,
-        "Query validation failed",
-        errorMessage
-      );
+      ResponseHandler.badRequest(res, "Query validation failed", errorMessage);
+      return;
     }
 
     req.query = value;
@@ -63,11 +61,12 @@ export const validateParams = (schema: Joi.ObjectSchema) => {
         .join(", ");
 
       logger.warn("Params validation error:", errorMessage);
-      return ResponseHandler.badRequest(
+      ResponseHandler.badRequest(
         res,
         "Parameters validation failed",
         errorMessage
       );
+      return;
     }
 
     req.params = value;

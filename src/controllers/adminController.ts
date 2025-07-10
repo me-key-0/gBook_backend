@@ -16,7 +16,7 @@ import {
 } from "@/utils/errors";
 import { logger } from "@/utils/logger";
 import { asyncHandler } from "@/middleware/errorHandler";
-import { Types } from "mongoose";
+import mongoose, { Types } from "mongoose";
 import { error } from "console";
 
 class AdminController {
@@ -175,8 +175,9 @@ class AdminController {
         throw new NotFoundError("Report not found");
       }
 
+      const uid = new Types.ObjectId(req.userId!);
       report.status = status;
-      report.reviewedBy = req.userId!;
+      report.reviewedBy = uid;
       report.reviewedAt = new Date();
       await report.save();
 

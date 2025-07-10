@@ -1,10 +1,10 @@
-import { Request, Response, NextFunction } from 'express';
-import jwt from 'jsonwebtoken';
-import { User } from '@/models/User';
-import { AuthenticatedRequest } from '@/types';
-import { AuthenticationError, AuthorizationError } from '@/utils/errors';
-import { ResponseHandler } from '@/utils/response';
-import { logger } from '@/utils/logger';
+import { Request, Response, NextFunction } from "express";
+import jwt from "jsonwebtoken";
+import { User } from "@/models/User";
+import { AuthenticatedRequest } from "@/types";
+import { AuthenticationError, AuthorizationError } from "@/utils/errors";
+import { ResponseHandler } from "@/utils/response";
+import { logger } from "@/utils/logger";
 
 interface JwtPayload {
   id: string;
@@ -21,30 +21,30 @@ export const authenticate = async (
   next: NextFunction
 ): Promise<void> => {
   try {
-    const authHeader = req.header('Authorization');
-    
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
-      throw new AuthenticationError('Access token is required');
+    const authHeader = req.header("Authorization");
+
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+      throw new AuthenticationError("Access token is required");
     }
 
     const token = authHeader.substring(7);
-    
+
     if (!token) {
-      throw new AuthenticationError('Access token is required');
+      throw new AuthenticationError("Access token is required");
     }
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET!) as JwtPayload;
-    
+
     const user = await User.findById(decoded.id)
-      .populate('campus college department')
-      .select('-password');
-    
+      .populate("campus college department")
+      .select("-password");
+
     if (!user) {
-      throw new AuthenticationError('User not found');
+      throw new AuthenticationError("User not found");
     }
 
     if (!user.isActive) {
-      throw new AuthenticationError('Account is deactivated');
+      throw new AuthenticationError("Account is deactivated");
     }
 
     // Update last active
@@ -52,43 +52,52 @@ export const authenticate = async (
 
     req.user = user;
     req.userId = user._id.toString();
-    
+
     next();
   } catch (error) {
-    logger.error('Authentication error:', error);
-    
+    logger.error("Authentication error:", error);
+
     if (error instanceof jwt.JsonWebTokenError) {
-      return ResponseHandler.unauthorized(res, 'Invalid token');
+      ResponseHandler.unauthorized(res, "Invalid token");
+      return;
     }
-    
+
     if (error instanceof AuthenticationError) {
-      return ResponseHandler.unauthorized(res, error.message);
+      ResponseHandler.unauthorized(res, error.message);
+      return;
     }
-    
-    return ResponseHandler.internalError(res, 'Authentication failed');
+
+    ResponseHandler.internalError(res, "Authentication failed");
+    return;
   }
 };
 
 export const authorize = (...roles: string[]) => {
-  return (req: AuthenticatedRequest, res: Response, next: NextFunction): void => {
+  return (
+    req: AuthenticatedRequest,
+    res: Response,
+    next: NextFunction
+  ): void => {
     try {
       if (!req.user) {
-        throw new AuthenticationError('Authentication required');
+        throw new AuthenticationError("Authentication required");
       }
 
       if (!roles.includes(req.user.role)) {
-        throw new AuthorizationError('Insufficient permissions');
+        throw new AuthorizationError("Insufficient permissions");
       }
 
       next();
     } catch (error) {
-      logger.error('Authorization error:', error);
-      
+      logger.error("Authorization error:", error);
+
       if (error instanceof AuthorizationError) {
-        return ResponseHandler.forbidden(res, error.message);
+        ResponseHandler.forbidden(res, error.message);
+        return;
       }
-      
-      return ResponseHandler.unauthorized(res, 'Authorization failed');
+
+      ResponseHandler.unauthorized(res, "Authorization failed");
+      return;
     }
   };
 };
@@ -99,30 +108,30 @@ export const optionalAuth = async (
   next: NextFunction
 ): Promise<void> => {
   try {
-    const authHeader = req.header('Authorization');
-    
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    const authHeader = req.header("Authorization");
+
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
       return next();
     }
 
     const token = authHeader.substring(7);
-    
+
     if (!token) {
       return next();
     }
 
     const decoded = jwt.verify(token, process.env.JWT_SECRET!) as JwtPayload;
-    
+
     const user = await User.findById(decoded.id)
-      .populate('campus college department')
-      .select('-password');
-    
+      .populate("campus college department")
+      .select("-password");
+
     if (user && user.isActive) {
       req.user = user;
       req.userId = user._id.toString();
       user.updateLastActive();
     }
-    
+
     next();
   } catch (error) {
     // Continue without authentication for optional auth
@@ -137,16 +146,18 @@ export const requireProfileCompletion = (
 ): void => {
   try {
     if (!req.user) {
-      throw new AuthenticationError('Authentication required');
+      throw new AuthenticationError("Authentication required");
     }
 
-    if (req.user.role === 'graduate' && !req.user.profileCompleted) {
-      return ResponseHandler.forbidden(res, 'Profile completion required');
+    if (req.user.role === "graduate" && !req.user.profileCompleted) {
+      ResponseHandler.forbidden(res, "Profile completion required");
+      return;
     }
 
     next();
   } catch (error) {
-    logger.error('Profile completion check error:', error);
-    return ResponseHandler.forbidden(res, 'Profile completion required');
+    logger.error("Profile completion check error:", error);
+    ResponseHandler.forbidden(res, "Profile completion required");
+    return;
   }
 };

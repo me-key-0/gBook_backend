@@ -1,5 +1,5 @@
-import { Document, Types } from 'mongoose';
-import { Request } from 'express';
+import { Document, Types } from "mongoose";
+import { Request } from "express";
 
 // Base interfaces
 export interface IUser extends Document {
@@ -18,11 +18,11 @@ export interface IUser extends Document {
   campus: Types.ObjectId | ICampus;
   college: Types.ObjectId | ICollege;
   department: Types.ObjectId | IDepartment;
-  role: 'graduate' | 'guest' | 'admin';
+  role: "graduate" | "guest" | "admin";
   isVerified: boolean;
   isActive: boolean;
   profileCompleted: boolean;
-  
+
   // Social links
   socialLinks: {
     telegram?: string;
@@ -32,15 +32,30 @@ export interface IUser extends Document {
     snapchat?: string;
     linkedin?: string;
   };
-  
+
   // Privacy settings
   privacySettings: {
-    profileVisibility: 'public' | 'department' | 'college' | 'campus' | 'private';
-    contactVisibility: 'public' | 'department' | 'college' | 'campus' | 'private';
-    commentPermission: 'public' | 'department' | 'college' | 'campus' | 'private';
+    profileVisibility:
+      | "public"
+      | "department"
+      | "college"
+      | "campus"
+      | "private";
+    contactVisibility:
+      | "public"
+      | "department"
+      | "college"
+      | "campus"
+      | "private";
+    commentPermission:
+      | "public"
+      | "department"
+      | "college"
+      | "campus"
+      | "private";
     excludedUsers: Types.ObjectId[];
   };
-  
+
   // Interactions
   likes: Types.ObjectId[];
   savedProfiles: Types.ObjectId[];
@@ -48,17 +63,17 @@ export interface IUser extends Document {
   savedPosts: Types.ObjectId[];
   comments: Types.ObjectId[];
   tags: Types.ObjectId[];
-  
+
   // Statistics
   views: number;
   numberOfLikes: number;
   numberOfComments: number;
-  
+
   // Timestamps
   lastActive: Date;
   createdAt: Date;
   updatedAt: Date;
-  
+
   // Methods
   comparePassword(password: string): Promise<boolean>;
   generateAuthToken(): string;
@@ -71,7 +86,7 @@ export interface IPost extends Document {
   user: Types.ObjectId | IUser;
   question: Types.ObjectId | IQuestion;
   answer: string;
-  type: 'lastword' | 'question';
+  type: "lastword" | "question";
   likes: Types.ObjectId[];
   comments: IPostComment[];
   shares: Types.ObjectId[];
@@ -79,7 +94,7 @@ export interface IPost extends Document {
   isActive: boolean;
   createdAt: Date;
   updatedAt: Date;
-  
+
   // Methods
   addLike(userId: string): Promise<IPost>;
   removeLike(userId: string): Promise<IPost>;
@@ -97,7 +112,7 @@ export interface IPostComment {
 export interface IQuestion extends Document {
   _id: Types.ObjectId;
   question: string;
-  type: 'lastword' | 'profile' | 'post';
+  type: "lastword" | "profile" | "post";
   category: string;
   isRequired: boolean;
   isActive: boolean;
@@ -146,7 +161,14 @@ export interface IDepartment extends Document {
 export interface INotification extends Document {
   _id: Types.ObjectId;
   user: Types.ObjectId | IUser;
-  type: 'like' | 'comment' | 'share' | 'tag' | 'follow' | 'post_like' | 'post_comment';
+  type:
+    | "like"
+    | "comment"
+    | "share"
+    | "tag"
+    | "follow"
+    | "post_like"
+    | "post_comment";
   fromUser: Types.ObjectId | IUser;
   targetId?: Types.ObjectId;
   message: string;
@@ -180,10 +202,15 @@ export interface IReport extends Document {
   _id: Types.ObjectId;
   reporter: Types.ObjectId | IUser;
   reported: Types.ObjectId | IUser;
-  type: 'inappropriate_content' | 'harassment' | 'spam' | 'fake_profile' | 'other';
+  type:
+    | "inappropriate_content"
+    | "harassment"
+    | "spam"
+    | "fake_profile"
+    | "other";
   reason: string;
   description?: string;
-  status: 'pending' | 'reviewed' | 'resolved' | 'dismissed';
+  status: "pending" | "reviewed" | "resolved" | "dismissed";
   reviewedBy?: Types.ObjectId | IUser;
   reviewedAt?: Date;
   createdAt: Date;
@@ -200,7 +227,7 @@ export interface PaginationQuery {
   page?: string;
   limit?: string;
   sort?: string;
-  order?: 'asc' | 'desc';
+  order?: "asc" | "desc";
 }
 
 export interface SearchQuery extends PaginationQuery {
@@ -209,7 +236,7 @@ export interface SearchQuery extends PaginationQuery {
   college?: string;
   department?: string;
   graduationYear?: string;
-  role?: 'graduate' | 'guest';
+  role?: "graduate" | "guest";
 }
 
 export interface PersonalizationData {
@@ -256,8 +283,8 @@ export interface ProfileResponse extends Partial<IUser> {
 }
 
 export interface PostResponse extends Partial<IPost> {
-  user: Partial<IUser>;
-  question: Partial<IQuestion>;
+  user: IUser;
+  question: IQuestion;
   isLiked: boolean;
   isSaved: boolean;
   likesCount: number;
@@ -293,7 +320,7 @@ export interface ImageProcessingOptions {
   width?: number;
   height?: number;
   quality?: number;
-  format?: 'jpeg' | 'png' | 'webp';
+  format?: "jpeg" | "png" | "webp";
 }
 
 // Validation interfaces
@@ -310,7 +337,7 @@ export interface RegisterValidation {
   campus: string;
   college: string;
   department: string;
-  role: 'graduate' | 'guest';
+  role: "graduate" | "guest";
 }
 
 export interface LoginValidation {
@@ -332,9 +359,24 @@ export interface ProfileUpdateValidation {
     linkedin?: string;
   };
   privacySettings?: {
-    profileVisibility?: 'public' | 'department' | 'college' | 'campus' | 'private';
-    contactVisibility?: 'public' | 'department' | 'college' | 'campus' | 'private';
-    commentPermission?: 'public' | 'department' | 'college' | 'campus' | 'private';
+    profileVisibility?:
+      | "public"
+      | "department"
+      | "college"
+      | "campus"
+      | "private";
+    contactVisibility?:
+      | "public"
+      | "department"
+      | "college"
+      | "campus"
+      | "private";
+    commentPermission?:
+      | "public"
+      | "department"
+      | "college"
+      | "campus"
+      | "private";
   };
 }
 

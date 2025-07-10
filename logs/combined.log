@@ -8948,3 +8948,87 @@
   service: 'gradbook-api',
   timestamp: '2025-07-09 13:33:02'
 }
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-10 08:55:31'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-10 08:55:31'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-10 08:55:31'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-10 08:55:31'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-10 08:55:31'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-10 08:55:31'
+}
+{
+  message: '📴 Received SIGINT. Starting graceful shutdown...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-10 08:55:41'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-10 09:23:58'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-10 09:23:59'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-10 09:23:59'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-10 09:23:59'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-10 09:23:59'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-10 09:23:59'
+}
+{
+  message: '📴 Received SIGINT. Starting graceful shutdown...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-10 09:26:39'
+}
