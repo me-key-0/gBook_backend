@@ -184,6 +184,8 @@ class NotificationService {
       fromUserId: likerUserId,
       targetId: postId,
       message: `${liker.firstName} ${liker.lastName} liked your post`,
+      fromUser: new Types.ObjectId(likerUserId),
+      user: new Types.ObjectId(postOwnerId),
     });
   }
 
