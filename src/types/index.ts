@@ -114,6 +114,7 @@ export interface IAnswer extends Document {
   userId: Types.ObjectId;
   questionId: IQuestion;
   answer: string;
+  mediaMeta: object;
 }
 
 export interface IQuestion extends Document {

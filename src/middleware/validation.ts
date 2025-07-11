@@ -4,6 +4,8 @@ import { ValidationError } from "@/utils/errors";
 import { ResponseHandler } from "@/utils/response";
 import { logger } from "@/utils/logger";
 
+const objectId = Joi.string().hex().length(24);
+
 export const validate = (schema: Joi.ObjectSchema) => {
   return (req: Request, res: Response, next: NextFunction): void => {
     const { error, value } = schema.validate(req.body, {
@@ -154,9 +156,17 @@ export const schemas = {
   // Search schemas
   search: Joi.object({
     q: Joi.string().min(1).max(100).optional(),
-    campus: Joi.string().hex().length(24).optional(),
-    college: Joi.string().hex().length(24).optional(),
-    department: Joi.string().hex().length(24).optional(),
+    campus: Joi.alternatives()
+      .try(objectId, Joi.array().items(objectId))
+      .optional(),
+
+    college: Joi.alternatives()
+      .try(objectId, Joi.array().items(objectId))
+      .optional(),
+
+    department: Joi.alternatives()
+      .try(objectId, Joi.array().items(objectId))
+      .optional(),
     graduationYear: Joi.number()
       .min(1950)
       .max(new Date().getFullYear() + 10)
@@ -168,6 +178,7 @@ export const schemas = {
       .valid("name", "likes", "views", "recent")
       .default("recent"),
     order: Joi.string().valid("asc", "desc").default("desc"),
+    randomSeed: Joi.string().optional(),
   }),
 
   // Report schemas

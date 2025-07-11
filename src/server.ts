@@ -65,6 +65,7 @@ class Server {
 
     // Compression
     this.app.use(compression());
+    this.app.use(express.urlencoded({ extended: true })); // ✅ enables nested parsing
 
     // Body parsing
     this.app.use(express.json({ limit: "10mb" }));

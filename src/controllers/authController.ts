@@ -22,8 +22,9 @@ import {
 } from "@/types";
 import { Otp } from "@/models/Otp";
 import { emailService } from "@/services/emailService";
-import { Answer } from "@/models/Answer";
 import { Question } from "@/models/Question";
+import { firebaseService } from "@/config/firebase";
+import { Answer } from "@/models/Answer";
 
 interface UserResponse {
   userId: string;
@@ -31,6 +32,10 @@ interface UserResponse {
     question: string;
     answer: string;
   }[];
+}
+
+interface MulterRequest extends Request {
+  file?: Express.Multer.File;
 }
 
 class AuthController {
@@ -125,8 +130,81 @@ class AuthController {
     }
   );
 
+  // Upload photo
+  uploadPhoto = asyncHandler(async (req: Request, res: Response) => {
+    const userId = req.params.userId;
+
+    if (!req.file) {
+      res.status(400).json({ message: "No file uploaded" });
+      return;
+    }
+
+    const user = await User.findById(userId);
+    if (!user) {
+      res.status(404).json({ message: "User not found" });
+      return;
+    }
+
+    const url = await firebaseService.uploadFileToStorage(
+      req.file.buffer,
+      req.file.originalname,
+      req.file.mimetype
+    );
+
+    user.photo = url;
+    await user.save();
+
+    res.status(200).json({ message: "Profile photo uploaded", photoUrl: url });
+  });
+
+  // Upload cover image
+  uploadCoverImage = asyncHandler(async (req: Request, res: Response) => {
+    const userId = req.params.userId;
+
+    if (!req.file) {
+      res.status(400).json({ message: "No file uploaded" });
+      return;
+    }
+
+    const user = await User.findById(userId);
+    if (!user) {
+      res.status(404).json({ message: "User not found" });
+      return;
+    }
+
+    const url = await firebaseService.uploadFileToStorage(
+      req.file.buffer,
+      req.file.originalname,
+      req.file.mimetype
+    );
+
+    user.coverImage = url;
+    await user.save();
+
+    res
+      .status(200)
+      .json({ message: "Cover image uploaded", coverImageUrl: url });
+  });
+
+  // Get user photo URLs
+  getUserImages = asyncHandler(async (req: Request, res: Response) => {
+    const user = await User.findById(req.params.userId).select(
+      "photo coverImage"
+    );
+
+    if (!user) {
+      res.status(404).json({ message: "User not found" });
+      return;
+    }
+
+    res.status(200).json({
+      photo: user.photo,
+      coverImage: user.coverImage,
+    });
+  });
+
   submitForm = asyncHandler(
-    async (req: Request, res: Response): Promise<void> => {
+    async (req: MulterRequest, res: Response): Promise<void> => {
       const { userId, answers } = req.body;
 
       if (!userId || !answers) {
@@ -134,12 +212,28 @@ class AuthController {
         return;
       }
 
-      // Validate answers
-      const invalidAnswer = answers.find(
+      // Validate user exists
+      const user = await User.findById(userId);
+      if (!user) {
+        res.status(404).json({ message: "User not found" });
+        return;
+      }
+
+      // Parse answers (in case sent as a JSON string via multipart/form-data)
+      let parsedAnswers;
+      try {
+        parsedAnswers =
+          typeof answers === "string" ? JSON.parse(answers) : answers;
+      } catch (err) {
+        res.status(400).json({ message: "Invalid answers format" });
+        return;
+      }
+
+      // Validate each answer
+      const invalidAnswer = parsedAnswers.find(
         (answer: { questionId: string; answer: string }) =>
           answer.answer.length > 500
       );
-
       if (invalidAnswer) {
         res.status(400).json({
           message: `Answer for question ${invalidAnswer.questionId} is too long. Max length is 500 characters.`,
@@ -147,29 +241,249 @@ class AuthController {
         return;
       }
 
-      // Optional: Check if user exists (if userId is valid)
-      const user = await User.findById(userId);
-      if (!user) {
-        res.status(404).json({ message: "User not found" });
-        return;
+      // Upload photo to Firebase if provided
+      let photoUrl: string | null = null;
+
+      if (req.file) {
+        const file = req.file;
+        const firebaseFile = firebaseService
+          .getBucket()
+          .file(`profilePhotos/${uuidv4()}_${file.originalname}`);
+        const stream = firebaseFile.createWriteStream({
+          metadata: {
+            contentType: file.mimetype,
+          },
+        });
+
+        await new Promise<void>((resolve, reject) => {
+          stream.on("error", reject);
+          stream.on("finish", resolve);
+          stream.end(file.buffer);
+        });
+
+        const [url] = await firebaseFile.getSignedUrl({
+          action: "read",
+          expires: "03-01-2500",
+        });
+
+        photoUrl = url;
       }
 
-      // Create and save the answers
+      // Save answers to MongoDB
       const savedAnswers = await Answer.insertMany(
-        answers.map((answer: { questionId: string; answer: string }) => ({
+        parsedAnswers.map((answer: { questionId: string; answer: string }) => ({
           userId,
           questionId: answer.questionId,
           answer: answer.answer,
         }))
       );
 
-      // Return the success response with the saved answers
       res.status(200).json({
         message: "Form submitted successfully",
         answers: savedAnswers,
+        ...(photoUrl && { photoUrl }),
       });
     }
   );
+
+  // ............
+
+  // submitForm = asyncHandler(
+  //   async (req: Request, res: Response): Promise<void> => {
+  //     const { userId, answers } = req.body;
+  //     // const answers = req.body.answers as {
+  //     //   questionId: string;
+  //     //   answer: string;
+  //     //   file?: Express.Multer.File;
+  //     // }[];
+  //     console.log("userId",userId);
+  //     console.log("answers",answers);
+
+  //     if (!userId || !answers || !Array.isArray(answers)) {
+  //       res.status(400).json({ message: "userId and answers are required." });
+  //       return;
+  //     }
+
+  //     // Verify user exists
+  //     const user = await User.findById(userId);
+  //     if (!user) {
+  //       res.status(404).json({ message: "User not found" });
+  //       return;
+  //     }
+
+  //     const storage = firebaseService.getBucket();
+
+  //     const savedAnswers = [];
+
+  //     for (const ans of answers) {
+  //       if (!ans.answer && !ans.file) {
+  //         continue; // skip empty answer
+  //       }
+
+  //       let finalAnswer = ans.answer;
+  //       let mediaMeta;
+
+  //       // Handle file upload if present
+  //       if (ans.file) {
+  //         const fileName = `${userId}_${Date.now()}_${ans.file.originalname}`;
+  //         const file = storage.file(`yearbook/${fileName}`);
+  //         await file.save(ans.file.buffer, {
+  //           metadata: {
+  //             contentType: ans.file.mimetype,
+  //           },
+  //         });
+
+  //         const [url] = await file.getSignedUrl({
+  //           action: "read",
+  //           expires: "03-01-2030", // long-term URL
+  //         });
+
+  //         finalAnswer = url;
+  //         mediaMeta = {
+  //           fileName: fileName,
+  //           contentType: ans.file.mimetype,
+  //         };
+  //       } else if (ans.answer.length > 500) {
+  //         res.status(400).json({
+  //           message: `Answer for question ${ans.questionId} is too long. Max 500 characters.`,
+  //         });
+  //         return;
+  //       }
+
+  //       const saved = await Answer.create({
+  //         userId,
+  //         questionId: ans.questionId,
+  //         answer: finalAnswer,
+  //         mediaMeta,
+  //       });
+
+  //       savedAnswers.push(saved);
+  //     }
+
+  //     logger.info(`User ${userId} submitted ${savedAnswers.length} answers`);
+
+  //     res.status(200).json({
+  //       message: "Form submitted successfully",
+  //       answers: savedAnswers,
+  //     });
+  //   }
+  // );
+
+  // submitForm = asyncHandler(
+  //   async (req: Request, res: Response): Promise<void> => {
+  //     const { userId } = req.body;
+
+  //     if (!userId) {
+  //       res.status(400).json({ message: "userId is required." });
+  //       return;
+  //     }
+
+  //     // Parse answers JSON string
+  //     let answers: {
+  //       questionId: string;
+  //       answer?: string;
+  //     }[];
+
+  //     try {
+  //       answers = JSON.parse(req.body.answers);
+  //     } catch (error) {
+  //       res.status(400).json({ message: "Invalid answers JSON format." });
+  //       return;
+  //     }
+
+  //     if (!answers || !Array.isArray(answers)) {
+  //       res.status(400).json({ message: "Answers must be an array." });
+  //       return;
+  //     }
+
+  //     // Verify user exists
+  //     const user = await User.findById(userId);
+  //     if (!user) {
+  //       res.status(404).json({ message: "User not found" });
+  //       return;
+  //     }
+
+  //     const storage = firebaseService
+  //       .getStorage()
+  //       .bucket(process.env.FIREBASE_STORAGE_BUCKET!);
+
+  //     // req.files is expected to be an array of files from multer with 'fieldname' = questionId
+  //     // e.g. multer setup: upload.array('files') or upload.fields([{name: questionId1}, {name: questionId2}, ...])
+  //     const files: Express.Multer.File[] = Array.isArray(req.files)
+  //       ? req.files
+  //       : Object.values(req.files || {}).flat();
+
+  //     const savedAnswers = [];
+
+  //     for (const ans of answers) {
+  //       if (
+  //         (!ans.answer || ans.answer.trim() === "") &&
+  //         !files.find((f) => f.fieldname === ans.questionId)
+  //       ) {
+  //         // skip empty answer and no file
+  //         continue;
+  //       }
+
+  //       if (ans.answer && ans.answer.length > 500) {
+  //         res.status(400).json({
+  //           message: `Answer for question ${ans.questionId} is too long. Max 500 characters.`,
+  //         });
+  //         return;
+  //       }
+
+  //       let mediaMeta = undefined;
+
+  //       // Find file that matches this questionId
+  //       const fileForAnswer = files.find((f) => f.fieldname === ans.questionId);
+
+  //       let finalAnswer = ans.answer || "";
+
+  //       if (fileForAnswer) {
+  //         const fileName = `${userId}_${Date.now()}_${
+  //           fileForAnswer.originalname
+  //         }`;
+  //         const file = storage.file(`yearbook/${fileName}`);
+
+  //         await file.save(fileForAnswer.buffer, {
+  //           metadata: {
+  //             contentType: fileForAnswer.mimetype,
+  //           },
+  //         });
+
+  //         const [url] = await file.getSignedUrl({
+  //           action: "read",
+  //           expires: "03-01-2030",
+  //         });
+
+  //         mediaMeta = {
+  //           url,
+  //           fileName,
+  //           contentType: fileForAnswer.mimetype,
+  //           size: fileForAnswer.size,
+  //         };
+
+  //         // Optionally, if you want to store the URL as the answer text:
+  //         // finalAnswer = url;
+  //       }
+
+  //       const saved = await Answer.create({
+  //         userId,
+  //         questionId: ans.questionId,
+  //         answer: finalAnswer,
+  //         mediaMeta,
+  //       });
+
+  //       savedAnswers.push(saved);
+  //     }
+
+  //     logger.info(`User ${userId} submitted ${savedAnswers.length} answers`);
+
+  //     res.status(200).json({
+  //       message: "Form submitted successfully",
+  //       answers: savedAnswers,
+  //     });
+  //   }
+  // );
 
   fetchAnswers = asyncHandler(
     async (req: Request, res: Response): Promise<void> => {
@@ -558,3 +872,6 @@ class AuthController {
 }
 
 export const authController = new AuthController();
+function uuidv4() {
+  throw new Error("Function not implemented.");
+}

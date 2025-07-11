@@ -5,18 +5,18 @@ const answerSchema = new Schema<IAnswer>(
   {
     userId: {
       type: Schema.Types.ObjectId,
-      ref: "User", // Assuming you have a User model
+      ref: "User",
       required: true,
     },
     questionId: {
       type: Schema.Types.ObjectId,
-      ref: "Question", // References the Question model
+      ref: "Question",
       required: true,
     },
     answer: {
       type: String,
-      required: true,
       maxlength: 500,
+      // not always required (can be empty if file is provided)
     },
   },
   { timestamps: true }

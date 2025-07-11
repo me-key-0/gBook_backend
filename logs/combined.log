@@ -17035,3 +17035,4065 @@
   service: 'gradbook-api',
   timestamp: '2025-07-11 06:34:00'
 }
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:34:24'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:34:24'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:34:24'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:34:24'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:34:24'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:34:24'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:34:24'
+}
+{
+  message: 'GET /api/v1/auth/fetch-form - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:34:27'
+}
+{
+  message: 'POST /api/v1/auth/register - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:39:11'
+}
+{
+  service: 'gradbook-api',
+  messageId: '<cf8e4003-c32b-fffa-ff6f-76b221a2e261@yearbook.com>',
+  subject: 'Verify Your Email - yearBook',
+  level: 'info',
+  message: 'Email sent successfully to ysakor77@gmail.com:',
+  timestamp: '2025-07-11 06:39:18'
+}
+{
+  message: 'New user registered: ysakor77@gmail.com (graduate)',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:39:18'
+}
+{
+  message: 'POST /api/v1/auth/verify-otp - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:40:51'
+}
+{
+  message: 'GET /api/v1/graduates/search - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:44:43'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:45:48'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=20',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:45:50'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:46:14'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=20',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:46:15'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:48:04'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:48:07'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:48:07'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:48:07'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:48:07'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:48:07'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:48:07'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:49:13'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:49:14'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:49:14'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:49:14'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:49:14'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:49:14'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:49:14'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:49:59'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:49:59'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:49:59'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:49:59'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:49:59'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:49:59'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:49:59'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:50:05'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=20',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:50:08'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:50:20'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=20',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:50:21'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:51:24'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:51:24'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:51:25'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:51:25'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:51:25'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:51:25'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:51:25'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:56:14'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:56:14'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:56:14'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:56:14'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:56:14'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:56:14'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:56:14'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:56:22'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: crypto.createHash is not a function',
+  stack: 'TypeError: crypto.createHash is not a function\n' +
+    '    at C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\controllers\\searchController.ts:203:29\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  url: '/api/v1/search/users',
+  method: 'GET',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-11 06:56:23'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:57:40'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:57:40'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:57:41'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:57:41'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:57:41'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:57:41'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:57:41'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:57:43'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=20',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:57:44'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:57:56'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=20',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:57:57'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:58:03'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=20',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:58:04'
+}
+{
+  message: 'POST /api/v1/auth/login - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:58:38'
+}
+{
+  service: 'gradbook-api',
+  level: 'warn',
+  message: 'Validation error:',
+  timestamp: '2025-07-11 06:58:38'
+}
+{
+  message: 'POST /api/v1/auth/login - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:58:54'
+}
+{
+  message: 'User logged in: ysakor77@gmail.com',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:58:55'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:59:41'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=20',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 06:59:42'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:00:52'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=20',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:00:57'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:01:55'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:01:56'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:01:56'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:01:56'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:01:56'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:01:56'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:01:56'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:06:17'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:06:17'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:06:17'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:06:17'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:06:17'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:06:17'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:06:17'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:06:57'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:06:57'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:06:57'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:06:57'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:06:57'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:06:57'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:06:57'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:07:25'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:07:25'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:07:25'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:07:25'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:07:25'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:07:25'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:07:25'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:07:49'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:07:49'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:07:49'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:07:49'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:07:50'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:07:50'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:07:50'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:07:54'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=20',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:07:56'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:08:04'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=20',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:08:05'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:08:51'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=20',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:08:53'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:11:02'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:11:04'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:11:28'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:11:29'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:11:44'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:11:45'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:12:05'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:12:06'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:12:11'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:12:12'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:12:21'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:12:21'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:12:44'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:12:45'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:13:16'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:13:16'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:26:19'
+}
+{
+  message: 'Search performed: query="Lisa", filters={}, results=0',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:26:19'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:26:32'
+}
+{
+  message: 'Search performed: query="Lisa", filters={}, results=6',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:26:33'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:27:22'
+}
+{
+  message: 'Search performed: query="jane", filters={}, results=6',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:27:23'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:32:44'
+}
+{
+  service: 'gradbook-api',
+  level: 'warn',
+  message: 'Query validation error:',
+  timestamp: '2025-07-11 07:32:44'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:32:51'
+}
+{
+  service: 'gradbook-api',
+  level: 'warn',
+  message: 'Query validation error:',
+  timestamp: '2025-07-11 07:32:51'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:33:22'
+}
+{
+  service: 'gradbook-api',
+  level: 'warn',
+  message: 'Query validation error:',
+  timestamp: '2025-07-11 07:33:22'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:35:18'
+}
+{
+  service: 'gradbook-api',
+  level: 'warn',
+  message: 'Query validation error:',
+  timestamp: '2025-07-11 07:35:18'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:35:58'
+}
+{
+  service: 'gradbook-api',
+  level: 'warn',
+  message: 'Query validation error:',
+  timestamp: '2025-07-11 07:35:59'
+}
+{
+  message: 'GET /api/v1/search/filters - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:38:55'
+}
+{
+  message: 'GET /api/v1/search/filters - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:39:31'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:40:50'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:40:52'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:41:26'
+}
+{
+  message: 'Search performed: query="Lisa", filters={}, results=6',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:41:27'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:41:37'
+}
+{
+  message: 'Search performed: query="jane", filters={}, results=6',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:41:38'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:41:49'
+}
+{
+  service: 'gradbook-api',
+  level: 'warn',
+  message: 'Query validation error:',
+  timestamp: '2025-07-11 07:41:49'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:42:03'
+}
+{
+  service: 'gradbook-api',
+  level: 'warn',
+  message: 'Query validation error:',
+  timestamp: '2025-07-11 07:42:03'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:44:15'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:44:15'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:44:15'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:44:15'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:44:15'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:44:15'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:44:15'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:44:34'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:44:34'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:44:34'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:44:34'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:44:34'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:44:34'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:44:34'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:45:21'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:45:22'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:45:22'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:45:22'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:45:22'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:45:22'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:45:22'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:46:26'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:46:26'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:46:26'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:46:26'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:46:26'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:46:26'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:46:26'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:46:33'
+}
+{
+  service: 'gradbook-api',
+  level: 'warn',
+  message: 'Query validation error:',
+  timestamp: '2025-07-11 07:46:34'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:46:49'
+}
+{
+  service: 'gradbook-api',
+  level: 'warn',
+  message: 'Query validation error:',
+  timestamp: '2025-07-11 07:46:49'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:49:48'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:49:48'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:49:48'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:49:48'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:49:48'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:49:48'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:49:48'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:49:55'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:49:55'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:49:55'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:49:55'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:49:55'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:49:55'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:49:55'
+}
+{
+  message: 'GET /api/v1/search/filters - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:50:12'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:50:32'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":"686a29034ecf459fa06f257a"}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:50:33'
+}
+{
+  message: 'GET /api/v1/search/filters - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:51:34'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:52:03'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":"686a29034ecf459fa06f257c"}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:52:04'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:52:33'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":["686a29034ecf459fa06f257a","686a29034ecf459fa06f257c"]}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:52:33'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:52:50'
+}
+{
+  service: 'gradbook-api',
+  level: 'warn',
+  message: 'Query validation error:',
+  timestamp: '2025-07-11 07:52:51'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:53:11'
+}
+{
+  service: 'gradbook-api',
+  level: 'warn',
+  message: 'Query validation error:',
+  timestamp: '2025-07-11 07:53:11'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:53:28'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":["686a29034ecf459fa06f257a","686a29034ecf459fa06f257c"]}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:53:29'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:54:09'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":["686a29034ecf459fa06f257a","686a29034ecf459fa06f257c"]}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:54:10'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:54:33'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":["686a29034ecf459fa06f257a","686a29034ecf459fa06f257c"]}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:54:34'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:54:50'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":["686a29034ecf459fa06f257a","686a29034ecf459fa06f257c"]}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:54:51'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:55:04'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":["686a29034ecf459fa06f257a","686a29034ecf459fa06f257c"]}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:55:05'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:56:55'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:56:56'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:57:15'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:57:16'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:57:26'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:57:27'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:57:35'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:57:36'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:59:26'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:59:26'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:59:26'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:59:26'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:59:26'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:59:26'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:59:26'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 07:59:32'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined',
+  stack: 'TypeError: The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n' +
+    '    at Hash.update (node:internal/crypto/hash:115:11)\n' +
+    '    at C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\controllers\\searchController.ts:222:50\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  url: '/api/v1/search/users?randomSeed=c4f2a43c-8b7d-40aa-8711-1e65923b4f49&limit=10&page=2',
+  method: 'GET',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-11 07:59:33'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:00:20'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined',
+  stack: 'TypeError: The "data" argument must be of type string or an instance of Buffer, TypedArray, or DataView. Received undefined\n' +
+    '    at Hash.update (node:internal/crypto/hash:115:11)\n' +
+    '    at C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\controllers\\searchController.ts:222:50\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  url: '/api/v1/search/users?randomSeed=c4f2a43c&limit=10&page=2',
+  method: 'GET',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-11 08:00:33'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:01:42'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:01:42'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:01:42'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:01:42'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:01:42'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:01:42'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:01:42'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:04:13'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:04:14'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:04:14'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:04:14'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:04:14'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:04:14'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:04:14'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:04:17'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:04:19'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:04:47'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:04:48'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:04:53'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:04:54'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:05:02'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:05:03'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:05:11'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:05:12'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:05:14'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:05:16'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:05:19'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:05:20'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:05:23'
+}
+{
+  message: 'Search performed: query="undefined", filters={}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:05:24'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:05:35'
+}
+{
+  message: 'Search performed: query="jane", filters={}, results=0',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:05:35'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:06:06'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":"686a29034ecf459fa06f257a"}, results=0',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:06:06'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:06:13'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":"686a29034ecf459fa06f257a"}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:06:14'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:06:21'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":"686a29034ecf459fa06f257a"}, results=6',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:06:23'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:06:33'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":"686a29034ecf459fa06f257a"}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:06:34'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:06:42'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":"686a29034ecf459fa06f257a"}, results=6',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:06:43'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:06:46'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":"686a29034ecf459fa06f257a"}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:06:47'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:06:55'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":["686a29034ecf459fa06f257a","686a29034ecf459fa06f257c"]}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:06:56'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:07:03'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":["686a29034ecf459fa06f257a","686a29034ecf459fa06f257c"]}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:07:04'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:07:11'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":["686a29034ecf459fa06f257a","686a29034ecf459fa06f257c"]}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:07:13'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:07:18'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":["686a29034ecf459fa06f257a","686a29034ecf459fa06f257c"]}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:07:20'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:07:24'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":["686a29034ecf459fa06f257a","686a29034ecf459fa06f257c"]}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:07:25'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:07:28'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":["686a29034ecf459fa06f257a","686a29034ecf459fa06f257c"]}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:07:29'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:07:37'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":["686a29034ecf459fa06f257a","686a29034ecf459fa06f257c"]}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:07:38'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:07:43'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":["686a29034ecf459fa06f257a","686a29034ecf459fa06f257c"]}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:07:44'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:07:47'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":["686a29034ecf459fa06f257a","686a29034ecf459fa06f257c"]}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:07:48'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:08:23'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:08:24'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:08:24'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:08:24'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:08:24'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:08:24'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:08:24'
+}
+{
+  message: 'GET /api/v1/search/users/686a29064ecf459fa06f25e9 - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:11:01'
+}
+{
+  message: 'GET /api/v1/users/686a29064ecf459fa06f25e9 - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:11:13'
+}
+{
+  message: 'User 686a29064ecf459fa06f25bc viewd user 686a29064ecf459fa06f25e9',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:11:14'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:32:36'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:32:36'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:32:36'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:32:36'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:32:36'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:32:36'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:32:36'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:33:11'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:33:11'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:33:11'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:33:11'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:33:11'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:33:11'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:33:11'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:36:46'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:36:46'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:36:46'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:36:46'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:36:46'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:36:46'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:36:46'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:36:56'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:36:56'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:36:56'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:36:56'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:36:56'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:36:56'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:36:56'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:37:30'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:37:30'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:37:30'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:37:30'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:37:30'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:37:30'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:37:30'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:37:46'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:37:46'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:37:46'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:37:46'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:37:46'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:37:46'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:37:46'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:45:05'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:45:06'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:45:06'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:45:06'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:45:06'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:45:06'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:45:06'
+}
+{
+  message: '📴 Received SIGINT. Starting graceful shutdown...',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:47:00'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:47:10'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:47:10'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:47:10'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:47:10'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:47:10'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:47:10'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:47:10'
+}
+{
+  message: 'GET /api/v1/search/users - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:47:43'
+}
+{
+  message: 'Search performed: query="undefined", filters={"college":["686a29034ecf459fa06f257a","686a29034ecf459fa06f257c"]}, results=10',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:47:44'
+}
+{
+  message: 'GET /api/v1/auth/fetch-form - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:49:01'
+}
+{
+  service: 'gradbook-api',
+  message: `Error occurred: Unexpected token ']', ..."    },\r\n` +
+    '  ]\r\n' +
+    '}\r\n' +
+    '" is not valid JSON',
+  stack: `SyntaxError: Unexpected token ']', ..."    },\r\n` +
+    '  ]\r\n' +
+    '}\r\n' +
+    '" is not valid JSON\n' +
+    '    at JSON.parse (<anonymous>)\n' +
+    '    at parse (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\body-parser\\lib\\types\\json.js:92:19)\n' +
+    '    at C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\body-parser\\lib\\read.js:128:18\n' +
+    '    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)\n' +
+    '    at invokeCallback (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\raw-body\\index.js:238:16)\n' +
+    '    at done (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\raw-body\\index.js:227:7)\n' +
+    '    at IncomingMessage.onEnd (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\raw-body\\index.js:287:7)\n' +
+    '    at IncomingMessage.emit (node:events:519:28)\n' +
+    '    at endReadableNT (node:internal/streams/readable:1696:12)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:82:21)',
+  url: '/api/v1/auth/fetch-form?userId=686f9fade3e6d321832e7989',
+  method: 'GET',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-11 08:49:57'
+}
+{
+  message: 'GET /api/v1/auth/fetch-form - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:50:21'
+}
+{
+  message: 'GET /api/v1/auth/fetch-form - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:51:28'
+}
+{
+  message: 'POST /api/v1/auth/submit-form - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:51:41'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:54:35'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:54:35'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:54:35'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:54:35'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:54:35'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:54:35'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:54:35'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:55:03'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:55:03'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:55:03'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:55:03'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:55:03'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:55:03'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:55:03'
+}
+{
+  message: 'POST /api/v1/auth/submit-form - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:55:45'
+}
+{
+  message: 'User 686f9fade3e6d321832e7989 submitted 24 answers',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 08:55:51'
+}
+{
+  message: 'POST /api/v1/auth/submit-form - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:06:32'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:12:53'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:12:53'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:12:54'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:12:54'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:12:54'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:12:54'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:12:54'
+}
+{
+  message: 'POST /api/v1/auth/submit-form - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:14:57'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:15:29'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:15:29'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:15:29'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:15:29'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:15:29'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:15:29'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:15:29'
+}
+{
+  message: 'POST /api/v1/auth/submit-form - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:15:37'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:00'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:01'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:01'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:01'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:01'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:01'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:01'
+}
+{
+  message: 'POST /api/v1/auth/submit-form - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:03'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:25'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:25'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:25'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:25'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:25'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:25'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:26'
+}
+{
+  message: 'POST /api/v1/auth/submit-form - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:28'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:47'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:47'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:47'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:47'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:47'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:47'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:47'
+}
+{
+  message: 'POST /api/v1/auth/submit-form - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:16:50'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:17:43'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:17:44'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:17:44'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:17:44'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:17:44'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:17:44'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:17:44'
+}
+{
+  message: 'POST /api/v1/auth/submit-form - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:17:46'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:26:31'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:26:31'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:26:31'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:26:31'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:26:31'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:26:31'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:26:31'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:31:04'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:31:04'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:31:04'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:31:04'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:31:04'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:31:04'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:31:04'
+}
+{
+  message: 'POST /api/v1/auth/submit-form - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:31:10'
+}
+{
+  service: 'gradbook-api',
+  message: `Error occurred: Unexpected token '}', ..."a": \r\n` +
+    '    }\r\n' +
+    '  ]\r\n' +
+    '}\r"... is not valid JSON',
+  stack: `SyntaxError: Unexpected token '}', ..."a": \r\n` +
+    '    }\r\n' +
+    '  ]\r\n' +
+    '}\r"... is not valid JSON\n' +
+    '    at JSON.parse (<anonymous>)\n' +
+    '    at parse (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\body-parser\\lib\\types\\json.js:92:19)\n' +
+    '    at C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\body-parser\\lib\\read.js:128:18\n' +
+    '    at AsyncResource.runInAsyncScope (node:async_hooks:206:9)\n' +
+    '    at invokeCallback (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\raw-body\\index.js:238:16)\n' +
+    '    at done (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\raw-body\\index.js:227:7)\n' +
+    '    at IncomingMessage.onEnd (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\raw-body\\index.js:287:7)\n' +
+    '    at IncomingMessage.emit (node:events:519:28)\n' +
+    '    at endReadableNT (node:internal/streams/readable:1696:12)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:82:21)',
+  url: '/api/v1/auth/submit-form?userId=686f9fade3e6d321832e7989%20%20',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-11 09:33:48'
+}
+{
+  message: 'POST /api/v1/auth/submit-form - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:35:21'
+}
+{
+  message: 'POST /api/v1/auth/submit-form - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:35:39'
+}
+{
+  message: 'POST /api/v1/auth/submit-form - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:36:56'
+}
+{
+  message: 'POST /api/v1/auth/submit-form - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:37:08'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 09:41:49'
+}
+{
+  service: 'gradbook-api',
+  errorLabelSet: Set(3) { 'HandshakeError', 'RetryableWriteError', 'ResetPool' },
+  beforeHandshake: false,
+  connectionGeneration: 0,
+  level: 'error',
+  message: '❌ Database connection failed: connection 1 to 159.41.79.95:27017 timed out',
+  stack: 'MongoNetworkTimeoutError: connection 1 to 159.41.79.95:27017 timed out\n' +
+    '    at Timeout._onTimeout (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongodb\\src\\cmap\\connection.ts:319:20)\n' +
+    '    at listOnTimeout (node:internal/timers:581:17)\n' +
+    '    at processTimers (node:internal/timers:519:7)',
+  timestamp: '2025-07-11 09:42:34'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:42:21'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:42:21'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:42:21'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:42:21'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:42:21'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:42:21'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:42:21'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:43:44'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:43:45'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:43:45'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:43:45'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:43:45'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:43:45'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:43:45'
+}
+{
+  service: 'gradbook-api',
+  message: "❌ Database connection failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/",
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 4317668,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 4317668,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 4317668,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-jpqdje-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  level: 'error',
+  stack: "MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/\n" +
+    '    at _handleConnectionErrors (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1165:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1096:11)\n' +
+    '    at Database.connect (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\config\\database.ts:37:7)\n' +
+    '    at Server.start (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\server.ts:118:7)',
+  timestamp: '2025-07-11 10:51:45'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:52:12'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:52:12'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:52:12'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:52:12'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:52:12'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:52:12'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:52:12'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:52:24'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:52:24'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:52:24'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:52:24'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:52:24'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:52:24'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:52:24'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:55:29'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:55:29'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:55:29'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:55:29'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:55:29'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:55:29'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:55:29'
+}
+{
+  message: 'POST /api/v1/auth/submit-form - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:55:42'
+}
+{
+  service: 'gradbook-api',
+  message: "Error occurred: Cannot read properties of undefined (reading 'length')",
+  stack: "TypeError: Cannot read properties of undefined (reading 'length')\n" +
+    '    at C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\controllers\\authController.ts:162:25\n' +
+    '    at Array.find (<anonymous>)\n' +
+    '    at C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\controllers\\authController.ts:160:43\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  url: '/api/v1/auth/submit-form?userId=686f9fade3e6d321832e7989%20%20',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-11 10:55:42'
+}
+{
+  message: 'POST /api/v1/auth/submit-form - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 10:58:12'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:02:16'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:02:17'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:02:17'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:02:17'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:02:17'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:02:17'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:02:17'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:07:24'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:07:24'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:07:24'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:07:24'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:07:24'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:07:24'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:07:24'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:16:03'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:16:03'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:16:03'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:16:03'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:16:03'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:16:03'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:16:03'
+}
+{
+  message: 'POST /api/v1/auth/submit-form - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:16:31'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:18:24'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:18:24'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:18:24'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:18:24'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:18:24'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:18:24'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:18:24'
+}
+{
+  message: 'GET /api/v1/auth/686a29064ecf459fa06f25e9/image - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:20:23'
+}
+{
+  message: 'GET /api/v1/auth/686a29064ecf459fa06f25e9/images - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:20:27'
+}
+{
+  message: 'POST /api/v1/auth/686a29064ecf459fa06f25e9/photo - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:21:57'
+}
+{
+  message: 'POST /api/v1/auth/686a29064ecf459fa06f25e9/photo - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:22:35'
+}
+{
+  message: 'POST /api/v1/auth/686a29064ecf459fa06f25e9/photo - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:22:43'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:31:53'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:31:53'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:31:53'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:31:53'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:31:53'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:31:53'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:31:53'
+}
+{
+  message: 'GET /api/v1/auth/686a29064ecf459fa06f25e9/images - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:32:10'
+}
+{
+  message: 'POST /api/v1/auth/686a29064ecf459fa06f25e9/photo - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:32:16'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: Unexpected field',
+  stack: 'MulterError: Unexpected field\n' +
+    '    at wrappedFileFilter (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\multer\\index.js:40:19)\n' +
+    '    at Multipart.<anonymous> (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\multer\\lib\\make-middleware.js:109:7)\n' +
+    '    at Multipart.emit (node:events:519:28)\n' +
+    '    at HeaderParser.cb (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\busboy\\lib\\types\\multipart.js:358:14)\n' +
+    '    at HeaderParser.push (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\busboy\\lib\\types\\multipart.js:162:20)\n' +
+    '    at SBMH.ssCb [as _cb] (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\busboy\\lib\\types\\multipart.js:394:37)\n' +
+    '    at feed (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\streamsearch\\lib\\sbmh.js:200:10)\n' +
+    '    at SBMH.push (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\streamsearch\\lib\\sbmh.js:104:16)\n' +
+    '    at Multipart._write (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\busboy\\lib\\types\\multipart.js:567:19)\n' +
+    '    at writeOrBuffer (node:internal/streams/writable:570:12)',
+  url: '/api/v1/auth/686a29064ecf459fa06f25e9/photo',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-11 11:32:16'
+}
+{
+  message: 'POST /api/v1/auth/686a29064ecf459fa06f25e9/photo - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:32:31'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: {\n' +
+    '  "error": {\n' +
+    '    "code": 404,\n' +
+    '    "message": "The specified bucket does not exist.",\n' +
+    '    "errors": [\n' +
+    '      {\n' +
+    '        "message": "The specified bucket does not exist.",\n' +
+    '        "domain": "global",\n' +
+    '        "reason": "notFound"\n' +
+    '      }\n' +
+    '    ]\n' +
+    '  }\n' +
+    '}\n',
+  stack: 'Error: {\n' +
+    '  "error": {\n' +
+    '    "code": 404,\n' +
+    '    "message": "The specified bucket does not exist.",\n' +
+    '    "errors": [\n' +
+    '      {\n' +
+    '        "message": "The specified bucket does not exist.",\n' +
+    '        "domain": "global",\n' +
+    '        "reason": "notFound"\n' +
+    '      }\n' +
+    '    ]\n' +
+    '  }\n' +
+    '}\n' +
+    '\n' +
+    '    at Gaxios._request (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\google-auth-library\\node_modules\\gaxios\\src\\gaxios.ts:146:15)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at JWT.requestAsync (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\google-auth-library\\build\\src\\auth\\oauth2client.js:429:18)\n' +
+    '    at Upload.makeRequest (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\@google-cloud\\storage\\build\\cjs\\src\\resumable-upload.js:766:21)\n' +
+    '    at uri.retries (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\@google-cloud\\storage\\build\\cjs\\src\\resumable-upload.js:432:29)\n' +
+    '    at Upload.createURIAsync (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\@google-cloud\\storage\\build\\cjs\\src\\resumable-upload.js:429:21)',
+  url: '/api/v1/auth/686a29064ecf459fa06f25e9/photo',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-11 11:32:36'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:44:43'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:44:43'
+}
+{
+  message: 'Database disconnected',
+  level: 'warn',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:45:45'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:45:45'
+}
+{
+  service: 'gradbook-api',
+  errno: -4077,
+  code: 'ECONNRESET',
+  syscall: 'read',
+  level: 'error',
+  message: '❌ Database connection failed: read ECONNRESET',
+  stack: 'Error: read ECONNRESET\n' +
+    '    at TLSWrap.onStreamRead (node:internal/stream_base_commons:218:20)',
+  timestamp: '2025-07-11 11:46:46'
+}
+{
+  service: 'gradbook-api',
+  message: "❌ Database connection failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/",
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 7736678,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 7736678,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 7736678,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-jpqdje-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  level: 'error',
+  stack: "MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/\n" +
+    '    at _handleConnectionErrors (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1165:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1096:11)\n' +
+    '    at Database.connect (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\config\\database.ts:37:7)\n' +
+    '    at Server.start (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\server.ts:118:7)',
+  timestamp: '2025-07-11 11:48:46'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:48:55'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:48:55'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:48:55'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:48:55'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:48:55'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:48:55'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:48:55'
+}
+{
+  message: 'POST /api/v1/auth/686a29064ecf459fa06f25e9/photo - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 11:49:03'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: {\n' +
+    '  "error": {\n' +
+    '    "code": 404,\n' +
+    '    "message": "The specified bucket does not exist.",\n' +
+    '    "errors": [\n' +
+    '      {\n' +
+    '        "message": "The specified bucket does not exist.",\n' +
+    '        "domain": "global",\n' +
+    '        "reason": "notFound"\n' +
+    '      }\n' +
+    '    ]\n' +
+    '  }\n' +
+    '}\n',
+  stack: 'Error: {\n' +
+    '  "error": {\n' +
+    '    "code": 404,\n' +
+    '    "message": "The specified bucket does not exist.",\n' +
+    '    "errors": [\n' +
+    '      {\n' +
+    '        "message": "The specified bucket does not exist.",\n' +
+    '        "domain": "global",\n' +
+    '        "reason": "notFound"\n' +
+    '      }\n' +
+    '    ]\n' +
+    '  }\n' +
+    '}\n' +
+    '\n' +
+    '    at Gaxios._request (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\google-auth-library\\node_modules\\gaxios\\src\\gaxios.ts:146:15)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at JWT.requestAsync (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\google-auth-library\\build\\src\\auth\\oauth2client.js:429:18)\n' +
+    '    at Upload.makeRequest (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\@google-cloud\\storage\\build\\cjs\\src\\resumable-upload.js:766:21)\n' +
+    '    at uri.retries (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\@google-cloud\\storage\\build\\cjs\\src\\resumable-upload.js:432:29)\n' +
+    '    at Upload.createURIAsync (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\@google-cloud\\storage\\build\\cjs\\src\\resumable-upload.js:429:21)',
+  url: '/api/v1/auth/686a29064ecf459fa06f25e9/photo',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-11 11:49:10'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:05:06'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:05:07'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:05:07'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:05:07'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:05:07'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:05:07'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:05:07'
+}
+{
+  message: 'POST /api/v1/auth/686a29064ecf459fa06f25e9/photo - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:06:10'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: request to https://www.googleapis.com/oauth2/v4/token failed, reason: Client network socket disconnected before secure TLS connection was established',
+  stack: 'Error: request to https://www.googleapis.com/oauth2/v4/token failed, reason: Client network socket disconnected before secure TLS connection was established\n' +
+    '    at Gaxios._request (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\google-auth-library\\node_modules\\gaxios\\src\\gaxios.ts:157:13)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at GoogleToken._GoogleToken_requestToken (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\gtoken\\build\\src\\index.js:241:19)\n' +
+    '    at GoogleToken._GoogleToken_getTokenAsync (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\gtoken\\build\\src\\index.js:160:16)\n' +
+    '    at JWT.refreshTokenNoCache (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\google-auth-library\\build\\src\\auth\\jwtclient.js:173:23)\n' +
+    '    at JWT.getRequestMetadataAsync (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\google-auth-library\\build\\src\\auth\\oauth2client.js:333:17)\n' +
+    '    at JWT.requestAsync (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\google-auth-library\\build\\src\\auth\\oauth2client.js:418:23)\n' +
+    '    at Upload.makeRequest (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\@google-cloud\\storage\\build\\cjs\\src\\resumable-upload.js:766:21)\n' +
+    '    at uri.retries (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\@google-cloud\\storage\\build\\cjs\\src\\resumable-upload.js:432:29)\n' +
+    '    at Upload.createURIAsync (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\@google-cloud\\storage\\build\\cjs\\src\\resumable-upload.js:429:21)',
+  url: '/api/v1/auth/686a29064ecf459fa06f25e9/photo',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-11 12:07:57'
+}
+{
+  message: 'Database disconnected',
+  level: 'warn',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:10:43'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:10:44'
+}
+{
+  message: 'POST /api/v1/auth/686a29064ecf459fa06f25e9/photo - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:11:20'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: {\n' +
+    '  "error": {\n' +
+    '    "code": 404,\n' +
+    '    "message": "The specified bucket does not exist.",\n' +
+    '    "errors": [\n' +
+    '      {\n' +
+    '        "message": "The specified bucket does not exist.",\n' +
+    '        "domain": "global",\n' +
+    '        "reason": "notFound"\n' +
+    '      }\n' +
+    '    ]\n' +
+    '  }\n' +
+    '}\n',
+  stack: 'Error: {\n' +
+    '  "error": {\n' +
+    '    "code": 404,\n' +
+    '    "message": "The specified bucket does not exist.",\n' +
+    '    "errors": [\n' +
+    '      {\n' +
+    '        "message": "The specified bucket does not exist.",\n' +
+    '        "domain": "global",\n' +
+    '        "reason": "notFound"\n' +
+    '      }\n' +
+    '    ]\n' +
+    '  }\n' +
+    '}\n' +
+    '\n' +
+    '    at Gaxios._request (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\google-auth-library\\node_modules\\gaxios\\src\\gaxios.ts:146:15)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at JWT.requestAsync (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\google-auth-library\\build\\src\\auth\\oauth2client.js:429:18)\n' +
+    '    at Upload.makeRequest (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\@google-cloud\\storage\\build\\cjs\\src\\resumable-upload.js:766:21)\n' +
+    '    at uri.retries (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\@google-cloud\\storage\\build\\cjs\\src\\resumable-upload.js:432:29)\n' +
+    '    at Upload.createURIAsync (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\@google-cloud\\storage\\build\\cjs\\src\\resumable-upload.js:429:21)',
+  url: '/api/v1/auth/686a29064ecf459fa06f25e9/photo',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-11 12:11:26'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:15:22'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:15:23'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:15:23'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:15:23'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:15:23'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:15:23'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:15:23'
+}
+{
+  message: 'POST /api/v1/auth/686a29064ecf459fa06f25e9/photo - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:15:30'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: bucket.file is not a function',
+  stack: 'TypeError: bucket.file is not a function\n' +
+    '    at FirebaseService.uploadFileToStorage (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\config\\firebase.ts:93:25)\n' +
+    '    at C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\controllers\\authController.ts:148:39\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  url: '/api/v1/auth/686a29064ecf459fa06f25e9/photo',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-11 12:15:31'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:16:45'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:16:45'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:16:45'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:16:45'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:16:45'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:16:45'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:16:45'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-11 12:20:14'
+}

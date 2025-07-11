@@ -9,8 +9,119 @@ import { AuthenticatedRequest } from "@/types";
 import { logger } from "@/utils/logger";
 import { asyncHandler } from "@/middleware/errorHandler";
 import { personalizationService } from "@/services/personalizationService";
-
+import crypto from "crypto";
 class SearchController {
+  // public searchUsers = asyncHandler(
+  //   async (req: AuthenticatedRequest, res: Response): Promise<void> => {
+  //     const {
+  //       q,
+  //       campus,
+  //       college,
+  //       department,
+  //       graduationYear,
+  //       role,
+  //       page = 1,
+  //       limit = 20,
+  //       sort = "recent",
+  //       order = "desc",
+  //     } = req.query;
+
+  //     const pageNum = parseInt(page as string);
+  //     const limitNum = parseInt(limit as string);
+
+  //     // Build search filter
+  //     const filter: any = { isActive: true };
+
+  //     // Text search
+  //     if (q) {
+  //       const searchRegex = new RegExp(q as string, "i");
+  //       filter.$or = [
+  //         { firstName: searchRegex },
+  //         { lastName: searchRegex },
+  //         { surname: searchRegex },
+  //         { username: searchRegex },
+  //       ];
+  //     }
+
+  //     // Academic filters
+  //     if (campus) filter.campus = campus;
+  //     if (college) filter.college = college;
+  //     if (department) filter.department = department;
+  //     if (graduationYear)
+  //       filter.graduationYear = parseInt(graduationYear as string);
+  //     if (role) filter.role = role;
+
+  //     // Build sort options
+  //     let sortOptions: any = {};
+  //     if (q) {
+  //       switch (sort) {
+  //         case "name":
+  //           sortOptions = { firstName: order === "desc" ? -1 : 1 };
+  //           break;
+  //         case "likes":
+  //           sortOptions = { numberOfLikes: order === "desc" ? -1 : 1 };
+  //           break;
+  //         case "views":
+  //           sortOptions = { views: order === "desc" ? -1 : 1 };
+  //           break;
+  //         case "recent":
+  //         default:
+  //           sortOptions = { createdAt: order === "desc" ? -1 : 1 };
+  //           break;
+  //       }
+  //     } else {
+  //     }
+
+  //     // Execute search
+  //     const [users, total] = await Promise.all([
+  //       User.find(filter)
+  //         .populate("campus college department", "name")
+  //         .select(
+  //           "firstName lastName surname username photo graduationYear numberOfLikes views campus college department role"
+  //         )
+  //         .sort(sortOptions)
+  //         .skip((pageNum - 1) * limitNum)
+  //         .limit(limitNum),
+  //       User.countDocuments(filter),
+  //     ]);
+
+  //     // Update search points for academic entities
+  //     if (campus) {
+  //       await Campus.findByIdAndUpdate(campus, { $inc: { searchPoints: 1 } });
+  //     }
+  //     if (college) {
+  //       await College.findByIdAndUpdate(college, { $inc: { searchPoints: 1 } });
+  //     }
+  //     if (department) {
+  //       await Department.findByIdAndUpdate(department, {
+  //         $inc: { searchPoints: 1 },
+  //       });
+  //     }
+
+  //     logger.info(
+  //       `Search performed: query="${q}", filters=${JSON.stringify({
+  //         campus,
+  //         college,
+  //         department,
+  //         graduationYear,
+  //         role,
+  //       })}, results=${users.length}`
+  //     );
+
+  //     ResponseHandler.paginated(
+  //       res,
+  //       users,
+  //       {
+  //         page: pageNum,
+  //         limit: limitNum,
+  //         total,
+  //         pages: Math.ceil(total / limitNum),
+  //       },
+  //       "Search results retrieved successfully"
+  //     );
+  //   }
+  // );
+
   public searchUsers = asyncHandler(
     async (req: AuthenticatedRequest, res: Response): Promise<void> => {
       const {
@@ -24,16 +135,43 @@ class SearchController {
         limit = 20,
         sort = "recent",
         order = "desc",
+        randomSeed,
       } = req.query;
 
       const pageNum = parseInt(page as string);
       const limitNum = parseInt(limit as string);
 
-      // Build search filter
+      // Build base filter
       const filter: any = { isActive: true };
 
+      // Optional filters
+      // if (campus) filter.campus = campus;
+      // if (college) filter.college = college;
+      // if (department) filter.department = department;
+
+      // Parse multiple values for filtering
+      const parseMulti = (value?: string | string[]) => {
+        if (!value) return undefined;
+        if (Array.isArray(value)) return value;
+        return value.includes(",") ? value.split(",") : [value];
+      };
+
+      const campusArray = parseMulti(campus as string | string[]);
+      const collegeArray = parseMulti(college as string | string[]);
+      const departmentArray = parseMulti(department as string | string[]);
+
+      // Apply to filter if values exist
+      if (campusArray) filter.campus = { $in: campusArray };
+      if (collegeArray) filter.college = { $in: collegeArray };
+      if (departmentArray) filter.department = { $in: departmentArray };
+
+      if (graduationYear)
+        filter.graduationYear = parseInt(graduationYear as string);
+      if (role) filter.role = role;
+
       // Text search
-      if (q) {
+      const isSearch = !!q;
+      if (isSearch) {
         const searchRegex = new RegExp(q as string, "i");
         filter.$or = [
           { firstName: searchRegex },
@@ -43,57 +181,84 @@ class SearchController {
         ];
       }
 
-      // Academic filters
-      if (campus) filter.campus = campus;
-      if (college) filter.college = college;
-      if (department) filter.department = department;
-      if (graduationYear)
-        filter.graduationYear = parseInt(graduationYear as string);
-      if (role) filter.role = role;
+      let users: any[] = [];
+      let total = 0;
 
-      // Build sort options
-      let sortOptions: any = {};
-      switch (sort) {
-        case "name":
-          sortOptions = { firstName: order === "desc" ? -1 : 1 };
-          break;
-        case "likes":
-          sortOptions = { numberOfLikes: order === "desc" ? -1 : 1 };
-          break;
-        case "views":
-          sortOptions = { views: order === "desc" ? -1 : 1 };
-          break;
-        case "recent":
-        default:
-          sortOptions = { createdAt: order === "desc" ? -1 : 1 };
-          break;
-      }
+      if (isSearch) {
+        // Standard search logic with sorting
+        const sortOptions: any = (() => {
+          switch (sort) {
+            case "name":
+              return { firstName: order === "desc" ? -1 : 1 };
+            case "likes":
+              return { numberOfLikes: order === "desc" ? -1 : 1 };
+            case "views":
+              return { views: order === "desc" ? -1 : 1 };
+            case "recent":
+            default:
+              return { createdAt: order === "desc" ? -1 : 1 };
+          }
+        })();
 
-      // Execute search
-      const [users, total] = await Promise.all([
-        User.find(filter)
+        [users, total] = await Promise.all([
+          User.find(filter)
+            .populate("campus college department", "name")
+            .select(
+              "firstName lastName surname username photo graduationYear numberOfLikes views campus college department role"
+            )
+            .sort(sortOptions)
+            .skip((pageNum - 1) * limitNum)
+            .limit(limitNum),
+          User.countDocuments(filter),
+        ]);
+      } else {
+        // RANDOM USERS with consistent pagination
+        const allUserIds = await User.find(filter).select("_id").lean();
+        total = allUserIds.length;
+
+        // Use a fixed seed to generate consistent shuffling across pages
+        const rawSeed = req.query.randomSeed as string;
+        const seed = crypto.createHash("sha256").update(rawSeed).digest("hex");
+
+        const hash = crypto.createHash("sha256").update(seed).digest("hex");
+
+        // Create a pseudo-random but deterministic shuffle using a hash
+        const shuffled = allUserIds
+          .map((u, index) => ({
+            id: u._id,
+            sortKey: crypto
+              .createHash("sha256")
+              .update(seed + index)
+              .digest("hex"),
+          }))
+          .sort((a, b) => (a.sortKey > b.sortKey ? 1 : -1));
+
+        const paginatedIds = shuffled
+          .slice((pageNum - 1) * limitNum, pageNum * limitNum)
+          .map((entry) => entry.id);
+
+        users = await User.find({ _id: { $in: paginatedIds } })
           .populate("campus college department", "name")
           .select(
             "firstName lastName surname username photo graduationYear numberOfLikes views campus college department role"
-          )
-          .sort(sortOptions)
-          .skip((pageNum - 1) * limitNum)
-          .limit(limitNum),
-        User.countDocuments(filter),
-      ]);
+          );
 
-      // Update search points for academic entities
-      if (campus) {
+        // Optional: re-sort users according to the order in paginatedIds
+        const idMap = new Map(users.map((u) => [u._id.toString(), u]));
+        users = paginatedIds
+          .map((id) => idMap.get(id.toString()))
+          .filter(Boolean);
+      }
+
+      // Update search points if filters applied
+      if (campus)
         await Campus.findByIdAndUpdate(campus, { $inc: { searchPoints: 1 } });
-      }
-      if (college) {
+      if (college)
         await College.findByIdAndUpdate(college, { $inc: { searchPoints: 1 } });
-      }
-      if (department) {
+      if (department)
         await Department.findByIdAndUpdate(department, {
           $inc: { searchPoints: 1 },
         });
-      }
 
       logger.info(
         `Search performed: query="${q}", filters=${JSON.stringify({

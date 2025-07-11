@@ -3,6 +3,7 @@ import { authController } from "@/controllers/authController";
 import { authenticate } from "@/middleware/auth";
 import { validate, schemas } from "@/middleware/validation";
 import { authLimiter } from "@/middleware/rateLimiter";
+import upload from "@/middleware/multer";
 
 const router = Router();
 
@@ -15,6 +16,21 @@ router.post(
 );
 router.post("/submit-form", authLimiter, authController.submitForm);
 router.get("/fetch-form", authLimiter, authController.fetchAnswers);
+
+router.post(
+  "/:userId/photo",
+  upload.single("image"),
+  authController.uploadPhoto
+);
+// POST /api/users/:userId/cover
+router.post(
+  "/:userId/cover",
+  upload.single("image"),
+  authController.uploadCoverImage
+);
+// GET /api/users/:userId/images
+router.get("/:userId/images", authController.getUserImages);
+
 router.post(
   "/login",
   authLimiter,
