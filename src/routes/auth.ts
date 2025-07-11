@@ -13,6 +13,8 @@ router.post(
   validate(schemas.register),
   authController.register
 );
+router.post("/submit-form", authLimiter, authController.submitForm);
+router.get("/fetch-form", authLimiter, authController.fetchAnswers);
 router.post(
   "/login",
   authLimiter,

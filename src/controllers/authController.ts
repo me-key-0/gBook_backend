@@ -22,6 +22,16 @@ import {
 } from "@/types";
 import { Otp } from "@/models/Otp";
 import { emailService } from "@/services/emailService";
+import { Answer } from "@/models/Answer";
+import { Question } from "@/models/Question";
+
+interface UserResponse {
+  userId: string;
+  responses: {
+    question: string;
+    answer: string;
+  }[];
+}
 
 class AuthController {
   register = asyncHandler(
@@ -112,6 +122,97 @@ class AuthController {
         },
         "Registration successful. Please verify your email."
       );
+    }
+  );
+
+  submitForm = asyncHandler(
+    async (req: Request, res: Response): Promise<void> => {
+      const { userId, answers } = req.body;
+
+      if (!userId || !answers) {
+        res.status(400).json({ message: "UserId and answers are required" });
+        return;
+      }
+
+      // Validate answers
+      const invalidAnswer = answers.find(
+        (answer: { questionId: string; answer: string }) =>
+          answer.answer.length > 500
+      );
+
+      if (invalidAnswer) {
+        res.status(400).json({
+          message: `Answer for question ${invalidAnswer.questionId} is too long. Max length is 500 characters.`,
+        });
+        return;
+      }
+
+      // Optional: Check if user exists (if userId is valid)
+      const user = await User.findById(userId);
+      if (!user) {
+        res.status(404).json({ message: "User not found" });
+        return;
+      }
+
+      // Create and save the answers
+      const savedAnswers = await Answer.insertMany(
+        answers.map((answer: { questionId: string; answer: string }) => ({
+          userId,
+          questionId: answer.questionId,
+          answer: answer.answer,
+        }))
+      );
+
+      // Return the success response with the saved answers
+      res.status(200).json({
+        message: "Form submitted successfully",
+        answers: savedAnswers,
+      });
+    }
+  );
+
+  fetchAnswers = asyncHandler(
+    async (req: Request, res: Response): Promise<void> => {
+      const { userId } = req.params;
+
+      // Fetch all questions from the Question model
+      const questions = await Question.find().select("question -_id"); // Only the 'question' field
+
+      // Fetch all answers for the given user
+      const answers = await Answer.find()
+        .populate({
+          path: "questionId", // This is the reference to the Question model in the Answer model
+          select: "question -_id", // We only want the question field (exclude '_id')
+        })
+        .lean();
+
+      console.log("answers", answers);
+      try {
+        const groupedByUser: Record<string, UserResponse> = {};
+
+        for (const ans of answers) {
+          const userId = ans.userId.toString();
+          const questionText = ans.questionId?.question || "Unknown question";
+
+          if (!groupedByUser[userId]) {
+            groupedByUser[userId] = {
+              userId,
+              responses: [],
+            };
+          }
+
+          groupedByUser[userId].responses.push({
+            question: questionText,
+            answer: ans.answer,
+          });
+        }
+
+        const responseArray: UserResponse[] = Object.values(groupedByUser);
+        res.json(responseArray);
+      } catch (error) {
+        console.error("Error fetching answers:", error);
+        res.status(500).json({ message: "Server error" });
+      }
     }
   );
 

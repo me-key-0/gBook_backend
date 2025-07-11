@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema, Types } from "mongoose";
 import { IQuestion } from "@/types";
 
 const questionSchema = new Schema<IQuestion>(
@@ -30,6 +30,10 @@ const questionSchema = new Schema<IQuestion>(
     order: {
       type: Number,
       default: 0,
+    },
+    answer: {
+      type: Schema.Types.ObjectId,
+      ref: "Answer",
     },
     options: [
       {

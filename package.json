@@ -11,7 +11,7 @@
     "test:watch": "jest --watch",
     "lint": "eslint src/**/*.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
-    "seed": "ts-node src/scripts/seed.ts",
+    "seed": "ts-node src/config/seed.ts",
     "clean": "rimraf dist"
   },
   "keywords": [

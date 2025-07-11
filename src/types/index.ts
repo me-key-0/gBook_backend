@@ -110,6 +110,12 @@ export interface IPostComment {
   _id: Types.ObjectId;
 }
 
+export interface IAnswer extends Document {
+  userId: Types.ObjectId;
+  questionId: IQuestion;
+  answer: string;
+}
+
 export interface IQuestion extends Document {
   _id: Types.ObjectId;
   question: string;
@@ -118,6 +124,7 @@ export interface IQuestion extends Document {
   isRequired: boolean;
   isActive: boolean;
   order: number;
+  answer: Types.ObjectId;
   options?: string[];
   createdAt: Date;
   updatedAt: Date;
