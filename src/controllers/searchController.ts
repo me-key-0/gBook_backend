@@ -138,6 +138,7 @@ class SearchController {
         randomSeed,
       } = req.query;
 
+      const currentUserId = req.userId;
       const pageNum = parseInt(page as string);
       const limitNum = parseInt(limit as string);
 
@@ -204,7 +205,7 @@ class SearchController {
           User.find(filter)
             .populate("campus college department", "name")
             .select(
-              "firstName lastName surname username photo quote graduationYear numberOfLikes views campus college department role"
+              "firstName lastName surname username photo quote likes graduationYear numberOfLikes numberOfComments views campus college department role"
             )
             .sort(sortOptions)
             .skip((pageNum - 1) * limitNum)
@@ -240,7 +241,7 @@ class SearchController {
         users = await User.find({ _id: { $in: paginatedIds } })
           .populate("campus college department", "name")
           .select(
-            "firstName lastName surname username photo quote graduationYear numberOfLikes views campus college department role"
+            "firstName lastName surname username photo quote likes graduationYear numberOfLikes numberOfComments views campus college department role"
           );
 
         // Optional: re-sort users according to the order in paginatedIds
@@ -269,6 +270,20 @@ class SearchController {
           role,
         })}, results=${users.length}`
       );
+
+      if (currentUserId) {
+        const user = await User.findById(currentUserId);
+        users = users.map((u: any) => {
+          const obj = u.toJSON();
+
+          obj.isLiked = obj.likes?.includes(currentUserId);
+          obj.isSaved = user?.savedProfiles?.includes(u._id) || false;
+
+          delete obj.likes;
+
+          return obj;
+        });
+      }
 
       ResponseHandler.paginated(
         res,
