@@ -1,14 +1,14 @@
 import { Router } from 'express';
 import { categoryController } from '@/controllers/categoryController';
-import { validateParams, validateQuery, schemas } from '@/middleware/validation';
+import { validateParams, objectIdParam, validateQuery, schemas } from '@/middleware/validation';
 
 const router = Router();
 
 // Academic structure routes
 router.get('/campuses', categoryController.getAllCampuses);
-router.get('/campuses/:campusId/colleges', validateParams(schemas.objectId), categoryController.getCampusColleges);
-router.get('/colleges/:collegeId/departments', validateParams(schemas.objectId), categoryController.getCollegeDepartments);
-router.get('/departments/:departmentId/users', validateParams(schemas.objectId), validateQuery(schemas.pagination), categoryController.getDepartmentUsers);
+router.get('/campuses/:campusId/colleges', validateParams(objectIdParam('campusId')), categoryController.getCampusColleges);
+router.get('/colleges/:collegeId/departments', validateParams(objectIdParam('collegeId')), categoryController.getCollegeDepartments);
+router.get('/departments/:departmentId/users', validateParams(objectIdParam('departmentId')), validateQuery(schemas.pagination), categoryController.getDepartmentUsers);
 
 // Statistics
 router.get('/campuses/:campusId/stats', validateParams(schemas.objectId), categoryController.getCampusStats);

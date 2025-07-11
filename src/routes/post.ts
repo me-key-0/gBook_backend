@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { postController } from '@/controllers/postController';
 import { authenticate, optionalAuth, authorize } from '@/middleware/auth';
-import { validate, validateParams, validateQuery, schemas } from '@/middleware/validation';
+import { validate, validateParams, objectIdParam, validateQuery, schemas } from '@/middleware/validation';
 import { likeLimiter, commentLimiter } from '@/middleware/rateLimiter';
 
 const router = Router();
@@ -10,7 +10,7 @@ const router = Router();
 router.get('/', optionalAuth, validateQuery(schemas.pagination), postController.getPosts);
 router.get('/popular', validateQuery(schemas.pagination), postController.getPopularPosts);
 router.get('/lastwords', optionalAuth, validateQuery(schemas.pagination), postController.getLastWords);
-router.get('/user/:userId', validateParams(schemas.objectId), postController.getUserPosts);
+router.get('/user/:userId', validateParams(objectIdParam('userId')), postController.getUserPosts);
 router.get('/:id', optionalAuth, validateParams(schemas.objectId), postController.getPost);
 
 // Protected routes

@@ -66,7 +66,7 @@ export const validateParams = (schema: Joi.ObjectSchema) => {
       ResponseHandler.badRequest(
         res,
         "Parameters validation failed",
-        errorMessage
+        errorMessage,
       );
       return;
     }
@@ -77,6 +77,8 @@ export const validateParams = (schema: Joi.ObjectSchema) => {
   };
 };
 
+export const objectIdParam = (paramName: string) =>
+  Joi.object({ [paramName]: Joi.string().hex().length(24).required() });
 // Common validation schemas
 export const schemas = {
   // Auth schemas
@@ -189,7 +191,7 @@ export const schemas = {
         "harassment",
         "spam",
         "fake_profile",
-        "other"
+        "other",
       )
       .required(),
     reason: Joi.string().min(10).max(500).required(),
