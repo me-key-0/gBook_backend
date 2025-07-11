@@ -204,7 +204,7 @@ class SearchController {
           User.find(filter)
             .populate("campus college department", "name")
             .select(
-              "firstName lastName surname username photo graduationYear numberOfLikes views campus college department role"
+              "firstName lastName surname username photo quote graduationYear numberOfLikes views campus college department role"
             )
             .sort(sortOptions)
             .skip((pageNum - 1) * limitNum)
@@ -240,7 +240,7 @@ class SearchController {
         users = await User.find({ _id: { $in: paginatedIds } })
           .populate("campus college department", "name")
           .select(
-            "firstName lastName surname username photo graduationYear numberOfLikes views campus college department role"
+            "firstName lastName surname username photo quote graduationYear numberOfLikes views campus college department role"
           );
 
         // Optional: re-sort users according to the order in paginatedIds
