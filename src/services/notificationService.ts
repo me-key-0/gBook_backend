@@ -141,8 +141,8 @@ class NotificationService {
       type: "like",
       fromUserId: likerUserId,
       message: `${liker.firstName} ${liker.lastName} liked your profile`,
-      user: liker._id,
-      fromUser: liked?._id,
+      fromUser: liker._id,
+      user: liked?._id,
     });
   }
 
