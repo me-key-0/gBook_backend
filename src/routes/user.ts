@@ -20,6 +20,9 @@ router.post('/:id/comment', commentLimiter, validateParams(schemas.objectId), va
 router.post('/:id/tag', validateParams(schemas.objectId), validate(schemas.tagUser), userController.tagUser);
 router.post('/:id/report', validateParams(schemas.objectId), validate(schemas.createReport), userController.reportUser);
 
+router.put("/:id/socials", userController.updateSocialLinks);
+router.get("/:id/socials", userController.getUserSocialLinks);
+
 // User's own data
 router.get('/me/liked', userController.getLikedProfiles);
 router.get('/me/saved', userController.getSavedProfiles);

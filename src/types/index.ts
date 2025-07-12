@@ -25,14 +25,7 @@ export interface IUser extends Document {
   profileCompleted: boolean;
 
   // Social links
-  socialLinks: {
-    telegram?: string;
-    instagram?: string;
-    tiktok?: string;
-    youtube?: string;
-    snapchat?: string;
-    linkedin?: string;
-  };
+  socials: ISocials;
 
   // Privacy settings
   privacySettings: {
@@ -80,6 +73,16 @@ export interface IUser extends Document {
   generateAuthToken(): string;
   updateLastActive(): Promise<void>;
   toJSON(): any;
+}
+
+interface ISocials {
+  instagram?: string;
+  tiktok?: string;
+  telegram?: string;
+  snapchat?: string;
+  twitter?: string;
+  linkedIn?: string;
+  [key: string]: string | undefined;
 }
 
 export interface IPost extends Document {

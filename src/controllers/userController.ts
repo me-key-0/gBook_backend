@@ -15,6 +15,7 @@ import { asyncHandler } from "@/middleware/errorHandler";
 import { notificationService } from "@/services/notificationService";
 import { personalizationService } from "@/services/personalizationService";
 import mongoose, { Types } from "mongoose";
+import { buildSocialLinks } from "@/utils/buildSocialLinks";
 
 class UserController {
   public getProfile = asyncHandler(
@@ -84,7 +85,7 @@ class UserController {
         mutualConnections,
         // Hide sensitive info based on permissions
         phoneNumber: canViewContact ? user.phoneNumber : undefined,
-        socialLinks: canViewContact ? user.socialLinks : undefined,
+        socialLinks: canViewContact ? user.socials : undefined,
       };
 
       ResponseHandler.success(
@@ -362,6 +363,43 @@ class UserController {
       );
     }
   );
+
+ public updateSocialLinks = asyncHandler(async (req: Request, res: Response) => {
+  const { id } = req.params;
+  const socials = req.body;
+
+  const user = await User.findById(id);
+  if (!user) {
+    return ResponseHandler.notFound(res, "User not found");
+  }
+
+  user.socials = {
+    ...user.socials,
+    ...socials,
+  };
+
+  await user.save();
+
+  return ResponseHandler.success(res, user.socials, "Social links updated");
+});
+
+public getUserSocialLinks = asyncHandler(async (req: Request, res: Response) => {
+  const { id } = req.params;
+
+  const user = await User.findById(id);
+  if (!user) {
+    return ResponseHandler.notFound(res, "User not found");
+  }
+
+  if (!user.socials) {
+    return ResponseHandler.notFound(res, "Social links not found");
+  }
+
+  const links = buildSocialLinks(user.socials);
+
+  return ResponseHandler.success(res, links, "Social links fetched");
+});
+
 
   public getLikedProfiles = asyncHandler(
     async (req: AuthenticatedRequest, res: Response): Promise<void> => {

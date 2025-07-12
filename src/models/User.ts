@@ -121,13 +121,13 @@ const userSchema = new Schema<IUser>(
       type: Boolean,
       default: false,
     },
-    socialLinks: {
+    socials: {
       telegram: { type: String, trim: true },
       instagram: { type: String, trim: true },
       tiktok: { type: String, trim: true },
-      youtube: { type: String, trim: true },
+      twitter: { type: String, trim: true },
       snapchat: { type: String, trim: true },
-      linkedin: { type: String, trim: true },
+      linkedIn: { type: String, trim: true },
     },
     privacySettings: {
       profileVisibility: {

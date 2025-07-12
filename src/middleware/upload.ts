@@ -1,5 +1,5 @@
 // src/middleware/upload.ts
-import multer from "multer";
+import multer, { MulterError } from "multer";
 
 // Store file in memory to use buffer directly
 const storage = multer.memoryStorage();
@@ -10,10 +10,11 @@ export const upload = multer({
     fileSize: 5 * 1024 * 1024, // 5MB max
   },
   fileFilter: (req, file, cb) => {
-    if (file.mimetype.startsWith("image/")) {
-      cb(null, true);
-    } else {
-      cb(new Error("Only image files are allowed"), false);
-    }
-  },
+  if (file.mimetype.startsWith("image/")) {
+    cb(null, true);
+  } else {
+    const error = new MulterError("LIMIT_UNEXPECTED_FILE", file.fieldname);
+    cb(error as any , false);
+  }
+}
 });
