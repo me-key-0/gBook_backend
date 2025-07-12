@@ -8169,3 +8169,812 @@
   level: 'error',
   timestamp: '2025-07-11 12:15:31'
 }
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: {\n' +
+    '  "error": {\n' +
+    '    "code": 404,\n' +
+    '    "message": "The specified bucket does not exist.",\n' +
+    '    "errors": [\n' +
+    '      {\n' +
+    '        "message": "The specified bucket does not exist.",\n' +
+    '        "domain": "global",\n' +
+    '        "reason": "notFound"\n' +
+    '      }\n' +
+    '    ]\n' +
+    '  }\n' +
+    '}\n',
+  stack: 'Error: {\n' +
+    '  "error": {\n' +
+    '    "code": 404,\n' +
+    '    "message": "The specified bucket does not exist.",\n' +
+    '    "errors": [\n' +
+    '      {\n' +
+    '        "message": "The specified bucket does not exist.",\n' +
+    '        "domain": "global",\n' +
+    '        "reason": "notFound"\n' +
+    '      }\n' +
+    '    ]\n' +
+    '  }\n' +
+    '}\n' +
+    '\n' +
+    '    at Gaxios._request (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\google-auth-library\\node_modules\\gaxios\\src\\gaxios.ts:146:15)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at JWT.requestAsync (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\google-auth-library\\build\\src\\auth\\oauth2client.js:429:18)\n' +
+    '    at Upload.makeRequest (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\@google-cloud\\storage\\build\\cjs\\src\\resumable-upload.js:766:21)\n' +
+    '    at uri.retries (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\@google-cloud\\storage\\build\\cjs\\src\\resumable-upload.js:432:29)\n' +
+    '    at Upload.createURIAsync (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\@google-cloud\\storage\\build\\cjs\\src\\resumable-upload.js:429:21)',
+  url: '/api/v1/auth/686a29064ecf459fa06f25e9/photo',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-11 12:27:55'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: {\n' +
+    '  "error": {\n' +
+    '    "code": 404,\n' +
+    '    "message": "The specified bucket does not exist.",\n' +
+    '    "errors": [\n' +
+    '      {\n' +
+    '        "message": "The specified bucket does not exist.",\n' +
+    '        "domain": "global",\n' +
+    '        "reason": "notFound"\n' +
+    '      }\n' +
+    '    ]\n' +
+    '  }\n' +
+    '}\n',
+  stack: 'Error: {\n' +
+    '  "error": {\n' +
+    '    "code": 404,\n' +
+    '    "message": "The specified bucket does not exist.",\n' +
+    '    "errors": [\n' +
+    '      {\n' +
+    '        "message": "The specified bucket does not exist.",\n' +
+    '        "domain": "global",\n' +
+    '        "reason": "notFound"\n' +
+    '      }\n' +
+    '    ]\n' +
+    '  }\n' +
+    '}\n' +
+    '\n' +
+    '    at Gaxios._request (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\google-auth-library\\node_modules\\gaxios\\src\\gaxios.ts:146:15)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at JWT.requestAsync (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\google-auth-library\\build\\src\\auth\\oauth2client.js:429:18)\n' +
+    '    at Upload.makeRequest (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\@google-cloud\\storage\\build\\cjs\\src\\resumable-upload.js:766:21)\n' +
+    '    at uri.retries (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\@google-cloud\\storage\\build\\cjs\\src\\resumable-upload.js:432:29)\n' +
+    '    at Upload.createURIAsync (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\@google-cloud\\storage\\build\\cjs\\src\\resumable-upload.js:429:21)',
+  url: '/api/v1/auth/686a29064ecf459fa06f25e9/photo',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-11 13:03:10'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-11 18:53:37'
+}
+{
+  service: 'gradbook-api',
+  message: "❌ Database connection failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/",
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 1716976,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 1716976,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 1716976,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-jpqdje-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  level: 'error',
+  stack: "MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/\n" +
+    '    at _handleConnectionErrors (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1165:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1096:11)\n' +
+    '    at Database.connect (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\config\\database.ts:37:7)\n' +
+    '    at Server.start (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\server.ts:118:7)',
+  timestamp: '2025-07-11 18:55:06'
+}
+{
+  service: 'gradbook-api',
+  message: "❌ Database connection failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/",
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 1744671,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 1744671,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 1744671,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-jpqdje-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  level: 'error',
+  stack: "MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/\n" +
+    '    at _handleConnectionErrors (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1165:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1096:11)\n' +
+    '    at Database.connect (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\config\\database.ts:37:7)\n' +
+    '    at Server.start (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\server.ts:118:7)',
+  timestamp: '2025-07-11 18:55:33'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: {\n' +
+    '  "error": {\n' +
+    '    "code": 404,\n' +
+    '    "message": "The specified bucket does not exist.",\n' +
+    '    "errors": [\n' +
+    '      {\n' +
+    '        "message": "The specified bucket does not exist.",\n' +
+    '        "domain": "global",\n' +
+    '        "reason": "notFound"\n' +
+    '      }\n' +
+    '    ]\n' +
+    '  }\n' +
+    '}\n',
+  stack: 'Error: {\n' +
+    '  "error": {\n' +
+    '    "code": 404,\n' +
+    '    "message": "The specified bucket does not exist.",\n' +
+    '    "errors": [\n' +
+    '      {\n' +
+    '        "message": "The specified bucket does not exist.",\n' +
+    '        "domain": "global",\n' +
+    '        "reason": "notFound"\n' +
+    '      }\n' +
+    '    ]\n' +
+    '  }\n' +
+    '}\n' +
+    '\n' +
+    '    at Gaxios._request (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\google-auth-library\\node_modules\\gaxios\\src\\gaxios.ts:146:15)\n' +
+    '    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n' +
+    '    at JWT.requestAsync (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\google-auth-library\\build\\src\\auth\\oauth2client.js:429:18)\n' +
+    '    at Upload.makeRequest (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\@google-cloud\\storage\\build\\cjs\\src\\resumable-upload.js:766:21)\n' +
+    '    at uri.retries (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\@google-cloud\\storage\\build\\cjs\\src\\resumable-upload.js:432:29)\n' +
+    '    at Upload.createURIAsync (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\@google-cloud\\storage\\build\\cjs\\src\\resumable-upload.js:429:21)',
+  url: '/api/v1/auth/686a29064ecf459fa06f25e9/photo',
+  method: 'POST',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-11 18:56:46'
+}
+{
+  service: 'gradbook-api',
+  message: 'Error occurred: connect ETIMEDOUT 159.41.79.84:27017',
+  stack: 'MongoServerSelectionError: connect ETIMEDOUT 159.41.79.84:27017\n' +
+    '    at Topology.selectServer (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongodb\\src\\sdam\\topology.ts:628:30)\n' +
+    '    at tryOperation (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:201:16)\n' +
+    '    at executeOperation (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongodb\\src\\operations\\execute_operation.ts:115:12)\n' +
+    '    at FindCursor._initialize (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongodb\\src\\cursor\\find_cursor.ts:92:22)\n' +
+    '    at FindCursor.cursorInit (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongodb\\src\\cursor\\abstract_cursor.ts:944:21)\n' +
+    '    at FindCursor.fetchBatch (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongodb\\src\\cursor\\abstract_cursor.ts:982:7)\n' +
+    '    at FindCursor.next (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongodb\\src\\cursor\\abstract_cursor.ts:612:9)\n' +
+    '    at Collection.findOne (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongodb\\src\\collection.ts:525:17)\n' +
+    '    at model.Query._findOne (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\query.js:2661:15)\n' +
+    '    at model.Query.exec (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\query.js:4456:63)',
+  url: '/api/v1/auth/686a29064ecf459fa06f25e9/images',
+  method: 'GET',
+  ip: '::1',
+  userAgent: 'PostmanRuntime/7.44.1',
+  level: 'error',
+  timestamp: '2025-07-11 20:05:46'
+}
+{
+  service: 'gradbook-api',
+  message: "❌ Database connection failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/",
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 7187616,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 7187617,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 7187617,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-jpqdje-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  level: 'error',
+  stack: "MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/\n" +
+    '    at _handleConnectionErrors (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1165:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1096:11)\n' +
+    '    at Database.connect (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\config\\database.ts:37:7)\n' +
+    '    at Server.start (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\server.ts:118:7)',
+  timestamp: '2025-07-11 20:26:16'
+}
+{
+  service: 'gradbook-api',
+  message: "❌ Database connection failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/",
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 7197562,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 7197562,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 7197562,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-jpqdje-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  level: 'error',
+  stack: "MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/\n" +
+    '    at _handleConnectionErrors (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1165:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1096:11)\n' +
+    '    at Database.connect (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\config\\database.ts:37:7)\n' +
+    '    at Server.start (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\server.ts:118:7)',
+  timestamp: '2025-07-11 20:26:26'
+}
+{
+  service: 'gradbook-api',
+  message: "❌ Database connection failed: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/",
+  errorLabelSet: Set(0) {},
+  reason: TopologyDescription {
+    type: 'ReplicaSetNoPrimary',
+    servers: Map(3) {
+      'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-00.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 7544513,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-01.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 7544513,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      },
+      'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017' => ServerDescription {
+        address: 'ac-advsz4l-shard-00-02.ped78m1.mongodb.net:27017',
+        type: 'Unknown',
+        hosts: [],
+        passives: [],
+        arbiters: [],
+        tags: {},
+        minWireVersion: 0,
+        maxWireVersion: 0,
+        roundTripTime: -1,
+        minRoundTripTime: 0,
+        lastUpdateTime: 7544513,
+        lastWriteDate: 0,
+        error: null,
+        topologyVersion: null,
+        setName: null,
+        setVersion: null,
+        electionId: null,
+        logicalSessionTimeoutMinutes: null,
+        maxMessageSizeBytes: null,
+        maxWriteBatchSize: null,
+        maxBsonObjectSize: null,
+        primary: null,
+        me: null,
+        '$clusterTime': null,
+        iscryptd: false
+      }
+    },
+    stale: false,
+    compatible: true,
+    heartbeatFrequencyMS: 10000,
+    localThresholdMS: 15,
+    setName: 'atlas-jpqdje-shard-0',
+    maxElectionId: null,
+    maxSetVersion: null,
+    commonWireVersion: 0,
+    logicalSessionTimeoutMinutes: null
+  },
+  code: undefined,
+  level: 'error',
+  stack: "MongooseServerSelectionError: Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/\n" +
+    '    at _handleConnectionErrors (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1165:11)\n' +
+    '    at NativeConnection.openUri (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\node_modules\\mongoose\\lib\\connection.js:1096:11)\n' +
+    '    at Database.connect (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\config\\database.ts:37:7)\n' +
+    '    at Server.start (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\server.ts:118:7)',
+  timestamp: '2025-07-11 20:32:13'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-11 20:33:22'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-11 20:35:36'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-11 20:37:50'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-11 20:40:42'
+}
+{
+  service: 'gradbook-api',
+  errno: -4039,
+  code: 'ESOCKET',
+  syscall: 'connect',
+  address: '66.102.1.108',
+  port: 587,
+  command: 'CONN',
+  level: 'error',
+  message: 'Email service configuration error: connect ETIMEDOUT 66.102.1.108:587',
+  stack: 'Error: connect ETIMEDOUT 66.102.1.108:587\n' +
+    '    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)',
+  timestamp: '2025-07-11 20:44:15'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ECONNREFUSED',
+  syscall: 'querySrv',
+  hostname: '_mongodb._tcp.nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: querySrv ECONNREFUSED _mongodb._tcp.nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: querySrv ECONNREFUSED _mongodb._tcp.nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-11 20:44:19'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-11 20:47:07'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-11 20:53:57'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-11 20:55:00'
+}

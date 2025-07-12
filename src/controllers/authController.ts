@@ -25,6 +25,7 @@ import { emailService } from "@/services/emailService";
 import { Question } from "@/models/Question";
 import { firebaseService } from "@/config/firebase";
 import { Answer } from "@/models/Answer";
+import {cloudinaryService} from "@/services/cloudinaryService"
 
 interface UserResponse {
   userId: string;
@@ -130,61 +131,102 @@ class AuthController {
     }
   );
 
-  // Upload photo
   uploadPhoto = asyncHandler(async (req: Request, res: Response) => {
-    const userId = req.params.userId;
+  const userId = req.params.userId;
 
-    if (!req.file) {
-      res.status(400).json({ message: "No file uploaded" });
-      return;
-    }
+  if (!req.file) {
+    res.status(400).json({ message: "No file uploaded" });
+    return;
+  }
 
-    const user = await User.findById(userId);
-    if (!user) {
-      res.status(404).json({ message: "User not found" });
-      return;
-    }
+  const user = await User.findById(userId);
+  if (!user) {
+    res.status(404).json({ message: "User not found" });
+    return;
+  }
 
-    const url = await firebaseService.uploadFileToStorage(
+  try {
+    const photoUrl = await cloudinaryService.uploadBuffer(
       req.file.buffer,
-      req.file.originalname,
-      req.file.mimetype
+      req.file.originalname
     );
 
-    user.photo = url;
+    user.photo = photoUrl;
     await user.save();
 
-    res.status(200).json({ message: "Profile photo uploaded", photoUrl: url });
-  });
+    res.status(200).json({
+      message: "Profile photo uploaded successfully",
+      photoUrl,
+    });
+  } catch (error) {
+    console.error("Cloudinary upload error:", error);
+    res.status(500).json({ message: "Image upload failed" });
+  }
+});
 
-  // Upload cover image
+
+  // // Upload cover image
+  // uploadCoverImage = asyncHandler(async (req: Request, res: Response) => {
+  //   const userId = req.params.userId;
+
+  //   if (!req.file) {
+  //     res.status(400).json({ message: "No file uploaded" });
+  //     return;
+  //   }
+
+  //   const user = await User.findById(userId);
+  //   if (!user) {
+  //     res.status(404).json({ message: "User not found" });
+  //     return;
+  //   }
+
+  //   const url = await firebaseService.uploadFileToStorage(
+  //     req.file.buffer,
+  //     req.file.originalname,
+  //     req.file.mimetype
+  //   );
+
+  //   user.coverImage = url;
+  //   await user.save();
+
+  //   res
+  //     .status(200)
+  //     .json({ message: "Cover image uploaded", coverImageUrl: url });
+  // });
+
   uploadCoverImage = asyncHandler(async (req: Request, res: Response) => {
-    const userId = req.params.userId;
+  const userId = req.params.userId;
 
-    if (!req.file) {
-      res.status(400).json({ message: "No file uploaded" });
-      return;
-    }
+  if (!req.file) {
+    res.status(400).json({ message: "No file uploaded" });
+    return;
+  }
 
-    const user = await User.findById(userId);
-    if (!user) {
-      res.status(404).json({ message: "User not found" });
-      return;
-    }
+  const user = await User.findById(userId);
+  if (!user) {
+    res.status(404).json({ message: "User not found" });
+    return;
+  }
 
-    const url = await firebaseService.uploadFileToStorage(
+  try {
+    const coverImageUrl = await cloudinaryService.uploadBuffer(
       req.file.buffer,
       req.file.originalname,
-      req.file.mimetype
+      "userCoverImages" // custom folder for separation
     );
 
-    user.coverImage = url;
+    user.coverImage = coverImageUrl;
     await user.save();
 
-    res
-      .status(200)
-      .json({ message: "Cover image uploaded", coverImageUrl: url });
-  });
+    res.status(200).json({
+      message: "Cover image uploaded successfully",
+      coverImageUrl,
+    });
+  } catch (error) {
+    console.error("Cloudinary upload error:", error);
+    res.status(500).json({ message: "Image upload failed" });
+  }
+});
 
   // Get user photo URLs
   getUserImages = asyncHandler(async (req: Request, res: Response) => {
