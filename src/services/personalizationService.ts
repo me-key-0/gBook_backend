@@ -68,6 +68,7 @@ class PersonalizationService {
       select: 'firstName lastName surname username photo department college campus'
     })
     .populate('question', 'question type category')
+    .populate('comments.user', 'firstName lastName username')
     .sort({ createdAt: -1 })
     .skip((page - 1) * limit)
     .limit(limit);
@@ -113,6 +114,7 @@ class PersonalizationService {
     })
     .populate('user', 'firstName lastName surname username photo department college campus')
     .populate('question', 'question type category')
+    .populate('comments.user', 'firstName lastName username')
     .sort({ 
       createdAt: -1,
       likes: -1,

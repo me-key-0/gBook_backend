@@ -102,6 +102,10 @@ class PostController {
               path: "question",
               select: "question type category",
             },
+            {
+              path: "comments.user",
+              select: "firstName lastName username",
+            },
           ])
           .sort({ createdAt: -1 })
           .skip((pageNum - 1) * limitNum)
