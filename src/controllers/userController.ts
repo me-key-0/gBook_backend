@@ -646,6 +646,7 @@ public getUserSocialLinks = asyncHandler(async (req: Request, res: Response) => 
       case "campus":
         const currentUser = await User.findById(currentUserId);
         if (!currentUser) return false;
+        if (currentUser.role === "guest") return false;
 
         if (contactVisibility === "campus") {
           return user.campus.toString() === currentUser.campus.toString();
