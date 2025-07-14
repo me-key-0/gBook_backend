@@ -45,6 +45,7 @@ class Server {
     this.initializeErrorHandling();
   }
 
+
   private initializeMiddleware(): void {
     // Security middleware
     this.app.use(
@@ -52,6 +53,9 @@ class Server {
         crossOriginResourcePolicy: { policy: "cross-origin" },
       })
     );
+
+    this.app.set('trust proxy', true);
+
 
     // CORS configuration
     this.app.use(
