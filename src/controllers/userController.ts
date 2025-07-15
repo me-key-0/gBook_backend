@@ -34,10 +34,10 @@ class UserController {
       }
 
       // Check privacy settings
-      const canView = await this.checkProfileVisibility(user, currentUserId);
-      if (!canView) {
-        throw new AuthorizationError("Profile is private");
-      }
+      // const canView = await this.checkProfileVisibility(user, currentUserId);
+      // if (!canView) {
+      //   throw new AuthorizationError("Profile is private");
+      // }
 
       // Increment view count if not own profile
       if (currentUserId && currentUserId !== id) {
@@ -557,6 +557,10 @@ public getUserSocialLinks = asyncHandler(async (req: Request, res: Response) => 
   //       const currentUser = await User.findById(currentUserId);
   //       if (!currentUser) return false;
 
+  //       console.log("campus:",user.campus)
+  //       console.log("college:",user.college)
+  //       console.log("department:",user.department)
+
   //       if (profileVisibility === "campus") {
   //         return user.campus.toString() === currentUser.campus.toString();
   //       }
@@ -573,65 +577,6 @@ public getUserSocialLinks = asyncHandler(async (req: Request, res: Response) => 
   //       return false;
   //   }
   // }
-  private async checkProfileVisibility(
-  user: any,
-  currentUserId?: string
-): Promise<boolean> {
-  if (!currentUserId) {
-    return user.privacySettings?.profileVisibility === "public";
-  }
-
-  if (user._id?.toString() === currentUserId) {
-    return true; // Own profile
-  }
-
-  const { profileVisibility, excludedUsers } = user.privacySettings || {};
-
-  // Check if user is excluded
-  if (excludedUsers?.includes(currentUserId)) {
-    return false;
-  }
-
-  switch (profileVisibility) {
-    case "public":
-      return true;
-
-    case "private":
-      return false;
-
-    case "department":
-    case "college":
-    case "campus":
-      const currentUser = await User.findById(currentUserId);
-      if (!currentUser) return false;
-
-      if (profileVisibility === "campus") {
-        if (user.campus && currentUser.campus) {
-          return user.campus.toString() === currentUser.campus.toString();
-        }
-        return false;
-      }
-
-      if (profileVisibility === "college") {
-        if (user.college && currentUser.college) {
-          return user.college.toString() === currentUser.college.toString();
-        }
-        return false;
-      }
-
-      if (profileVisibility === "department") {
-        if (user.department && currentUser.department) {
-          return user.department.toString() === currentUser.department.toString();
-        }
-        return false;
-      }
-
-      return false;
-
-    default:
-      return false;
-  }
-}
 
 
   private async checkCommentPermission(
