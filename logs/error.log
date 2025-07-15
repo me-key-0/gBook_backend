@@ -9082,3 +9082,51 @@
   level: 'error',
   timestamp: '2025-07-12 07:20:31'
 }
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-15 09:03:27'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-15 09:06:07'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-15 09:07:24'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-15 09:10:49'
+}

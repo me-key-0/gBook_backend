@@ -24152,3 +24152,87 @@
   service: 'gradbook-api',
   timestamp: '2025-07-13 18:53:07'
 }
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-15 09:02:35'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-15 09:03:27'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-15 09:05:14'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-15 09:06:07'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-15 09:06:15'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-15 09:06:30'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-15 09:07:24'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-15 09:09:32'
+}
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-15 09:10:05'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-15 09:10:49'
+}

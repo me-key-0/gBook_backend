@@ -527,52 +527,112 @@ public getUserSocialLinks = asyncHandler(async (req: Request, res: Response) => 
   );
 
   // Helper methods
+  // private async checkProfileVisibility(
+  //   user: any,
+  //   currentUserId?: string
+  // ): Promise<boolean> {
+  //   if (!currentUserId) {
+  //     return user.privacySettings.profileVisibility === "public";
+  //   }
+
+  //   if (user._id.toString() === currentUserId) {
+  //     return true; // Own profile
+  //   }
+
+  //   const { profileVisibility, excludedUsers } = user.privacySettings;
+
+  //   // Check if user is excluded
+  //   if (excludedUsers.includes(currentUserId)) {
+  //     return false;
+  //   }
+
+  //   switch (profileVisibility) {
+  //     case "public":
+  //       return true;
+  //     case "private":
+  //       return false;
+  //     case "department":
+  //     case "college":
+  //     case "campus":
+  //       const currentUser = await User.findById(currentUserId);
+  //       if (!currentUser) return false;
+
+  //       if (profileVisibility === "campus") {
+  //         return user.campus.toString() === currentUser.campus.toString();
+  //       }
+  //       if (profileVisibility === "college") {
+  //         return user.college.toString() === currentUser.college.toString();
+  //       }
+  //       if (profileVisibility === "department") {
+  //         return (
+  //           user.department.toString() === currentUser.department.toString()
+  //         );
+  //       }
+  //       return false;
+  //     default:
+  //       return false;
+  //   }
+  // }
   private async checkProfileVisibility(
-    user: any,
-    currentUserId?: string
-  ): Promise<boolean> {
-    if (!currentUserId) {
-      return user.privacySettings.profileVisibility === "public";
-    }
+  user: any,
+  currentUserId?: string
+): Promise<boolean> {
+  if (!currentUserId) {
+    return user.privacySettings?.profileVisibility === "public";
+  }
 
-    if (user._id.toString() === currentUserId) {
-      return true; // Own profile
-    }
+  if (user._id?.toString() === currentUserId) {
+    return true; // Own profile
+  }
 
-    const { profileVisibility, excludedUsers } = user.privacySettings;
+  const { profileVisibility, excludedUsers } = user.privacySettings || {};
 
-    // Check if user is excluded
-    if (excludedUsers.includes(currentUserId)) {
+  // Check if user is excluded
+  if (excludedUsers?.includes(currentUserId)) {
+    return false;
+  }
+
+  switch (profileVisibility) {
+    case "public":
+      return true;
+
+    case "private":
       return false;
-    }
 
-    switch (profileVisibility) {
-      case "public":
-        return true;
-      case "private":
-        return false;
-      case "department":
-      case "college":
-      case "campus":
-        const currentUser = await User.findById(currentUserId);
-        if (!currentUser) return false;
+    case "department":
+    case "college":
+    case "campus":
+      const currentUser = await User.findById(currentUserId);
+      if (!currentUser) return false;
 
-        if (profileVisibility === "campus") {
+      if (profileVisibility === "campus") {
+        if (user.campus && currentUser.campus) {
           return user.campus.toString() === currentUser.campus.toString();
         }
-        if (profileVisibility === "college") {
+        return false;
+      }
+
+      if (profileVisibility === "college") {
+        if (user.college && currentUser.college) {
           return user.college.toString() === currentUser.college.toString();
         }
-        if (profileVisibility === "department") {
-          return (
-            user.department.toString() === currentUser.department.toString()
-          );
+        return false;
+      }
+
+      if (profileVisibility === "department") {
+        if (user.department && currentUser.department) {
+          return user.department.toString() === currentUser.department.toString();
         }
         return false;
-      default:
-        return false;
-    }
+      }
+
+      return false;
+
+    default:
+      return false;
   }
+}
+
 
   private async checkCommentPermission(
     user: any,
