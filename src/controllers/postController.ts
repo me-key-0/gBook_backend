@@ -14,6 +14,7 @@ import { asyncHandler } from "@/middleware/errorHandler";
 import { notificationService } from "@/services/notificationService";
 import { personalizationService } from "@/services/personalizationService";
 import { Types } from "mongoose";
+import crypto from "crypto";
 import { Answer } from "@/models/Answer";
 
 class PostController {
@@ -128,83 +129,195 @@ class PostController {
 );
 
 
-  public getPosts = asyncHandler(
-    async (req: AuthenticatedRequest, res: Response): Promise<void> => {
-      const currentUserId = req.userId;
-      const { page = 1, limit = 20, type, userId } = req.query;
+  // public getPosts = asyncHandler(
+  //   async (req: AuthenticatedRequest, res: Response): Promise<void> => {
+  //     const currentUserId = req.userId;
+  //     const { page = 1, limit = 20, type, userId } = req.query;
 
-      const pageNum = parseInt(page as string);
-      const limitNum = parseInt(limit as string);
+  //     const pageNum = parseInt(page as string);
+  //     const limitNum = parseInt(limit as string);
 
-      // Build filter
-      const filter: any = { isActive: true };
-      if (type) filter.type = type;
-      if (userId) filter.user = userId;
+  //     // Build filter
+  //     const filter: any = { isActive: true };
+  //     if (type) filter.type = type;
+  //     if (userId) filter.user = userId;
 
-      let posts;
-      let total;
+  //     let posts;
+  //     let total;
 
-      if (currentUserId && !userId) {
-        // Get personalized feed for authenticated users
-        const personalizedResult =
-          await personalizationService.getPersonalizedFeed(
-            currentUserId,
-            pageNum,
-            limitNum
-          );
-        posts = personalizedResult.posts;
-        total = personalizedResult.total;
-      } else {
-        // Get regular posts
-        posts = await Post.find(filter)
-          .populate([
-            {
-              path: "user",
-              select:
-                "firstName lastName surname username photo campus college department",
-            },
-            {
-              path: "question",
-              select: "question type category",
-            },
-            {
-              path: "comments.user",
-              select: "firstName lastName username",
-            },
-          ])
-          .sort({ createdAt: -1 })
-          .skip((pageNum - 1) * limitNum)
-          .limit(limitNum);
+  //     if (currentUserId && !userId) {
+  //       // Get personalized feed for authenticated users
+  //       const personalizedResult =
+  //         await personalizationService.getPersonalizedFeed(
+  //           currentUserId,
+  //           pageNum,
+  //           limitNum
+  //         );
+  //       posts = personalizedResult.posts;
+  //       total = personalizedResult.total;
+  //     } else {
+  //       // Get regular posts
+  //       posts = await Post.find(filter)
+  //         .populate([
+  //           {
+  //             path: "user",
+  //             select:
+  //               "firstName lastName surname username photo campus college department",
+  //           },
+  //           {
+  //             path: "question",
+  //             select: "question type category",
+  //           },
+  //           {
+  //             path: "comments.user",
+  //             select: "firstName lastName username",
+  //           },
+  //         ])
+  //         .sort({ createdAt: -1 })
+  //         .skip((pageNum - 1) * limitNum)
+  //         .limit(limitNum);
 
-        total = await Post.countDocuments(filter);
-      }
+  //       total = await Post.countDocuments(filter);
+  //     }
 
-      // Add interaction flags for authenticated users
-      if (currentUserId) {
-        const user = await User.findById(currentUserId);
-        posts = posts.map((post: any) => ({
-          ...post.toJSON(),
-          isLiked: post.likes.includes(currentUserId),
-          isSaved: user?.savedPosts.includes(post._id) || false,
-          likesCount: post.likes.length,
-          commentsCount: post.comments.length,
-          sharesCount: post.shares.length,
-        }));
-      }
+  //     // Add interaction flags for authenticated users
+  //     if (currentUserId) {
+  //       const user = await User.findById(currentUserId);
+  //       posts = posts.map((post: any) => ({
+  //         ...post.toJSON(),
+  //         isLiked: post.likes.includes(currentUserId),
+  //         isSaved: user?.savedPosts.includes(post._id) || false,
+  //         likesCount: post.likes.length,
+  //         commentsCount: post.comments.length,
+  //         sharesCount: post.shares.length,
+  //       }));
+  //     }
 
-      ResponseHandler.paginated(
-        res,
-        posts,
-        {
-          page: pageNum,
-          limit: limitNum,
-          total,
-          pages: Math.ceil(total / limitNum),
-        },
-        "Posts retrieved successfully"
-      );
+  //     ResponseHandler.paginated(
+  //       res,
+  //       posts,
+  //       {
+  //         page: pageNum,
+  //         limit: limitNum,
+  //         total,
+  //         pages: Math.ceil(total / limitNum),
+  //       },
+  //       "Posts retrieved successfully"
+  //     );
+  //   }
+  // );
+
+
+  
+
+public getPosts = asyncHandler(
+  async (req: AuthenticatedRequest, res: Response): Promise<void> => {
+    const currentUserId = req.userId;
+    const { page = 1, limit = 20, type, userId, randomSeed } = req.query;
+
+    const pageNum = parseInt(page as string);
+    const limitNum = parseInt(limit as string);
+
+    // Build filter
+    const filter: any = { isActive: true };
+    if (type) filter.type = type;
+    if (userId) filter.user = userId;
+
+    let posts: any[] = [];
+    let total = 0;
+
+    if (randomSeed) {
+      // Fetch all matching post IDs
+      const allPostIds = await Post.find(filter).select("_id").lean();
+      total = allPostIds.length;
+
+      const seed = crypto.createHash("sha256").update(randomSeed as string).digest("hex");
+
+      // Deterministic shuffling using seed
+      const shuffled = allPostIds
+        .map((p, index) => ({
+          id: p._id,
+          sortKey: crypto.createHash("sha256").update(seed + index).digest("hex"),
+        }))
+        .sort((a, b) => (a.sortKey > b.sortKey ? 1 : -1));
+
+      const paginatedIds = shuffled
+        .slice((pageNum - 1) * limitNum, pageNum * limitNum)
+        .map((entry) => entry.id);
+
+      posts = await Post.find({ _id: { $in: paginatedIds } })
+        .populate([
+          {
+            path: "user",
+            select: "firstName lastName surname username photo campus college department",
+          },
+          {
+            path: "question",
+            select: "question type category",
+          },
+          {
+            path: "comments.user",
+            select: "firstName lastName username",
+          },
+        ]);
+
+      // Reorder posts to match shuffled order
+      const postMap = new Map(posts.map((p) => [p._id.toString(), p]));
+      posts = paginatedIds
+        .map((id) => postMap.get(id.toString()))
+        .filter(Boolean);
+    } else {
+      // Standard sort by creation time
+      posts = await Post.find(filter)
+        .populate([
+          {
+            path: "user",
+            select: "firstName lastName surname username photo campus college department",
+          },
+          {
+            path: "question",
+            select: "question type category",
+          },
+          {
+            path: "comments.user",
+            select: "firstName lastName username",
+          },
+        ])
+        .sort({ createdAt: -1 })
+        .skip((pageNum - 1) * limitNum)
+        .limit(limitNum);
+
+      total = await Post.countDocuments(filter);
     }
-  );
+
+    // Add interaction flags for authenticated users
+    if (currentUserId) {
+      const user = await User.findById(currentUserId);
+      posts = posts.map((post: any) => ({
+        ...post.toJSON(),
+        isLiked: post.likes.includes(currentUserId),
+        isSaved: user?.savedPosts.includes(post._id) || false,
+        likesCount: post.likes.length,
+        commentsCount: post.comments.length,
+        sharesCount: post.shares.length,
+      }));
+    }
+
+    ResponseHandler.paginated(
+      res,
+      posts,
+      {
+        page: pageNum,
+        limit: limitNum,
+        total,
+        pages: Math.ceil(total / limitNum),
+      },
+      "Posts retrieved successfully"
+    );
+  }
+);
+
+
 
   public getPost = asyncHandler(
     async (req: AuthenticatedRequest, res: Response): Promise<void> => {

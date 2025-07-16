@@ -21,6 +21,7 @@ export interface IUser extends Document {
   department: Types.ObjectId | IDepartment;
   role: "graduate" | "guest" | "admin";
   isVerified: boolean;
+  isPaid: boolean;
   isActive: boolean;
   profileCompleted: boolean;
 

@@ -931,7 +931,7 @@ class AuthController {
     totalPaidAmount,
   } = req.body;
 
-  const userId = req.userId;
+  const userId = req.userId!;
   console.log(userId);
 
   // 1. Check if already used

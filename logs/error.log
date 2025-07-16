@@ -9460,3 +9460,83 @@
     '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
   timestamp: '2025-07-16 10:19:34'
 }
+{
+  service: 'gradbook-api',
+  errno: -4039,
+  code: 'ESOCKET',
+  syscall: 'connect',
+  address: '142.251.168.108',
+  port: 587,
+  command: 'CONN',
+  level: 'error',
+  message: 'Email service configuration error: connect ETIMEDOUT 142.251.168.108:587',
+  stack: 'Error: connect ETIMEDOUT 142.251.168.108:587\n' +
+    '    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)',
+  timestamp: '2025-07-16 16:56:10'
+}
+{
+  service: 'gradbook-api',
+  errno: -4039,
+  code: 'ESOCKET',
+  syscall: 'connect',
+  address: '142.251.168.108',
+  port: 587,
+  command: 'CONN',
+  level: 'error',
+  message: 'Email service configuration error: connect ETIMEDOUT 142.251.168.108:587',
+  stack: 'Error: connect ETIMEDOUT 142.251.168.108:587\n' +
+    '    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)',
+  timestamp: '2025-07-16 16:57:10'
+}
+{
+  service: 'gradbook-api',
+  errno: -4039,
+  code: 'ESOCKET',
+  syscall: 'connect',
+  address: '142.251.168.108',
+  port: 587,
+  command: 'CONN',
+  level: 'error',
+  message: 'Email service configuration error: connect ETIMEDOUT 142.251.168.108:587',
+  stack: 'Error: connect ETIMEDOUT 142.251.168.108:587\n' +
+    '    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)',
+  timestamp: '2025-07-16 16:58:02'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-16 16:58:38'
+}
+{
+  service: 'gradbook-api',
+  errno: -4039,
+  code: 'ESOCKET',
+  syscall: 'connect',
+  address: '64.233.167.109',
+  port: 587,
+  command: 'CONN',
+  level: 'error',
+  message: 'Email service configuration error: connect ETIMEDOUT 64.233.167.109:587',
+  stack: 'Error: connect ETIMEDOUT 64.233.167.109:587\n' +
+    '    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)',
+  timestamp: '2025-07-16 17:00:46'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-16 17:01:16'
+}
