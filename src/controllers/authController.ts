@@ -917,7 +917,7 @@ class AuthController {
 
   
 
-  public storeVerifiedPayment = asyncHandler(async (req: Request, res: Response) => {
+  public storeVerifiedPayment = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
   const {
     payerName,
     payerTelebirrNo,
@@ -974,7 +974,7 @@ class AuthController {
     totalPaidAmount,
     discountApplied,
     finalAmount: expectedAmount,
-    user: req.params.userId,
+    user: req.userId,
   });
 
   return ResponseHandler.created(res, payment, discountApplied
