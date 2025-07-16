@@ -26,6 +26,9 @@ import { Question } from "@/models/Question";
 import { firebaseService } from "@/config/firebase";
 import { Answer } from "@/models/Answer";
 import {cloudinaryService} from "@/services/cloudinaryService"
+import { DISCOUNT_LIMIT, BASE_PRICE, DISCOUNT_RATE, EXPECTED_ACCOUNT } from '@/config/constants';
+import { Payment } from "@/models/Payment";
+import dayjs from "dayjs";
 
 interface UserResponse {
   userId: string;
@@ -911,6 +914,77 @@ class AuthController {
       }
     }
   );
+
+  
+
+  public storeVerifiedPayment = asyncHandler(async (req: Request, res: Response) => {
+  const {
+    transactionId,
+    payerName,
+    payerTelebirrNo,
+    creditedPartyName,
+    creditedPartyAccountNo,
+    transactionStatus,
+    serviceFee,
+    receiptNo,
+    paymentDate,
+    settledAmount,
+    totalPaidAmount,
+  } = req.body;
+
+  // 1. Check if already used
+  const existing = await Payment.findOne({ transactionId });
+  if (existing) {
+    return ResponseHandler.conflict(res, 'This transaction ID has already been used.');
+  }
+
+  // 2. Check correct receiver
+  if (creditedPartyAccountNo !== EXPECTED_ACCOUNT) {
+    return ResponseHandler.badRequest(res, 'Transaction was not sent to the correct account.');
+  }
+
+  // 3. Check month
+  const now = dayjs();
+  const paidAt = dayjs(paymentDate);
+  if (!paidAt.isValid() || !(now.isSame(paidAt, 'month') && now.isSame(paidAt, 'year'))) {
+    return ResponseHandler.badRequest(res, 'Transaction is not from the current month.');
+  }
+
+  // 4. Determine applicable price
+  const totalSuccessfulPayments = await Payment.countDocuments();
+  const discountApplied = totalSuccessfulPayments < DISCOUNT_LIMIT;
+  const expectedAmount = discountApplied
+    ? BASE_PRICE * (1 - DISCOUNT_RATE)
+    : BASE_PRICE;
+
+  if (parseFloat(settledAmount) !== expectedAmount) {
+    return ResponseHandler.badRequest(res, `Expected amount: ${expectedAmount} ETB`);
+  }
+
+  // 5. Save
+  const payment = await Payment.create({
+    transactionId,
+    payerName,
+    payerTelebirrNo,
+    creditedPartyName,
+    creditedPartyAccountNo,
+    transactionStatus,
+    serviceFee,
+    receiptNo,
+    paymentDate,
+    settledAmount,
+    totalPaidAmount,
+    discountApplied,
+    finalAmount: expectedAmount,
+    user: req.params.userId,
+  });
+
+  return ResponseHandler.created(res, payment, discountApplied
+    ? '✅ Payment recorded with 25% discount!'
+    : '✅ Payment recorded successfully.');
+});
+
+
 }
 
 export const authController = new AuthController();

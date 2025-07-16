@@ -16,6 +16,7 @@ router.post(
 );
 router.post("/submit-form", authLimiter, authController.submitForm);
 router.get("/fetch-form", authLimiter, authController.fetchAnswers);
+router.post("/verify-payment", authController.storeVerifiedPayment);
 
 router.post(
   "/:userId/photo",

@@ -1,4 +1,4 @@
-import { Document, Types } from "mongoose";
+import mongoose, { Document, Types } from "mongoose";
 import { Request } from "express";
 
 // Base interfaces
@@ -73,6 +73,23 @@ export interface IUser extends Document {
   generateAuthToken(): string;
   updateLastActive(): Promise<void>;
   toJSON(): any;
+}
+
+export interface IPayment extends Document {
+  transactionId: string;
+  payerName: string;
+  payerTelebirrNo: string;
+  creditedPartyName: string;
+  creditedPartyAccountNo: string;
+  transactionStatus: string;
+  serviceFee: string;
+  receiptNo: string;
+  paymentDate: Date;
+  settledAmount: string;
+  totalPaidAmount: string;
+  discountApplied: boolean;
+  finalAmount: number;
+  user: mongoose.Types.ObjectId;
 }
 
 interface ISocials {

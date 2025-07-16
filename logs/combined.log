@@ -25416,3 +25416,129 @@
   service: 'gradbook-api',
   timestamp: '2025-07-16 06:15:52'
 }
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 06:23:02'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 06:23:04'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 06:23:04'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 06:23:04'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 06:23:04'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 06:23:04'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 06:23:04'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 06:28:53'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 06:28:53'
+}
+{
+  message: 'Database disconnected',
+  level: 'warn',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 06:29:04'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 06:29:04'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 06:34:55'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 06:34:55'
+}
+{
+  message: 'Database disconnected',
+  level: 'warn',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 06:35:06'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 06:35:06'
+}
+{
+  message: 'Database disconnected',
+  level: 'warn',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 06:40:58'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 06:41:08'
+}
+{
+  message: 'Database disconnected',
+  level: 'warn',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 06:47:10'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 06:47:21'
+}
+{
+  message: 'Database disconnected',
+  level: 'warn',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 06:53:12'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 06:53:23'
+}
