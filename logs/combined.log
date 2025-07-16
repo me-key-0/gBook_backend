@@ -25542,3 +25542,87 @@
   service: 'gradbook-api',
   timestamp: '2025-07-16 06:53:23'
 }
+{
+  message: '✅ Email service configured successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 08:21:55'
+}
+{
+  message: '✅ Database connected successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 08:21:56'
+}
+{
+  message: '✅ Firebase initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 08:21:56'
+}
+{
+  message: '✅ Socket.IO initialized successfully',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 08:21:56'
+}
+{
+  message: '🚀 GradBook API server running on port 3000',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 08:21:56'
+}
+{
+  message: '📱 Environment: development',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 08:21:56'
+}
+{
+  message: '🌐 Health check: http://localhost:3000/health',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 08:21:56'
+}
+{
+  message: 'GET /health - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 08:25:47'
+}
+{
+  message: 'GET /favicon.ico - ::1',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 08:25:47'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 08:28:06'
+}
+{
+  message: 'Database disconnected',
+  level: 'warn',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 08:28:17'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 08:28:17'
+}
+{
+  message: 'Database disconnected',
+  level: 'warn',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 08:34:19'
+}
+{
+  message: 'Database reconnected',
+  level: 'info',
+  service: 'gradbook-api',
+  timestamp: '2025-07-16 08:34:19'
+}
