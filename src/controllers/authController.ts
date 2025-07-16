@@ -26,7 +26,7 @@ import { Question } from "@/models/Question";
 import { firebaseService } from "@/config/firebase";
 import { Answer } from "@/models/Answer";
 import {cloudinaryService} from "@/services/cloudinaryService"
-import { DISCOUNT_LIMIT, BASE_PRICE, DISCOUNT_RATE, EXPECTED_ACCOUNT } from '@/config/constants';
+import { DISCOUNT_LIMIT, BASE_PRICE, DISCOUNT_RATE, EXPECTED_ACCOUNT, OPENING_DATE, OPENING_MESSAGE } from '@/config/constants';
 import { Payment } from "@/models/Payment";
 import dayjs from "dayjs";
 
@@ -915,8 +915,6 @@ class AuthController {
     }
   );
 
-  
-
   public storeVerifiedPayment = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
   const {
     payerName,
@@ -1018,6 +1016,14 @@ public checkDiscountEligibility = asyncHandler(
   }
 );
 
+
+
+public getLaunchCountdown = (req: Request, res: Response): void => {
+  ResponseHandler.success(res, {
+    deadline: OPENING_DATE.toISOString(),
+    message: OPENING_MESSAGE,
+  });
+};
 
 
 }

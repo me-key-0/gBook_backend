@@ -46,6 +46,7 @@ router.post("/refresh-token", authController.refreshToken);
 router.delete("/account", authController.deleteAccount);
 router.post("/verify-payment", authController.storeVerifiedPayment);
 router.get("/payment-details", authController.checkDiscountEligibility);
+router.get("/launch-countdown", authController.getLaunchCountdown);
 
 router.post(
   "/:userId/photo",
