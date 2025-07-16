@@ -985,6 +985,40 @@ class AuthController {
     : '✅ Payment recorded successfully.');
 });
 
+public checkDiscountEligibility = asyncHandler(
+  async (req: AuthenticatedRequest, res: Response): Promise<void> => {
+    const userId = req.userId!;
+
+    // Check if user already paid
+    const existingPayment = await Payment.findOne({ user: userId });
+    if (existingPayment) {
+      ResponseHandler.success(res, {
+        eligible: false,
+        amount: existingPayment.finalAmount,
+        message: "You have already paid.",
+      });
+      return
+    }
+
+    // Count how many successful payments exist
+    const totalSuccessfulPayments = await Payment.countDocuments();
+
+    const discountApplied = totalSuccessfulPayments < DISCOUNT_LIMIT;
+    const amountToPay = discountApplied
+      ? BASE_PRICE * (1 - DISCOUNT_RATE)
+      : BASE_PRICE;
+
+    ResponseHandler.success(res, {
+      eligible: discountApplied,
+      amount: amountToPay,
+      message: discountApplied
+        ? `🎉 You're eligible for a 25% discount! Pay ${amountToPay} ETB.`
+        : `You are not eligible for a discount. Pay ${amountToPay} ETB.`,
+    });
+  }
+);
+
+
 
 }
 

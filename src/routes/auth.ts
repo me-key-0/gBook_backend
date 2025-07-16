@@ -16,19 +16,7 @@ router.post(
 );
 router.post("/submit-form", authLimiter, authController.submitForm);
 router.get("/fetch-form", authLimiter, authController.fetchAnswers);
-router.post("/verify-payment", authController.storeVerifiedPayment);
 
-router.post(
-  "/:userId/photo",
-  upload.single("image"),
-  authController.uploadPhoto
-);
-// POST /api/users/:userId/cover
-router.post(
-  "/:userId/cover",
-  upload.single("image"),
-  authController.uploadCoverImage
-);
 // GET /api/users/:userId/images
 router.get("/:userId/images", authController.getUserImages);
 
@@ -56,5 +44,19 @@ router.put(
 router.post("/change-password", authController.changePassword);
 router.post("/refresh-token", authController.refreshToken);
 router.delete("/account", authController.deleteAccount);
+router.post("/verify-payment", authController.storeVerifiedPayment);
+router.get("/payment-details", authController.checkDiscountEligibility);
+
+router.post(
+  "/:userId/photo",
+  upload.single("image"),
+  authController.uploadPhoto
+);
+// POST /api/users/:userId/cover
+router.post(
+  "/:userId/cover",
+  upload.single("image"),
+  authController.uploadCoverImage
+);
 
 export default router;
