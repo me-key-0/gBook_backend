@@ -919,7 +919,6 @@ class AuthController {
 
   public storeVerifiedPayment = asyncHandler(async (req: Request, res: Response) => {
   const {
-    transactionId,
     payerName,
     payerTelebirrNo,
     creditedPartyName,
@@ -933,7 +932,7 @@ class AuthController {
   } = req.body;
 
   // 1. Check if already used
-  const existing = await Payment.findOne({ transactionId });
+  const existing = await Payment.findOne({ receiptNo });
   if (existing) {
     return ResponseHandler.conflict(res, 'This transaction ID has already been used.');
   }
@@ -963,7 +962,6 @@ class AuthController {
 
   // 5. Save
   const payment = await Payment.create({
-    transactionId,
     payerName,
     payerTelebirrNo,
     creditedPartyName,

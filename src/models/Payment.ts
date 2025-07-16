@@ -5,14 +5,13 @@ import mongoose, { Schema, Document } from 'mongoose';
 
 const paymentSchema = new Schema<IPayment>(
   {
-    transactionId: { type: String, unique: true, required: true },
+    receiptNo: { type: String, unique: true, required: true },
     payerName: String,
     payerTelebirrNo: String,
     creditedPartyName: String,
     creditedPartyAccountNo: String,
     transactionStatus: String,
     serviceFee: String,
-    receiptNo: String,
     paymentDate: Date,
     settledAmount: String,
     totalPaidAmount: String,
