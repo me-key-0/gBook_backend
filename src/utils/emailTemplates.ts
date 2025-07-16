@@ -319,7 +319,7 @@ export const generateWelcomeEmailTemplate = (
         }
         .cta-button {
           display: inline-block;
-          background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+          background: linear-gradient(135deg, #ff800020 0%, #ff80000e 100%);
           color: white;
           text-decoration: none;
           padding: 15px 30px;
@@ -430,7 +430,7 @@ export const generateWelcomeEmailTemplate = (
         </div>
         
         <div class="footer">
-          <p style="font-weight: 600; color: #3B82F6; font-size: 16px;">🎓 yearBook</p>
+          <p style="font-weight: 600; color: #ff800020; font-size: 16px;">🎓 yearBook</p>
           <p>Connecting graduates, preserving memories</p>
           <p style="margin-top: 20px; font-size: 12px;">
             Need help? Contact our support team or visit our help center.

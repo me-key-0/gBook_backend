@@ -216,6 +216,10 @@ class UserController {
         throw new AuthorizationError("You cannot comment on this profile");
       }
 
+      const commentAlreadyExist = await Comment.findOne({user:currentUserId,profile:id});
+      if (commentAlreadyExist) {
+        ResponseHandler.error(res, "Comment already exist")
+      }
       // Create comment
       const comment = await Comment.create({
         user: currentUserId,
@@ -416,7 +420,7 @@ public getUserSocialLinks = asyncHandler(async (req: Request, res: Response) => 
       const user = await User.findById(currentUserId).populate({
         path: "likes",
         select:
-          "firstName lastName surname username photo graduationYear campus college department",
+          "firstName lastName surname username photo graduationYear campus college department quote",
         populate: {
           path: "campus college department",
           select: "name",
@@ -458,7 +462,7 @@ public getUserSocialLinks = asyncHandler(async (req: Request, res: Response) => 
       const user = await User.findById(currentUserId).populate({
         path: "savedProfiles",
         select:
-          "firstName lastName surname username photo graduationYear campus college department",
+          "firstName lastName surname username photo graduationYear campus college department quote",
         populate: {
           path: "campus college department",
           select: "name",

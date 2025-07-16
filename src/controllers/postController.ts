@@ -14,54 +14,119 @@ import { asyncHandler } from "@/middleware/errorHandler";
 import { notificationService } from "@/services/notificationService";
 import { personalizationService } from "@/services/personalizationService";
 import { Types } from "mongoose";
+import { Answer } from "@/models/Answer";
 
 class PostController {
+  // public createPost = asyncHandler(
+  //   async (req: AuthenticatedRequest, res: Response): Promise<void> => {
+  //     const { questionId, answer, type = "question" } = req.body;
+  //     const currentUserId = req.userId!;
+
+  //     // Verify question exists and is active
+  //     const question = await Question.findOne({
+  //       _id: questionId,
+  //       isActive: true,
+  //     });
+  //     if (!question) {
+  //       throw new NotFoundError("Question not found");
+  //     }
+
+  //     // Check if user is a graduate (only graduates can post)
+  //     const user = await User.findById(currentUserId);
+  //     if (!user || user.role !== "graduate") {
+  //       throw new AuthorizationError("Only graduates can create posts");
+  //     }
+
+  //     // Create post
+  //     const post = await Post.create({
+  //       user: currentUserId,
+  //       question: questionId,
+  //       answer: answer.trim(),
+  //       type,
+  //     });
+
+  //     // Populate for response
+  //     await post.populate([
+  //       {
+  //         path: "user",
+  //         select:
+  //           "firstName lastName surname username photo campus college department",
+  //       },
+  //       {
+  //         path: "question",
+  //         select: "question type category",
+  //       },
+  //     ]);
+
+  //     logger.info(`Post created by user ${currentUserId}: ${post._id}`);
+
+  //     ResponseHandler.created(res, post, "Post created successfully");
+  //   }
+  // );
+
   public createPost = asyncHandler(
-    async (req: AuthenticatedRequest, res: Response): Promise<void> => {
-      const { questionId, answer, type = "question" } = req.body;
-      const currentUserId = req.userId!;
-
-      // Verify question exists and is active
-      const question = await Question.findOne({
-        _id: questionId,
-        isActive: true,
-      });
-      if (!question) {
-        throw new NotFoundError("Question not found");
-      }
-
-      // Check if user is a graduate (only graduates can post)
-      const user = await User.findById(currentUserId);
-      if (!user || user.role !== "graduate") {
-        throw new AuthorizationError("Only graduates can create posts");
-      }
-
-      // Create post
-      const post = await Post.create({
-        user: currentUserId,
-        question: questionId,
-        answer: answer.trim(),
-        type,
-      });
-
-      // Populate for response
-      await post.populate([
-        {
-          path: "user",
-          select:
-            "firstName lastName surname username photo campus college department",
-        },
-        {
-          path: "question",
-          select: "question type category",
-        },
-      ]);
-
-      logger.info(`Post created by user ${currentUserId}: ${post._id}`);
-
-      ResponseHandler.created(res, post, "Post created successfully");
+  async (req: AuthenticatedRequest, res: Response): Promise<void> => {
+    const { questionId, answer, type = "question" } = req.body;
+    
+    const currentUserId = req.userId!;
+    
+    // Verify question exists and is active
+    const question = await Question.findOne({
+      _id: questionId,
+      isActive: true,
+    });
+    
+    if (!question) {
+      throw new NotFoundError("Question not found");
     }
-  );
+
+    // Check if user is a graduate (only graduates can post)
+    const user = await User.findById(currentUserId);
+    if (!user || user.role !== "graduate") {
+      throw new AuthorizationError("Only graduates can create posts");
+    }
+
+    // // ✅ Check if the user already has a post for this question
+    // const existingPost = await Post.findOne({
+    //   user: new Types.ObjectId(currentUserId),
+    //   question: new Types.ObjectId(questionId) 
+    // });
+    
+    // if (existingPost) {
+    //   ResponseHandler.conflict(
+    //     res,
+    //     "You have already answered this question"
+    //   );
+    //   return
+    // }
+
+    // ✅ Create new post
+    const post = await Post.create({
+      user: currentUserId,
+      question: questionId,
+      answer: answer.trim(),
+      type,
+    });
+
+    // Populate for response
+    await post.populate([
+      {
+        path: "user",
+        select:
+          "firstName lastName surname username photo campus college department",
+      },
+      {
+        path: "question",
+        select: "question type category",
+      },
+    ]);
+
+    logger.info(`Post created by user ${currentUserId}: ${post._id}`);
+
+    ResponseHandler.created(res, post, "Post created successfully");
+  }
+);
+
 
   public getPosts = asyncHandler(
     async (req: AuthenticatedRequest, res: Response): Promise<void> => {
