@@ -931,6 +931,9 @@ class AuthController {
     totalPaidAmount,
   } = req.body;
 
+  const userId = req.userId;
+  console.log(userId);
+
   // 1. Check if already used
   const existing = await Payment.findOne({ receiptNo });
   if (existing) {
@@ -974,7 +977,7 @@ class AuthController {
     totalPaidAmount,
     discountApplied,
     finalAmount: expectedAmount,
-    user: req.userId,
+    user: userId,
   });
 
   return ResponseHandler.created(res, payment, discountApplied

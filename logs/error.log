@@ -9434,3 +9434,29 @@
     '    at Server.start (C:\\Users\\dell\\Documents\\gBook\\gBook_backend\\gBook_backend\\src\\server.ts:122:7)',
   timestamp: '2025-07-15 22:43:30'
 }
+{
+  service: 'gradbook-api',
+  errno: -4039,
+  code: 'ESOCKET',
+  syscall: 'connect',
+  address: '64.233.167.108',
+  port: 587,
+  command: 'CONN',
+  level: 'error',
+  message: 'Email service configuration error: connect ETIMEDOUT 64.233.167.108:587',
+  stack: 'Error: connect ETIMEDOUT 64.233.167.108:587\n' +
+    '    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1607:16)',
+  timestamp: '2025-07-16 10:19:10'
+}
+{
+  service: 'gradbook-api',
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'querySrv',
+  hostname: '_mongodb._tcp.nodexpress.ped78m1.mongodb.net',
+  level: 'error',
+  message: '❌ Database connection failed: querySrv ETIMEOUT _mongodb._tcp.nodexpress.ped78m1.mongodb.net',
+  stack: 'Error: querySrv ETIMEOUT _mongodb._tcp.nodexpress.ped78m1.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:291:17)',
+  timestamp: '2025-07-16 10:19:34'
+}
