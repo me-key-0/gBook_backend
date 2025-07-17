@@ -1,10 +1,6 @@
 import { Request, Response } from "express";
-import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { User } from "@/models/User";
-import { Campus } from "@/models/Campus";
-import { College } from "@/models/College";
-import { Department } from "@/models/Department";
 import { ResponseHandler } from "@/utils/response";
 import {
   AuthenticationError,
@@ -26,7 +22,7 @@ import { Question } from "@/models/Question";
 import { firebaseService } from "@/config/firebase";
 import { Answer } from "@/models/Answer";
 import {cloudinaryService} from "@/services/cloudinaryService"
-import { DISCOUNT_LIMIT, BASE_PRICE, DISCOUNT_RATE, EXPECTED_ACCOUNT, OPENING_DATE, OPENING_MESSAGE } from '@/config/constants';
+import { DISCOUNT_DEADLINE, BASE_PRICE, DISCOUNT_RATE, EXPECTED_ACCOUNT, OPENING_DATE, OPENING_MESSAGE } from '@/config/constants';
 import { Payment } from "@/models/Payment";
 import dayjs from "dayjs";
 
@@ -983,25 +979,23 @@ class AuthController {
     : '✅ Payment recorded successfully.');
 });
 
-public checkDiscountEligibility = asyncHandler(
+  public checkDiscountEligibility = asyncHandler(
   async (req: AuthenticatedRequest, res: Response): Promise<void> => {
     const userId = req.userId!;
 
     // Check if user already paid
     const existingPayment = await Payment.findOne({ user: userId });
+
     if (existingPayment) {
       ResponseHandler.success(res, {
         eligible: false,
         amount: existingPayment.finalAmount,
         message: "You have already paid.",
       });
-      return
     }
 
-    // Count how many successful payments exist
-    const totalSuccessfulPayments = await Payment.countDocuments();
-
-    const discountApplied = totalSuccessfulPayments < DISCOUNT_LIMIT;
+    const now = new Date();
+    const discountApplied = now <= DISCOUNT_DEADLINE;
     const amountToPay = discountApplied
       ? BASE_PRICE * (1 - DISCOUNT_RATE)
       : BASE_PRICE;
@@ -1010,15 +1004,13 @@ public checkDiscountEligibility = asyncHandler(
       eligible: discountApplied,
       amount: amountToPay,
       message: discountApplied
-        ? `🎉 You're eligible for a 25% discount! Pay ${amountToPay} ETB.`
+        ? `🎉 You're eligible for a 25% discount! Pay ${amountToPay} ETB before ${DISCOUNT_DEADLINE.toDateString()}.`
         : `You are not eligible for a discount. Pay ${amountToPay} ETB.`,
     });
   }
 );
 
-
-
-public getLaunchCountdown = (req: Request, res: Response): void => {
+  public getLaunchCountdown = (req: Request, res: Response): void => {
   ResponseHandler.success(res, {
     deadline: OPENING_DATE.toISOString(),
     message: OPENING_MESSAGE,
