@@ -25,6 +25,7 @@ import {cloudinaryService} from "@/services/cloudinaryService"
 import { DISCOUNT_DEADLINE, BASE_PRICE, DISCOUNT_RATE, EXPECTED_ACCOUNT, OPENING_DATE, OPENING_MESSAGE } from '@/config/constants';
 import { Payment } from "@/models/Payment";
 import dayjs from "dayjs";
+import { Types } from "mongoose";
 
 interface UserResponse {
   userId: string;
@@ -947,14 +948,15 @@ class AuthController {
   }
 
   // 4. Determine applicable price
-  const totalSuccessfulPayments = await Payment.countDocuments();
-  const discountApplied = totalSuccessfulPayments < DISCOUNT_LIMIT;
-  const expectedAmount = discountApplied
-    ? BASE_PRICE * (1 - DISCOUNT_RATE)
-    : BASE_PRICE;
+  const current = new Date();
+  const discountApplied = current <= DISCOUNT_DEADLINE
+  const amountToPay = discountApplied
+      ? BASE_PRICE * (1 - DISCOUNT_RATE)
+      : BASE_PRICE;
 
-  if (parseFloat(settledAmount) !== expectedAmount) {
-    return ResponseHandler.badRequest(res, `Expected amount: ${expectedAmount} ETB`);
+
+  if (parseFloat(settledAmount) !== amountToPay) {
+    return ResponseHandler.badRequest(res, `Expected amount: ${amountToPay} ETB`);
   }
 
   // 5. Save
@@ -970,8 +972,8 @@ class AuthController {
     settledAmount,
     totalPaidAmount,
     discountApplied,
-    finalAmount: expectedAmount,
-    user: userId,
+    finalAmount: amountToPay,
+    user: new Types.ObjectId(userId),
   });
 
   return ResponseHandler.created(res, payment, discountApplied
