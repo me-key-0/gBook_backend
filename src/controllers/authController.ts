@@ -35,7 +35,7 @@ import {
 import { Payment } from "@/models/Payment";
 import { Department } from "@/models/Department";
 import dayjs from "dayjs";
-import { Types } from "mongoose";
+import mongoose, { Types } from "mongoose";
 
 interface UserResponse {
   userId: string;
@@ -52,92 +52,105 @@ interface MulterRequest extends Request {
 class AuthController {
   register = asyncHandler(
     async (req: Request, res: Response): Promise<void> => {
-      const {
-        firstName,
-        lastName,
-        username,
-        email,
-        password,
-        phoneNumber,
-        role,
-      }: RegisterValidation = req.body;
+      const session = await mongoose.startSession();
+      session.startTransaction();
 
-      // Check if user already exists
-      const existingUser = await User.findOne({
-        $or: [{ email }, { username }],
-      });
+      try {
+        const {
+          firstName,
+          lastName,
+          username,
+          email,
+          password,
+          phoneNumber,
+          role,
+        }: RegisterValidation = req.body;
 
-      if (existingUser) {
-        if (existingUser.email === email) {
-          throw new ConflictError("Email already registered");
+        const existingUser = await User.findOne({
+          $or: [{ email }, { username }],
+        });
+
+        if (existingUser) {
+          if (existingUser.email === email) {
+            throw new ConflictError("Email already registered");
+          }
+          if (existingUser.username === username) {
+            throw new ConflictError("Username already taken");
+          }
         }
-        if (existingUser.username === username) {
-          throw new ConflictError("Username already taken");
+
+        const user = await User.create(
+          [
+            {
+              firstName,
+              lastName,
+              username: username.toLowerCase(),
+              email: email.toLowerCase(),
+              password,
+              phoneNumber,
+              role,
+              isVerified: false,
+              profileCompleted: false,
+            },
+          ],
+          { session },
+        );
+
+        const otp = Otp.generateOTP();
+        const otpExpiresAt = new Date(Date.now() + 10 * 60 * 1000);
+
+        await Otp.create(
+          [
+            {
+              user: user[0]._id,
+              email: user[0].email,
+              otp,
+              expiresAt: otpExpiresAt,
+              type: "email_verification",
+            },
+          ],
+          { session },
+        );
+
+        const otpData = {
+          firstName: user[0].firstName,
+          lastName: user[0].lastName,
+          otp,
+          expiresInMinutes: 10,
+        };
+
+        const otpSent = await emailService.sendOtpEmail(user[0].email, otpData);
+
+        if (!otpSent) {
+          throw new InternalServerError("Failed to send OTP email");
         }
-      }
 
-      // Create user
-      const user = await User.create({
-        firstName,
-        lastName,
-        username: username.toLowerCase(),
-        email: email.toLowerCase(),
-        password,
-        phoneNumber,
-        role,
-        isVerified: false, // Guests are auto-verified
-        profileCompleted: role === "guest", // Guests don't need profile completion
-      });
+        await session.commitTransaction();
+        session.endSession();
 
-      // Generate OTP using the model's static method
-      const otp = Otp.generateOTP();
+        logger.info(`New user registered: ${email} (${role})`);
 
-      // Create OTP object and save to DB
-      const otpExpiresAt = new Date(Date.now() + 10 * 60 * 1000); // OTP expires in 10 minutes
-      const otpDocument = await Otp.create({
-        user: user._id, // Reference to the user
-        email: user.email,
-        otp,
-        expiresAt: otpExpiresAt,
-        type: "email_verification", // This OTP is for email verification
-      });
-
-      // Send OTP email to user
-      const otpData = {
-        firstName: user.firstName,
-        lastName: user.lastName,
-        otp,
-        expiresInMinutes: 10, // OTP expiration time
-      };
-
-      const otpSent = await emailService.sendOtpEmail(user.email, otpData);
-
-      if (!otpSent) {
-        throw new InternalServerError("Failed to send OTP email");
-      }
-
-      // Remove password from response
-      const userResponse = user.toJSON();
-
-      logger.info(`New user registered: ${email} (${role})`);
-
-      // Send the response with the user data and the generated token
-      ResponseHandler.created(
-        res,
-        {
-          user: {
-            firstname: firstName,
-            lastname: lastName,
-            role,
-            username,
-            email,
-            isVerified: false,
+        ResponseHandler.created(
+          res,
+          {
+            user: {
+              firstname: firstName,
+              lastname: lastName,
+              role,
+              username,
+              email,
+              isVerified: false,
+            },
+            requiresProfileCompletion:
+              role === "graduate" && !user[0].profileCompleted,
           },
-          requiresProfileCompletion:
-            role === "graduate" && !user.profileCompleted,
-        },
-        "Registration successful. Please verify your email.",
-      );
+          "Registration successful. Please verify your email.",
+        );
+      } catch (err) {
+        await session.abortTransaction();
+        session.endSession();
+        throw err;
+      }
     },
   );
 
