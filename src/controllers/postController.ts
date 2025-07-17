@@ -15,7 +15,6 @@ import { notificationService } from "@/services/notificationService";
 import { personalizationService } from "@/services/personalizationService";
 import { Types } from "mongoose";
 import crypto from "crypto";
-import { Answer } from "@/models/Answer";
 
 class PostController {
   // public createPost = asyncHandler(
@@ -66,68 +65,67 @@ class PostController {
   // );
 
   public createPost = asyncHandler(
-  async (req: AuthenticatedRequest, res: Response): Promise<void> => {
-    const { questionId, answer, type = "question" } = req.body;
-    
-    const currentUserId = req.userId!;
-    
-    // Verify question exists and is active
-    const question = await Question.findOne({
-      _id: questionId,
-      isActive: true,
-    });
-    
-    if (!question) {
-      throw new NotFoundError("Question not found");
-    }
+    async (req: AuthenticatedRequest, res: Response): Promise<void> => {
+      const { questionId, answer, type = "question" } = req.body;
 
-    // Check if user is a graduate (only graduates can post)
-    const user = await User.findById(currentUserId);
-    if (!user || user.role !== "graduate") {
-      throw new AuthorizationError("Only graduates can create posts");
-    }
+      const currentUserId = req.userId!;
 
-    // // ✅ Check if the user already has a post for this question
-    // const existingPost = await Post.findOne({
-    //   user: new Types.ObjectId(currentUserId),
-    //   question: new Types.ObjectId(questionId) 
-    // });
-    
-    // if (existingPost) {
-    //   ResponseHandler.conflict(
-    //     res,
-    //     "You have already answered this question"
-    //   );
-    //   return
-    // }
+      // Verify question exists and is active
+      const question = await Question.findOne({
+        _id: questionId,
+        isActive: true,
+      });
 
-    // ✅ Create new post
-    const post = await Post.create({
-      user: currentUserId,
-      question: questionId,
-      answer: answer.trim(),
-      type,
-    });
+      if (!question) {
+        throw new NotFoundError("Question not found");
+      }
 
-    // Populate for response
-    await post.populate([
-      {
-        path: "user",
-        select:
-          "firstName lastName surname username photo campus college department",
-      },
-      {
-        path: "question",
-        select: "question type category",
-      },
-    ]);
+      // Check if user is a graduate (only graduates can post)
+      const user = await User.findById(currentUserId);
+      if (!user || user.role !== "graduate") {
+        throw new AuthorizationError("Only graduates can create posts");
+      }
 
-    logger.info(`Post created by user ${currentUserId}: ${post._id}`);
+      // // ✅ Check if the user already has a post for this question
+      // const existingPost = await Post.findOne({
+      //   user: new Types.ObjectId(currentUserId),
+      //   question: new Types.ObjectId(questionId)
+      // });
 
-    ResponseHandler.created(res, post, "Post created successfully");
-  }
-);
+      // if (existingPost) {
+      //   ResponseHandler.conflict(
+      //     res,
+      //     "You have already answered this question"
+      //   );
+      //   return
+      // }
 
+      // ✅ Create new post
+      const post = await Post.create({
+        user: currentUserId,
+        question: questionId,
+        answer: answer.trim(),
+        type,
+      });
+
+      // Populate for response
+      await post.populate([
+        {
+          path: "user",
+          select:
+            "firstName lastName surname username photo campus college department",
+        },
+        {
+          path: "question",
+          select: "question type category",
+        },
+      ]);
+
+      logger.info(`Post created by user ${currentUserId}: ${post._id}`);
+
+      ResponseHandler.created(res, post, "Post created successfully");
+    },
+  );
 
   // public getPosts = asyncHandler(
   //   async (req: AuthenticatedRequest, res: Response): Promise<void> => {
@@ -207,49 +205,52 @@ class PostController {
   //   }
   // );
 
+  public getPosts = asyncHandler(
+    async (req: AuthenticatedRequest, res: Response): Promise<void> => {
+      const currentUserId = req.userId;
+      const { page = 1, limit = 20, type, userId, randomSeed } = req.query;
 
-  
+      const pageNum = parseInt(page as string);
+      const limitNum = parseInt(limit as string);
 
-public getPosts = asyncHandler(
-  async (req: AuthenticatedRequest, res: Response): Promise<void> => {
-    const currentUserId = req.userId;
-    const { page = 1, limit = 20, type, userId, randomSeed } = req.query;
+      // Build filter
+      const filter: any = { isActive: true };
+      if (type) filter.type = type;
+      if (userId) filter.user = userId;
 
-    const pageNum = parseInt(page as string);
-    const limitNum = parseInt(limit as string);
+      let posts: any[] = [];
+      let total = 0;
 
-    // Build filter
-    const filter: any = { isActive: true };
-    if (type) filter.type = type;
-    if (userId) filter.user = userId;
+      if (randomSeed) {
+        // Fetch all matching post IDs
+        const allPostIds = await Post.find(filter).select("_id").lean();
+        total = allPostIds.length;
 
-    let posts: any[] = [];
-    let total = 0;
+        const seed = crypto
+          .createHash("sha256")
+          .update(randomSeed as string)
+          .digest("hex");
 
-    if (randomSeed) {
-      // Fetch all matching post IDs
-      const allPostIds = await Post.find(filter).select("_id").lean();
-      total = allPostIds.length;
+        // Deterministic shuffling using seed
+        const shuffled = allPostIds
+          .map((p, index) => ({
+            id: p._id,
+            sortKey: crypto
+              .createHash("sha256")
+              .update(seed + index)
+              .digest("hex"),
+          }))
+          .sort((a, b) => (a.sortKey > b.sortKey ? 1 : -1));
 
-      const seed = crypto.createHash("sha256").update(randomSeed as string).digest("hex");
+        const paginatedIds = shuffled
+          .slice((pageNum - 1) * limitNum, pageNum * limitNum)
+          .map((entry) => entry.id);
 
-      // Deterministic shuffling using seed
-      const shuffled = allPostIds
-        .map((p, index) => ({
-          id: p._id,
-          sortKey: crypto.createHash("sha256").update(seed + index).digest("hex"),
-        }))
-        .sort((a, b) => (a.sortKey > b.sortKey ? 1 : -1));
-
-      const paginatedIds = shuffled
-        .slice((pageNum - 1) * limitNum, pageNum * limitNum)
-        .map((entry) => entry.id);
-
-      posts = await Post.find({ _id: { $in: paginatedIds } })
-        .populate([
+        posts = await Post.find({ _id: { $in: paginatedIds } }).populate([
           {
             path: "user",
-            select: "firstName lastName surname username photo campus college department",
+            select:
+              "firstName lastName surname username photo campus college department",
           },
           {
             path: "question",
@@ -261,63 +262,62 @@ public getPosts = asyncHandler(
           },
         ]);
 
-      // Reorder posts to match shuffled order
-      const postMap = new Map(posts.map((p) => [p._id.toString(), p]));
-      posts = paginatedIds
-        .map((id) => postMap.get(id.toString()))
-        .filter(Boolean);
-    } else {
-      // Standard sort by creation time
-      posts = await Post.find(filter)
-        .populate([
-          {
-            path: "user",
-            select: "firstName lastName surname username photo campus college department",
-          },
-          {
-            path: "question",
-            select: "question type category",
-          },
-          {
-            path: "comments.user",
-            select: "firstName lastName username",
-          },
-        ])
-        .sort({ createdAt: -1 })
-        .skip((pageNum - 1) * limitNum)
-        .limit(limitNum);
+        // Reorder posts to match shuffled order
+        const postMap = new Map(posts.map((p) => [p._id.toString(), p]));
+        posts = paginatedIds
+          .map((id) => postMap.get(id.toString()))
+          .filter(Boolean);
+      } else {
+        // Standard sort by creation time
+        posts = await Post.find(filter)
+          .populate([
+            {
+              path: "user",
+              select:
+                "firstName lastName surname username photo campus college department",
+            },
+            {
+              path: "question",
+              select: "question type category",
+            },
+            {
+              path: "comments.user",
+              select: "firstName lastName username",
+            },
+          ])
+          .sort({ createdAt: -1 })
+          .skip((pageNum - 1) * limitNum)
+          .limit(limitNum);
 
-      total = await Post.countDocuments(filter);
-    }
+        total = await Post.countDocuments(filter);
+      }
 
-    // Add interaction flags for authenticated users
-    if (currentUserId) {
-      const user = await User.findById(currentUserId);
-      posts = posts.map((post: any) => ({
-        ...post.toJSON(),
-        isLiked: post.likes.includes(currentUserId),
-        isSaved: user?.savedPosts.includes(post._id) || false,
-        likesCount: post.likes.length,
-        commentsCount: post.comments.length,
-        sharesCount: post.shares.length,
-      }));
-    }
+      // Add interaction flags for authenticated users
+      if (currentUserId) {
+        const user = await User.findById(currentUserId);
+        posts = posts.map((post: any) => ({
+          ...post.toJSON(),
+          isLiked: post.likes.includes(currentUserId),
+          isSaved: user?.savedPosts.includes(post._id) || false,
+          likesCount: post.likes.length,
+          commentsCount: post.comments.length,
+          sharesCount: post.shares.length,
+        }));
+      }
 
-    ResponseHandler.paginated(
-      res,
-      posts,
-      {
-        page: pageNum,
-        limit: limitNum,
-        total,
-        pages: Math.ceil(total / limitNum),
-      },
-      "Posts retrieved successfully"
-    );
-  }
-);
-
-
+      ResponseHandler.paginated(
+        res,
+        posts,
+        {
+          page: pageNum,
+          limit: limitNum,
+          total,
+          pages: Math.ceil(total / limitNum),
+        },
+        "Posts retrieved successfully",
+      );
+    },
+  );
 
   public getPost = asyncHandler(
     async (req: AuthenticatedRequest, res: Response): Promise<void> => {
@@ -353,7 +353,7 @@ public getPosts = asyncHandler(
           currentUserId,
           "view",
           id,
-          "post"
+          "post",
         );
       }
 
@@ -364,7 +364,7 @@ public getPosts = asyncHandler(
         postResponse = {
           ...postResponse,
           isLiked: post.likes.some(
-            (item: any) => item.toString() === currentUserId
+            (item: any) => item.toString() === currentUserId,
           ),
           isSaved: user?.savedPosts.includes(post._id) || false,
           likesCount: post.likes.length,
@@ -380,7 +380,7 @@ public getPosts = asyncHandler(
       }
 
       ResponseHandler.success(res, postResponse, "Post retrieved successfully");
-    }
+    },
   );
 
   public likePost = asyncHandler(
@@ -399,7 +399,7 @@ public getPosts = asyncHandler(
 
       // const isAlreadyLiked = post.likes.includes(currentUserId);
       const isAlreadyLiked = post.likes.some(
-        (item: any) => item.toString() === currentUserId
+        (item: any) => item.toString() === currentUserId,
       );
 
       if (isAlreadyLiked) {
@@ -413,7 +413,7 @@ public getPosts = asyncHandler(
         await notificationService.notifyPostLike(
           post.user.toString(),
           currentUserId,
-          id
+          id,
         );
 
         // Update personalization
@@ -421,7 +421,7 @@ public getPosts = asyncHandler(
           currentUserId,
           "like",
           id,
-          "post"
+          "post",
         );
       }
 
@@ -431,9 +431,9 @@ public getPosts = asyncHandler(
           isLiked: !isAlreadyLiked,
           likesCount: post.likes.length,
         },
-        isAlreadyLiked ? "Post unliked" : "Post liked"
+        isAlreadyLiked ? "Post unliked" : "Post liked",
       );
-    }
+    },
   );
 
   public savePost = asyncHandler(
@@ -459,7 +459,7 @@ public getPosts = asyncHandler(
       if (isAlreadySaved) {
         // Unsave
         user.savedPosts = user.savedPosts.filter(
-          (postId) => postId.toString() !== id
+          (postId) => postId.toString() !== id,
         );
       } else {
         // Save
@@ -473,9 +473,9 @@ public getPosts = asyncHandler(
         {
           isSaved: !isAlreadySaved,
         },
-        isAlreadySaved ? "Post unsaved" : "Post saved"
+        isAlreadySaved ? "Post unsaved" : "Post saved",
       );
-    }
+    },
   );
 
   public commentOnPost = asyncHandler(
@@ -497,7 +497,7 @@ public getPosts = asyncHandler(
         await notificationService.notifyPostComment(
           post.user.toString(),
           currentUserId,
-          id
+          id,
         );
       }
 
@@ -506,20 +506,20 @@ public getPosts = asyncHandler(
         currentUserId,
         "comment",
         id,
-        "post"
+        "post",
       );
 
       // Get the newly added comment with populated user
       const updatedPost = await Post.findById(id).populate(
         "comments.user",
-        "firstName lastName surname username photo"
+        "firstName lastName surname username photo",
       );
 
       const newComment =
         updatedPost!.comments[updatedPost!.comments.length - 1];
 
       ResponseHandler.created(res, newComment, "Comment added successfully");
-    }
+    },
   );
 
   public sharePost = asyncHandler(
@@ -538,7 +538,7 @@ public getPosts = asyncHandler(
 
       // const isAlreadyShared = post.shares.includes(currentUserId);
       const isAlreadyShared = post.shares.some(
-        (item: any) => item.toString() === currentUserId
+        (item: any) => item.toString() === currentUserId,
       );
 
       if (isAlreadyShared) {
@@ -553,7 +553,7 @@ public getPosts = asyncHandler(
       await notificationService.notifyPostShare(
         post.user.toString(),
         currentUserId,
-        id
+        id,
       );
 
       // Update personalization
@@ -561,7 +561,7 @@ public getPosts = asyncHandler(
         currentUserId,
         "share",
         id,
-        "post"
+        "post",
       );
 
       ResponseHandler.success(
@@ -569,9 +569,9 @@ public getPosts = asyncHandler(
         {
           sharesCount: post.shares.length,
         },
-        "Post shared successfully"
+        "Post shared successfully",
       );
-    }
+    },
   );
 
   public deletePost = asyncHandler(
@@ -596,7 +596,7 @@ public getPosts = asyncHandler(
       logger.info(`Post ${id} deleted by user ${currentUserId}`);
 
       ResponseHandler.success(res, null, "Post deleted successfully");
-    }
+    },
   );
 
   public getUserPosts = asyncHandler(
@@ -642,9 +642,9 @@ public getPosts = asyncHandler(
           total,
           pages: Math.ceil(total / limitNum),
         },
-        "User posts retrieved successfully"
+        "User posts retrieved successfully",
       );
-    }
+    },
   );
 
   public getSavedPosts = asyncHandler(
@@ -690,9 +690,9 @@ public getPosts = asyncHandler(
           total,
           pages: Math.ceil(total / limitNum),
         },
-        "Saved posts retrieved successfully"
+        "Saved posts retrieved successfully",
       );
-    }
+    },
   );
 
   public getLikedPosts = asyncHandler(
@@ -737,9 +737,9 @@ public getPosts = asyncHandler(
           total,
           pages: Math.ceil(total / limitNum),
         },
-        "Liked posts retrieved successfully"
+        "Liked posts retrieved successfully",
       );
-    }
+    },
   );
 
   public getPopularPosts = asyncHandler(
@@ -748,15 +748,15 @@ public getPosts = asyncHandler(
 
       const posts = await personalizationService.getPopularContent(
         timeframe as "day" | "week" | "month",
-        parseInt(limit as string)
+        parseInt(limit as string),
       );
 
       ResponseHandler.success(
         res,
         posts,
-        "Popular posts retrieved successfully"
+        "Popular posts retrieved successfully",
       );
-    }
+    },
   );
 
   public getLastWords = asyncHandler(
@@ -815,11 +815,10 @@ public getPosts = asyncHandler(
           total,
           pages: Math.ceil(total / limitNum),
         },
-        "Last words retrieved successfully"
+        "Last words retrieved successfully",
       );
-    }
+    },
   );
-
 }
 
 export const postController = new PostController();

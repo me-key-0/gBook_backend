@@ -15,6 +15,7 @@ import { asyncHandler } from "@/middleware/errorHandler";
 import { notificationService } from "@/services/notificationService";
 import { personalizationService } from "@/services/personalizationService";
 import mongoose, { Types } from "mongoose";
+import { Answer } from "@/models/Answer";
 import { buildSocialLinks } from "@/utils/buildSocialLinks";
 
 class UserController {
@@ -49,7 +50,7 @@ class UserController {
           currentUserId,
           "view",
           id,
-          "user"
+          "user",
         );
       }
 
@@ -77,8 +78,8 @@ class UserController {
       // );
 
       // Temporary placeholders...
-      const canComment = true
-      const canViewContact = true
+      const canComment = true;
+      const canViewContact = true;
 
       const profileResponse = {
         ...user.toJSON(),
@@ -95,9 +96,9 @@ class UserController {
       ResponseHandler.success(
         res,
         profileResponse,
-        "Profile retrieved successfully"
+        "Profile retrieved successfully",
       );
-    }
+    },
   );
 
   public likeProfile = asyncHandler(
@@ -123,7 +124,7 @@ class UserController {
       if (isAlreadyLiked) {
         // Unlike
         currentUser!.likes = currentUser!.likes.filter(
-          (likeId) => likeId.toString() !== id
+          (likeId) => likeId.toString() !== id,
         );
         targetUser.numberOfLikes = Math.max(0, targetUser.numberOfLikes - 1);
       } else {
@@ -143,9 +144,9 @@ class UserController {
           isLiked: !isAlreadyLiked,
           likesCount: targetUser.numberOfLikes,
         },
-        isAlreadyLiked ? "Profile unliked" : "Profile liked"
+        isAlreadyLiked ? "Profile unliked" : "Profile liked",
       );
-    }
+    },
   );
 
   public saveProfile = asyncHandler(
@@ -167,13 +168,13 @@ class UserController {
       }
 
       const isAlreadySaved = currentUser!.savedProfiles.includes(
-        targetUser._id
+        targetUser._id,
       );
 
       if (isAlreadySaved) {
         // Unsave
         currentUser!.savedProfiles = currentUser!.savedProfiles.filter(
-          (saveId) => saveId.toString() !== id
+          (saveId) => saveId.toString() !== id,
         );
       } else {
         // Save
@@ -187,9 +188,9 @@ class UserController {
         {
           isSaved: !isAlreadySaved,
         },
-        isAlreadySaved ? "Profile unsaved" : "Profile saved"
+        isAlreadySaved ? "Profile unsaved" : "Profile saved",
       );
-    }
+    },
   );
 
   public commentOnProfile = asyncHandler(
@@ -210,15 +211,18 @@ class UserController {
       // Check comment permission
       const canComment = await this.checkCommentPermission(
         targetUser,
-        currentUserId
+        currentUserId,
       );
       if (!canComment) {
         throw new AuthorizationError("You cannot comment on this profile");
       }
 
-      const commentAlreadyExist = await Comment.findOne({user:currentUserId,profile:id});
+      const commentAlreadyExist = await Comment.findOne({
+        user: currentUserId,
+        profile: id,
+      });
       if (commentAlreadyExist) {
-        ResponseHandler.error(res, "Comment already exist")
+        ResponseHandler.error(res, "Comment already exist");
       }
       // Create comment
       const comment = await Comment.create({
@@ -238,11 +242,11 @@ class UserController {
       // Populate comment for response
       await comment.populate(
         "user",
-        "firstName lastName surname username photo"
+        "firstName lastName surname username photo",
       );
 
       ResponseHandler.created(res, comment, "Comment added successfully");
-    }
+    },
   );
 
   public getProfileComments = asyncHandler(
@@ -273,9 +277,9 @@ class UserController {
           total,
           pages: Math.ceil(total / limitNum),
         },
-        "Comments retrieved successfully"
+        "Comments retrieved successfully",
       );
-    }
+    },
   );
 
   public tagUser = asyncHandler(
@@ -303,7 +307,7 @@ class UserController {
 
       // Add tags to user (avoid duplicates)
       const newTags = tagIds.filter(
-        (tagId: string) => !targetUser.tags.includes(new Types.ObjectId(tagId))
+        (tagId: string) => !targetUser.tags.includes(new Types.ObjectId(tagId)),
       );
 
       targetUser.tags.push(...newTags);
@@ -312,7 +316,7 @@ class UserController {
       // Update tag usage count
       await Tag.updateMany(
         { _id: { $in: newTags } },
-        { $inc: { usageCount: 1 } }
+        { $inc: { usageCount: 1 } },
       );
 
       // Send notification
@@ -323,9 +327,9 @@ class UserController {
       ResponseHandler.success(
         res,
         { tagsAdded: newTags.length },
-        "User tagged successfully"
+        "User tagged successfully",
       );
-    }
+    },
   );
 
   public reportUser = asyncHandler(
@@ -367,47 +371,66 @@ class UserController {
       ResponseHandler.created(
         res,
         { reportId: report._id },
-        "Report submitted successfully"
+        "Report submitted successfully",
       );
-    }
+    },
   );
 
- public updateSocialLinks = asyncHandler(async (req: Request, res: Response) => {
-  const { id } = req.params;
-  const socials = req.body;
+  public updateSocialLinks = asyncHandler(
+    async (req: Request, res: Response) => {
+      const { id } = req.params;
+      const socials = req.body;
 
-  const user = await User.findById(id);
-  if (!user) {
-    return ResponseHandler.notFound(res, "User not found");
-  }
+      const user = await User.findById(id);
+      if (!user) {
+        return ResponseHandler.notFound(res, "User not found");
+      }
 
-  user.socials = {
-    ...user.socials,
-    ...socials,
-  };
+      user.socials = {
+        ...user.socials,
+        ...socials,
+      };
 
-  await user.save();
+      await user.save();
 
-  return ResponseHandler.success(res, user.socials, "Social links updated");
-});
+      return ResponseHandler.success(res, user.socials, "Social links updated");
+    },
+  );
 
-public getUserSocialLinks = asyncHandler(async (req: Request, res: Response) => {
-  const { id } = req.params;
+  public getUserSocialLinks = asyncHandler(
+    async (req: Request, res: Response) => {
+      const { id } = req.params;
 
-  const user = await User.findById(id);
-  if (!user) {
-    return ResponseHandler.notFound(res, "User not found");
-  }
+      const user = await User.findById(id);
+      if (!user) {
+        return ResponseHandler.notFound(res, "User not found");
+      }
 
-  if (!user.socials) {
-    return ResponseHandler.notFound(res, "Social links not found");
-  }
+      if (!user.socials) {
+        return ResponseHandler.notFound(res, "Social links not found");
+      }
 
-  const links = buildSocialLinks(user.socials);
+      const links = buildSocialLinks(user.socials);
 
-  return ResponseHandler.success(res, links, "Social links fetched");
-});
+      return ResponseHandler.success(res, links, "Social links fetched");
+    },
+  );
 
+  public getUserAnswers = asyncHandler(
+    async (req: AuthenticatedRequest, res: Response): Promise<void> => {
+      const { id } = req.params;
+      const currentUserId = req.userId!;
+
+      const targetUserId = id || currentUserId;
+
+      const answers = await Answer.find({ userId: targetUserId })
+        .populate("questionId", "question") // adjust fields here if needed
+        .sort({ createdAt: -1 })
+        .exec();
+
+      ResponseHandler.success(res, answers, `Answers for user ${targetUserId}`);
+    },
+  );
 
   public getLikedProfiles = asyncHandler(
     async (req: AuthenticatedRequest, res: Response): Promise<void> => {
@@ -446,9 +469,9 @@ public getUserSocialLinks = asyncHandler(async (req: Request, res: Response) => 
           total,
           pages: Math.ceil(total / limitNum),
         },
-        "Liked profiles retrieved successfully"
+        "Liked profiles retrieved successfully",
       );
-    }
+    },
   );
 
   public getSavedProfiles = asyncHandler(
@@ -488,9 +511,9 @@ public getUserSocialLinks = asyncHandler(async (req: Request, res: Response) => 
           total,
           pages: Math.ceil(total / limitNum),
         },
-        "Saved profiles retrieved successfully"
+        "Saved profiles retrieved successfully",
       );
-    }
+    },
   );
 
   public updatePrivacySettings = asyncHandler(
@@ -501,7 +524,7 @@ public getUserSocialLinks = asyncHandler(async (req: Request, res: Response) => 
       const user = await User.findByIdAndUpdate(
         currentUserId,
         { privacySettings },
-        { new: true, runValidators: true }
+        { new: true, runValidators: true },
       );
 
       if (!user) {
@@ -511,9 +534,9 @@ public getUserSocialLinks = asyncHandler(async (req: Request, res: Response) => 
       ResponseHandler.success(
         res,
         user.privacySettings,
-        "Privacy settings updated successfully"
+        "Privacy settings updated successfully",
       );
-    }
+    },
   );
 
   public getSuggestedUsers = asyncHandler(
@@ -523,15 +546,15 @@ public getUserSocialLinks = asyncHandler(async (req: Request, res: Response) => 
 
       const suggestedUsers = await personalizationService.getSuggestedUsers(
         currentUserId,
-        parseInt(limit as string)
+        parseInt(limit as string),
       );
 
       ResponseHandler.success(
         res,
         suggestedUsers,
-        "Suggested users retrieved successfully"
+        "Suggested users retrieved successfully",
       );
-    }
+    },
   );
 
   // Helper methods
@@ -586,10 +609,9 @@ public getUserSocialLinks = asyncHandler(async (req: Request, res: Response) => 
   //   }
   // }
 
-
   private async checkCommentPermission(
     user: any,
-    currentUserId?: string
+    currentUserId?: string,
   ): Promise<boolean> {
     if (!currentUserId) return false;
 
@@ -634,7 +656,7 @@ public getUserSocialLinks = asyncHandler(async (req: Request, res: Response) => 
 
   private async checkContactVisibility(
     user: any,
-    currentUserId?: string
+    currentUserId?: string,
   ): Promise<boolean> {
     if (!currentUserId) return false;
 
@@ -680,10 +702,10 @@ public getUserSocialLinks = asyncHandler(async (req: Request, res: Response) => 
 
   private async getMutualConnectionsCount(
     user1: any,
-    user2: any
+    user2: any,
   ): Promise<number> {
     const mutualLikes = user1.likes.filter((like: any) =>
-      user2.likes.includes(like)
+      user2.likes.includes(like),
     );
     return mutualLikes.length;
   }
