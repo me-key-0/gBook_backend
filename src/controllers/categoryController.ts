@@ -16,7 +16,21 @@ class CategoryController {
         .select("name campusId location description");
 
       ResponseHandler.success(res, campuses, "Campuses retrieved successfully");
-    }
+    },
+  );
+
+  public getAllDepartments = asyncHandler(
+    async (req: Request, res: Response): Promise<void> => {
+      const departments = await Department.find({ isActive: true })
+        .sort({ searchPoints: -1, name: 1 })
+        .select("name departmentId location description");
+
+      ResponseHandler.success(
+        res,
+        departments,
+        "departments retrieved successfully",
+      );
+    },
   );
 
   public getCampusColleges = asyncHandler(
@@ -41,9 +55,9 @@ class CategoryController {
           },
           colleges,
         },
-        "Campus colleges retrieved successfully"
+        "Campus colleges retrieved successfully",
       );
-    }
+    },
   );
 
   public getCollegeDepartments = asyncHandler(
@@ -52,7 +66,7 @@ class CategoryController {
 
       const college = await College.findById(collegeId).populate(
         "campus",
-        "name"
+        "name",
       );
       if (!college || !college.isActive) {
         throw new NotFoundError("College not found");
@@ -75,9 +89,9 @@ class CategoryController {
           },
           departments,
         },
-        "College departments retrieved successfully"
+        "College departments retrieved successfully",
       );
-    }
+    },
   );
 
   public getDepartmentUsers = asyncHandler(
@@ -129,7 +143,7 @@ class CategoryController {
         User.find(filter)
           .populate("campus college department", "name")
           .select(
-            "firstName lastName surname username photo graduationYear numberOfLikes views"
+            "firstName lastName surname username photo graduationYear numberOfLikes views",
           )
           .sort(sortOptions)
           .skip((pageNum - 1) * limitNum)
@@ -159,9 +173,9 @@ class CategoryController {
             pages: Math.ceil(total / limitNum),
           },
         },
-        "Department users retrieved successfully"
+        "Department users retrieved successfully",
       );
-    }
+    },
   );
 
   public getCampusStats = asyncHandler(
@@ -212,9 +226,9 @@ class CategoryController {
       ResponseHandler.success(
         res,
         stats,
-        "Campus statistics retrieved successfully"
+        "Campus statistics retrieved successfully",
       );
-    }
+    },
   );
 
   public getCollegeStats = asyncHandler(
@@ -223,7 +237,7 @@ class CategoryController {
 
       const college = await College.findById(collegeId).populate(
         "campus",
-        "name"
+        "name",
       );
       if (!college || !college.isActive) {
         throw new NotFoundError("College not found");
@@ -279,9 +293,9 @@ class CategoryController {
       ResponseHandler.success(
         res,
         stats,
-        "College statistics retrieved successfully"
+        "College statistics retrieved successfully",
       );
-    }
+    },
   );
 
   public getAcademicStructure = asyncHandler(
@@ -313,22 +327,22 @@ class CategoryController {
                 ...college.toJSON(),
                 departments,
               };
-            })
+            }),
           );
 
           return {
             ...campus.toJSON(),
             colleges: collegesWithDepartments,
           };
-        })
+        }),
       );
 
       ResponseHandler.success(
         res,
         structure,
-        "Academic structure retrieved successfully"
+        "Academic structure retrieved successfully",
       );
-    }
+    },
   );
 }
 

@@ -21,9 +21,19 @@ import { emailService } from "@/services/emailService";
 import { Question } from "@/models/Question";
 import { firebaseService } from "@/config/firebase";
 import { Answer } from "@/models/Answer";
-import {cloudinaryService} from "@/services/cloudinaryService"
-import { DISCOUNT_DEADLINE, BASE_PRICE, DISCOUNT_RATE, EXPECTED_ACCOUNT, OPENING_DATE, OPENING_MESSAGE } from '@/config/constants';
+import { cloudinaryService } from "@/services/cloudinaryService";
+import {
+  EXPECTED_ACCOUNT_NAME,
+  EXPECTED_ACCOUNT_NUMBER,
+  DISCOUNT_DEADLINE,
+  BASE_PRICE,
+  DISCOUNT_RATE,
+  EXPECTED_ACCOUNT,
+  OPENING_DATE,
+  OPENING_MESSAGE,
+} from "@/config/constants";
 import { Payment } from "@/models/Payment";
+import { Department } from "@/models/Department";
 import dayjs from "dayjs";
 import { Types } from "mongoose";
 
@@ -126,44 +136,43 @@ class AuthController {
           requiresProfileCompletion:
             role === "graduate" && !user.profileCompleted,
         },
-        "Registration successful. Please verify your email."
+        "Registration successful. Please verify your email.",
       );
-    }
+    },
   );
 
   uploadPhoto = asyncHandler(async (req: Request, res: Response) => {
-  const userId = req.params.userId;
+    const userId = req.params.userId;
 
-  if (!req.file) {
-    res.status(400).json({ message: "No file uploaded" });
-    return;
-  }
+    if (!req.file) {
+      res.status(400).json({ message: "No file uploaded" });
+      return;
+    }
 
-  const user = await User.findById(userId);
-  if (!user) {
-    res.status(404).json({ message: "User not found" });
-    return;
-  }
+    const user = await User.findById(userId);
+    if (!user) {
+      res.status(404).json({ message: "User not found" });
+      return;
+    }
 
-  try {
-    const photoUrl = await cloudinaryService.uploadBuffer(
-      req.file.buffer,
-      req.file.originalname
-    );
+    try {
+      const photoUrl = await cloudinaryService.uploadBuffer(
+        req.file.buffer,
+        req.file.originalname,
+      );
 
-    user.photo = photoUrl;
-    await user.save();
+      user.photo = photoUrl;
+      await user.save();
 
-    res.status(200).json({
-      message: "Profile photo uploaded successfully",
-      photoUrl,
-    });
-  } catch (error) {
-    console.error("Cloudinary upload error:", error);
-    res.status(500).json({ message: "Image upload failed" });
-  }
-});
-
+      res.status(200).json({
+        message: "Profile photo uploaded successfully",
+        photoUrl,
+      });
+    } catch (error) {
+      console.error("Cloudinary upload error:", error);
+      res.status(500).json({ message: "Image upload failed" });
+    }
+  });
 
   // // Upload cover image
   // uploadCoverImage = asyncHandler(async (req: Request, res: Response) => {
@@ -195,43 +204,43 @@ class AuthController {
   // });
 
   uploadCoverImage = asyncHandler(async (req: Request, res: Response) => {
-  const userId = req.params.userId;
+    const userId = req.params.userId;
 
-  if (!req.file) {
-    res.status(400).json({ message: "No file uploaded" });
-    return;
-  }
+    if (!req.file) {
+      res.status(400).json({ message: "No file uploaded" });
+      return;
+    }
 
-  const user = await User.findById(userId);
-  if (!user) {
-    res.status(404).json({ message: "User not found" });
-    return;
-  }
+    const user = await User.findById(userId);
+    if (!user) {
+      res.status(404).json({ message: "User not found" });
+      return;
+    }
 
-  try {
-    const coverImageUrl = await cloudinaryService.uploadBuffer(
-      req.file.buffer,
-      req.file.originalname,
-      "userCoverImages" // custom folder for separation
-    );
+    try {
+      const coverImageUrl = await cloudinaryService.uploadBuffer(
+        req.file.buffer,
+        req.file.originalname,
+        "userCoverImages", // custom folder for separation
+      );
 
-    user.coverImage = coverImageUrl;
-    await user.save();
+      user.coverImage = coverImageUrl;
+      await user.save();
 
-    res.status(200).json({
-      message: "Cover image uploaded successfully",
-      coverImageUrl,
-    });
-  } catch (error) {
-    console.error("Cloudinary upload error:", error);
-    res.status(500).json({ message: "Image upload failed" });
-  }
-});
+      res.status(200).json({
+        message: "Cover image uploaded successfully",
+        coverImageUrl,
+      });
+    } catch (error) {
+      console.error("Cloudinary upload error:", error);
+      res.status(500).json({ message: "Image upload failed" });
+    }
+  });
 
   // Get user photo URLs
   getUserImages = asyncHandler(async (req: Request, res: Response) => {
     const user = await User.findById(req.params.userId).select(
-      "photo coverImage"
+      "photo coverImage",
     );
 
     if (!user) {
@@ -248,6 +257,7 @@ class AuthController {
   submitForm = asyncHandler(
     async (req: MulterRequest, res: Response): Promise<void> => {
       const { userId, answers } = req.body;
+      console.log(req.body);
 
       if (!userId || !answers) {
         res.status(400).json({ message: "UserId and answers are required" });
@@ -274,7 +284,7 @@ class AuthController {
       // Validate each answer
       const invalidAnswer = parsedAnswers.find(
         (answer: { questionId: string; answer: string }) =>
-          answer.answer.length > 500
+          answer.answer.length > 500,
       );
       if (invalidAnswer) {
         res.status(400).json({
@@ -317,15 +327,19 @@ class AuthController {
           userId,
           questionId: answer.questionId,
           answer: answer.answer,
-        }))
+        })),
       );
+
+      user.profileCompleted = true;
+
+      await user.save();
 
       res.status(200).json({
         message: "Form submitted successfully",
         answers: savedAnswers,
         ...(photoUrl && { photoUrl }),
       });
-    }
+    },
   );
 
   // ............
@@ -569,7 +583,7 @@ class AuthController {
         console.error("Error fetching answers:", error);
         res.status(500).json({ message: "Server error" });
       }
-    }
+    },
   );
 
   verifyOtpController = asyncHandler(
@@ -580,7 +594,7 @@ class AuthController {
       const otpRecord = await Otp.findValidOTP(
         email,
         otp,
-        "email_verification"
+        "email_verification",
       );
 
       if (!otpRecord) {
@@ -606,9 +620,9 @@ class AuthController {
         {
           message: "OTP successfully verified. Your account is now activated.",
         },
-        "Account verified"
+        "Account verified",
       );
-    }
+    },
   );
 
   resendOtpController = asyncHandler(
@@ -624,7 +638,7 @@ class AuthController {
 
       if (existingOtp) {
         throw new ConflictError(
-          "An OTP is already pending or not expired yet."
+          "An OTP is already pending or not expired yet.",
         );
       }
 
@@ -657,9 +671,9 @@ class AuthController {
       ResponseHandler.success(
         res,
         { message: "A new OTP has been sent to your email." },
-        "OTP resent"
+        "OTP resent",
       );
-    }
+    },
   );
 
   public login = asyncHandler(
@@ -705,9 +719,9 @@ class AuthController {
           requiresProfileCompletion:
             user.role === "graduate" && !user.profileCompleted,
         },
-        "Login successful"
+        "Login successful",
       );
-    }
+    },
   );
 
   public getProfile = asyncHandler(
@@ -722,7 +736,7 @@ class AuthController {
       }
 
       ResponseHandler.success(res, user, "Profile retrieved successfully");
-    }
+    },
   );
 
   public updateProfile = asyncHandler(
@@ -735,22 +749,57 @@ class AuthController {
         "phoneNumber",
         "socialLinks",
         "privacySettings",
+        "departmentId",
       ];
 
       const updates = Object.keys(req.body);
       const isValidOperation = updates.every((update) =>
-        allowedUpdates.includes(update)
+        allowedUpdates.includes(update),
       );
 
       if (!isValidOperation) {
         throw new ValidationError("Invalid updates");
       }
 
-      const user = await User.findByIdAndUpdate(
-        req.userId,
-        { ...req.body, profileCompleted: true },
-        { new: true, runValidators: true }
-      ).populate("campus college department", "name");
+      const updateData: Record<string, any> = {
+        ...req.body,
+        profileCompleted: false,
+      };
+
+      if (req.body.departmentId) {
+        const department = await Department.findById(
+          req.body.departmentId,
+        ).populate({
+          path: "college",
+          populate: { path: "campus" },
+        });
+
+        if (!department) {
+          throw new ValidationError("Invalid departmentId: not found");
+        }
+
+        if (!department.college) {
+          throw new ValidationError(
+            "Department does not have an associated college",
+          );
+        }
+
+        const college = department.college as any;
+
+        if (!college.campus) {
+          throw new ValidationError(
+            "College does not have an associated campus",
+          );
+        }
+
+        updateData.department = department._id;
+        updateData.college = college._id;
+        updateData.campus = college.campus._id;
+      }
+      const user = await User.findByIdAndUpdate(req.userId, updateData, {
+        new: true,
+        runValidators: true,
+      }).populate("campus college department", "name");
 
       if (!user) {
         throw new AuthenticationError("User not found");
@@ -759,7 +808,7 @@ class AuthController {
       logger.info(`Profile updated for user: ${user.email}`);
 
       ResponseHandler.success(res, user, "Profile updated successfully");
-    }
+    },
   );
 
   public changePassword = asyncHandler(
@@ -772,9 +821,8 @@ class AuthController {
       }
 
       // Verify current password
-      const isCurrentPasswordValid = await user.comparePassword(
-        currentPassword
-      );
+      const isCurrentPasswordValid =
+        await user.comparePassword(currentPassword);
       if (!isCurrentPasswordValid) {
         throw new AuthenticationError("Current password is incorrect");
       }
@@ -786,7 +834,7 @@ class AuthController {
       logger.info(`Password changed for user: ${user.email}`);
 
       ResponseHandler.success(res, null, "Password changed successfully");
-    }
+    },
   );
 
   public deleteAccount = asyncHandler(
@@ -811,7 +859,7 @@ class AuthController {
       logger.info(`Account deactivated for user: ${user.email}`);
 
       ResponseHandler.success(res, null, "Account deleted successfully");
-    }
+    },
   );
 
   public refreshToken = asyncHandler(
@@ -824,7 +872,7 @@ class AuthController {
       const token = user.generateAuthToken();
 
       ResponseHandler.success(res, { token }, "Token refreshed successfully");
-    }
+    },
   );
 
   public verifyEmail = asyncHandler(
@@ -853,7 +901,7 @@ class AuthController {
       } catch (error) {
         throw new AuthenticationError("Invalid or expired verification token");
       }
-    }
+    },
   );
 
   public forgotPassword = asyncHandler(
@@ -866,7 +914,7 @@ class AuthController {
         ResponseHandler.success(
           res,
           null,
-          "If email exists, reset instructions have been sent"
+          "If email exists, reset instructions have been sent",
         );
         return;
       }
@@ -883,9 +931,9 @@ class AuthController {
       ResponseHandler.success(
         res,
         null,
-        "If email exists, reset instructions have been sent"
+        "If email exists, reset instructions have been sent",
       );
-    }
+    },
   );
 
   public resetPassword = asyncHandler(
@@ -909,117 +957,153 @@ class AuthController {
       } catch (error) {
         throw new AuthenticationError("Invalid or expired reset token");
       }
-    }
+    },
   );
 
-  public storeVerifiedPayment = asyncHandler(async (req: AuthenticatedRequest, res: Response) => {
-  const {
-    payerName,
-    payerTelebirrNo,
-    creditedPartyName,
-    creditedPartyAccountNo,
-    transactionStatus,
-    serviceFee,
-    receiptNo,
-    paymentDate,
-    settledAmount,
-    totalPaidAmount,
-  } = req.body;
+  public storeVerifiedPayment = asyncHandler(
+    async (req: AuthenticatedRequest, res: Response) => {
+      const {
+        payerName,
+        payerTelebirrNo,
+        creditedPartyName,
+        creditedPartyAccountNo,
+        transactionStatus,
+        serviceFee,
+        receiptNo,
+        paymentDate,
+        settledAmount,
+        totalPaidAmount,
+      } = req.body;
 
-  const userId = req.userId!;
-  console.log(userId);
+      const userId = req.userId!;
+      console.log(userId);
 
-  // 1. Check if already used
-  const existing = await Payment.findOne({ receiptNo });
-  if (existing) {
-    return ResponseHandler.conflict(res, 'This transaction ID has already been used.');
-  }
+      const user = await User.findById(userId);
+      if (user?.isPaid == true) {
+        return ResponseHandler.success(res, "User Already Payed");
+      }
+      // 1. Check if already used
+      const existing = await Payment.findOne({ receiptNo });
+      if (existing) {
+        return ResponseHandler.conflict(
+          res,
+          "This transaction ID has already been used.",
+        );
+      }
 
-  // 2. Check correct receiver
-  if (creditedPartyAccountNo !== EXPECTED_ACCOUNT) {
-    return ResponseHandler.badRequest(res, 'Transaction was not sent to the correct account.');
-  }
+      // 2. Check correct receiver
+      if (creditedPartyAccountNo !== EXPECTED_ACCOUNT) {
+        return ResponseHandler.badRequest(
+          res,
+          "Transaction was not sent to the correct account.",
+        );
+      }
 
-  // 3. Check month
-  const now = dayjs();
-  const paidAt = dayjs(paymentDate);
-  if (!paidAt.isValid() || !(now.isSame(paidAt, 'month') && now.isSame(paidAt, 'year'))) {
-    return ResponseHandler.badRequest(res, 'Transaction is not from the current month.');
-  }
+      // 3. Check month
+      const now = dayjs();
+      const paidAt = dayjs(paymentDate);
+      if (
+        !paidAt.isValid() ||
+        !(now.isSame(paidAt, "month") && now.isSame(paidAt, "year"))
+      ) {
+        return ResponseHandler.badRequest(
+          res,
+          "Transaction is not from the current month.",
+        );
+      }
 
-  // 4. Determine applicable price
-  const current = new Date();
-  const discountApplied = current <= DISCOUNT_DEADLINE
-  const amountToPay = discountApplied
-      ? BASE_PRICE * (1 - DISCOUNT_RATE)
-      : BASE_PRICE;
+      // 4. Determine applicable price
+      const current = new Date();
+      const discountApplied = current <= DISCOUNT_DEADLINE;
+      const amountToPay = discountApplied
+        ? BASE_PRICE * (1 - DISCOUNT_RATE)
+        : BASE_PRICE;
 
+      if (parseFloat(settledAmount) !== amountToPay) {
+        return ResponseHandler.badRequest(
+          res,
+          `Expected amount: ${amountToPay} ETB`,
+        );
+      }
 
-  if (parseFloat(settledAmount) !== amountToPay) {
-    return ResponseHandler.badRequest(res, `Expected amount: ${amountToPay} ETB`);
-  }
+      // 5. Save
+      const payment = await Payment.create({
+        payerName,
+        payerTelebirrNo,
+        creditedPartyName,
+        creditedPartyAccountNo,
+        transactionStatus,
+        serviceFee,
+        receiptNo,
+        paymentDate,
+        settledAmount,
+        totalPaidAmount,
+        discountApplied,
+        finalAmount: amountToPay,
+        user: new Types.ObjectId(userId),
+      });
 
-  // 5. Save
-  const payment = await Payment.create({
-    payerName,
-    payerTelebirrNo,
-    creditedPartyName,
-    creditedPartyAccountNo,
-    transactionStatus,
-    serviceFee,
-    receiptNo,
-    paymentDate,
-    settledAmount,
-    totalPaidAmount,
-    discountApplied,
-    finalAmount: amountToPay,
-    user: new Types.ObjectId(userId),
-  });
+      if (!user) {
+        return ResponseHandler.notFound(res, "User not found");
+      }
 
-  return ResponseHandler.created(res, payment, discountApplied
-    ? '✅ Payment recorded with 25% discount!'
-    : '✅ Payment recorded successfully.');
-});
+      user.isPaid = true;
+      user.role = "graduate";
+
+      await user.save();
+      return ResponseHandler.created(
+        res,
+        payment,
+        discountApplied
+          ? "✅ Payment recorded with 25% discount!"
+          : "✅ Payment recorded successfully.",
+      );
+    },
+  );
 
   public checkDiscountEligibility = asyncHandler(
-  async (req: AuthenticatedRequest, res: Response): Promise<void> => {
-    const userId = req.userId!;
+    async (req: AuthenticatedRequest, res: Response) => {
+      const userId = req.userId!;
 
-    // Check if user already paid
-    const existingPayment = await Payment.findOne({ user: userId });
+      // Check if user already paid
+      const existingPayment = await Payment.findOne({ user: userId });
 
-    if (existingPayment) {
-      ResponseHandler.success(res, {
-        eligible: false,
-        amount: existingPayment.finalAmount,
-        message: "You have already paid.",
+      if (existingPayment) {
+        return ResponseHandler.success(res, {
+          eligible: false,
+          isPayed: true,
+          acountNumber: EXPECTED_ACCOUNT_NUMBER,
+          acountName: EXPECTED_ACCOUNT_NAME,
+          amount: existingPayment.finalAmount,
+          message: "You have already paid.",
+        });
+      }
+
+      const now = new Date();
+      const discountApplied = now <= DISCOUNT_DEADLINE;
+      const amountToPay = discountApplied
+        ? BASE_PRICE * (1 - DISCOUNT_RATE)
+        : BASE_PRICE;
+
+      return ResponseHandler.success(res, {
+        eligible: discountApplied,
+        isPayed: false,
+        acountNumber: EXPECTED_ACCOUNT_NUMBER,
+        acountName: EXPECTED_ACCOUNT_NAME,
+        amount: amountToPay,
+        message: discountApplied
+          ? `🎉 You're eligible for a 25% discount! Pay ${amountToPay} ETB before ${DISCOUNT_DEADLINE.toDateString()}.`
+          : `Pay ${amountToPay} ETB.`,
       });
-    }
-
-    const now = new Date();
-    const discountApplied = now <= DISCOUNT_DEADLINE;
-    const amountToPay = discountApplied
-      ? BASE_PRICE * (1 - DISCOUNT_RATE)
-      : BASE_PRICE;
-
-    ResponseHandler.success(res, {
-      eligible: discountApplied,
-      amount: amountToPay,
-      message: discountApplied
-        ? `🎉 You're eligible for a 25% discount! Pay ${amountToPay} ETB before ${DISCOUNT_DEADLINE.toDateString()}.`
-        : `You are not eligible for a discount. Pay ${amountToPay} ETB.`,
-    });
-  }
-);
+    },
+  );
 
   public getLaunchCountdown = (req: Request, res: Response): void => {
-  ResponseHandler.success(res, {
-    deadline: OPENING_DATE.toISOString(),
-    message: OPENING_MESSAGE,
-  });
-};
-
-
+    ResponseHandler.success(res, {
+      deadline: OPENING_DATE.toISOString(),
+      message: OPENING_MESSAGE,
+    });
+  };
 }
 
 export const authController = new AuthController();
