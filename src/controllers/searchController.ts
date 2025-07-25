@@ -143,7 +143,7 @@ class SearchController {
       const limitNum = parseInt(limit as string);
 
       // Build base filter
-      const filter: any = { isActive: true };
+      const filter: any = { isActive: true, profileCompleted: true };
 
       // Optional filters
       // if (campus) filter.campus = campus;
