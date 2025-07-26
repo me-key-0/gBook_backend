@@ -142,6 +142,7 @@ export const schemas = {
         .valid("public", "department", "college", "campus", "private")
         .optional(),
     }).optional(),
+    departmentId: Joi.string().hex().length(24).optional(),
   }),
 
   // Post schemas
@@ -211,7 +212,7 @@ export const schemas = {
   pagination: Joi.object({
     page: Joi.number().min(1).default(1),
     limit: Joi.number().min(1).max(100).default(20),
-    randomSeed: Joi.string().optional(), 
+    randomSeed: Joi.string().optional(),
   }),
 
   // Privacy settings
